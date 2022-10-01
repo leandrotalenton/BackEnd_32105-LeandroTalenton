@@ -1,0 +1,23 @@
+{
+  "name": "backend_32105-leandrotalenton",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leandrotalenton/BackEnd_32105-LeandroTalenton.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leandrotalenton/BackEnd_32105-LeandroTalenton/issues"
+  },
+  "homepage": "https://github.com/leandrotalenton/BackEnd_32105-LeandroTalenton#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
