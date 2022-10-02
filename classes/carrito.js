@@ -1,4 +1,4 @@
-const { Producto } = require('./producto')
+// const { Producto } = require('./producto')
 
 class Carrito {
     constructor(id,timeStamp,productos){
@@ -52,3 +52,5 @@ class Carrito {
 // carrin.addToCart({id:2})
 // carrin.deleteFromCart({id:2})
 // console.log(carrin)
+
+module.exports.Carrito = Carrito
