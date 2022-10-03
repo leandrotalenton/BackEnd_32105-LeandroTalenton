@@ -1,5 +1,5 @@
 const express = require('express')
-const { Container } = require('../classes/fs')
+const { Container } = require('../classes/itemsContainer')
 const { Producto } = require('../classes/producto')
 const { Router } = express
 const router = Router()
@@ -7,11 +7,25 @@ const router = Router()
 const admin = true
 const productos = new Container("./fileStorage/productos.json"); // esta ruta toma como origen a la carpeta donde estoy parado cuando la ejecuto.
 
+/* //Req body sugerido (json)
+    {
+        "name": "El loco del 60",
+        "description": "Sabe muchas cosas que nadie sabe en el mundo",
+        "code": "El codigo del FBI es... JJX",
+        "picture": "https://cdn3.iconfinder.com/data/icons/education-209/64/clock-stopwatch-timer-time-128.png",
+        "price": 15,
+        "stock": 6
+    }
+*/
+
 const adminOnly = (req, res, next)=>{
     if(admin){
         next()
     } else {
-        res.send(`You do not have the required access`)
+        res.send({
+            error: -1,
+            descripcion: `ruta ${req.path} metodo ${req.method} no autorizada`
+        })
     }
 }
 
@@ -56,7 +70,7 @@ router.put("/:id",adminOnly,(req, res)=>{
         req.body.stock
     );
     (async function(){
-        await productos.putById(req.params.id*1, productin)
+        await productos.editById(req.params.id*1, productin)
     })();
     res.send(`se actualizo el producto con id ${req.params.id}: con los datos de ${productin.name}`)
 })

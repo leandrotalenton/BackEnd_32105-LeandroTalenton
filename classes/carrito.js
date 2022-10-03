@@ -1,21 +1,31 @@
 // const { Producto } = require('./producto')
 
 class Carrito {
-    constructor(id,timeStamp,productos){
+    constructor(id, timeStamp, productos){
         this.id = id,
         this.timeStamp = timeStamp,
-        this.productos = [/* i.e.
-            id: 123,
-            timeStamp: Date.now(),
-            quantity: 3
-        */]
+        this.productos = productos
     };
 
+    // productos = [
+    //     {
+    //         id: addedProd.id,
+    //         timeStamp: Date.now(),
+    //         quantity: addedProdQuantity
+    //     },
+    //     {
+    //         id: addedProd.id,
+    //         timeStamp: Date.now(),
+    //         quantity: addedProdQuantity
+    //     }
+    // ]
+
+    // esta es una funcion a la que se le pasa un objecto con una prop .id y retorna el objecto completo (si lo encuentra) o undefined (si no lo encuentra)
     isInCart(prod){
         return this.productos.find((existProd)=>existProd.id === prod.id) // if found => {id:...} || if not found => undefined
     }
 
-    addToCart(addedProd, addedProdQuantity=1){
+    addToCart(addedProd/* ={id:1} */, addedProdQuantity/* =1 */){
         const productoIsInCart = this.isInCart(addedProd) 
         if(!productoIsInCart){ // if !undefined => create new producto || else increase prod cuantity
             this.productos.push({
