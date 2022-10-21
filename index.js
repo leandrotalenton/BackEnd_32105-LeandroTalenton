@@ -1,4 +1,4 @@
-const express = require('express');
+import express from 'express';
 const app = express();
 
 app.use(express.json())
@@ -6,13 +6,15 @@ app.use(express.urlencoded({extended:true}))
 
 const admin = true
 
-const productos = require("./routers/productos")
-const carrito = require("./routers/carritos")
+// const productos = require("./routers/productos")
+import productos from "./routers/productos.js";
+// const carrito = require("./routers/carritos")
+import carrito from "./routers/carritos.js";
 
 app.use("/productos",productos)
 app.use("/carrito",carrito)
 
-app.get("*", (req, res)=>{
+app.all("*", (req, res)=>{
     res.send({
         error: -2,
         descripccion: `ruta ${req.path} metodo ${req.method} no implementada`

@@ -1,6 +1,6 @@
 // const { Producto } = require('./producto')
 
-class Carrito {
+export class Carrito {
     constructor(id, timeStamp, productos){
         this.id = id,
         this.timeStamp = timeStamp,
@@ -63,4 +63,4 @@ class Carrito {
 // carrin.deleteFromCart({id:2})
 // console.log(carrin)
 
-module.exports.Carrito = Carrito
+// export { Carrito }

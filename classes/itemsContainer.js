@@ -1,6 +1,7 @@
 // const { Producto } = require('./producto')
 
-const fs = require("fs");
+// const fs = require("fs");
+import fs from "fs";
 
 class Container{
     constructor(file){
@@ -97,4 +98,4 @@ class Container{
 // }
 // ejecutar()
 
-module.exports.Container = Container
+export { Container }

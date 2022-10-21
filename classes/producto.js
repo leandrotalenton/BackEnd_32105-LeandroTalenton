@@ -11,4 +11,4 @@ class Producto {
     };
 }
 
-module.exports.Producto = Producto
+export { Producto }

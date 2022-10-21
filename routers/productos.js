@@ -1,6 +1,8 @@
-const express = require('express')
-const { Container } = require('../classes/itemsContainer')
-const { Producto } = require('../classes/producto')
+import express from 'express';
+// const { Container } = require('../classes/itemsContainer')
+import { Container } from '../classes/itemsContainer.js';
+// const { Producto } = require('../classes/producto')
+import { Producto } from '../classes/producto.js';
 const { Router } = express
 const router = Router()
 
@@ -82,4 +84,4 @@ router.delete("/:id",adminOnly,(req, res)=>{
     res.send(`Eliminando producto con id: ${req.params.id}`)
 })
 
-module.exports = router
+export default router

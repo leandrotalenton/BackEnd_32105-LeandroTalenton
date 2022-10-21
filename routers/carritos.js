@@ -1,7 +1,7 @@
-const express = require('express')
-const { Container } = require('../classes/itemsContainer')
-const { Carrito } = require('../classes/carrito')
-const { Router } = express
+import express from 'express';
+import { Container } from '../classes/itemsContainer.js';
+import { Carrito } from '../classes/carrito.js';
+const { Router } = express;
 const router = Router()
 
 const carritos = new Container("./fileStorage/carritos.json"); // esta ruta toma como origen a la carpeta donde estoy parado cuando la ejecuto.
@@ -56,7 +56,7 @@ router.post("/:id/productos",(req, res)=>{
                 carritoRancio.timeStamp,
                 carritoRancio.productos
             )
-            carrito.addToCart(req.body.prod,req.body.prodQuantity)
+            carrito.addToCart(req.body.prod, req.body.prodQuantity)
             console.log(carrito)
             await carritos.editById(req.params.id*1, carrito)
             res.send(`se agrego un producto al carrito ${req.params.id}`)
@@ -86,4 +86,4 @@ router.delete("/:id/productos/:id_prod",(req, res)=>{
     })()
 })
 
-module.exports = router
+export default router
