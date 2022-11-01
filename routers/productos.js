@@ -1,8 +1,5 @@
 import express from 'express';
-// const { Container } = require('../classes/itemsContainer')
-import { Container } from '../classes/itemsContainer.js';
-// const { Producto } = require('../classes/producto')
-import { Producto } from '../classes/producto.js';
+import { Container } from '../containers/containerFs.js';
 const { Router } = express
 const router = Router()
 
@@ -44,34 +41,34 @@ router.get("/:id",(req, res)=>{
 })
 
 router.post("/",adminOnly,(req, res)=>{
-    const productin = new Producto(
-        "aca arriba va a ir el id",
-        Date.now(),
-        req.body.name,
-        req.body.description,
-        req.body.code,
-        req.body.picture,
-        req.body.price,
-        req.body.stock
-    );
     (async function(){
+        const productin = {
+            id: null,
+            timeStamp: Date.now(),
+            name: req.body.name,
+            description: req.body.description,
+            code: req.body.code,
+            picture: req.body.picture,
+            price: req.body.price,
+            stock: req.body.stock
+        }
         await productos.save(productin);
+        res.send(`se agrego: ${productin.name}`)
     })();
-    res.send(`se agrego: ${productin.name}`)
 })
 
 router.put("/:id",adminOnly,(req, res)=>{
-    const productin = new Producto(
-        "aca arriba va a ir el id",
-        Date.now(),
-        req.body.name,
-        req.body.description,
-        req.body.code,
-        req.body.picture,
-        req.body.price,
-        req.body.stock
-    );
     (async function(){
+        const productin = {
+            id: null,
+            timeStamp: Date.now(),
+            name: req.body.name,
+            description: req.body.description,
+            code: req.body.code,
+            picture: req.body.picture,
+            price: req.body.price,
+            stock: req.body.stock
+        }
         await productos.editById(req.params.id*1, productin)
     })();
     res.send(`se actualizo el producto con id ${req.params.id}: con los datos de ${productin.name}`)

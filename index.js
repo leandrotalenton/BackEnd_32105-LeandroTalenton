@@ -6,9 +6,7 @@ app.use(express.urlencoded({extended:true}))
 
 const admin = true
 
-// const productos = require("./routers/productos")
 import productos from "./routers/productos.js";
-// const carrito = require("./routers/carritos")
 import carrito from "./routers/carritos.js";
 
 app.use("/productos",productos)

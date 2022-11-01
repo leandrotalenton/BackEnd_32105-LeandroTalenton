@@ -1,6 +1,3 @@
-// const { Producto } = require('./producto')
-
-// const fs = require("fs");
 import fs from "fs";
 
 class Container{
@@ -8,7 +5,6 @@ class Container{
         this.file = file;
     }
 
-    // metodo save(object)
     async save(newItem){
         const currentItems = await fs.promises.readFile(this.file, "utf-8");
         const items = JSON.parse(currentItems);
@@ -19,7 +15,6 @@ class Container{
         await fs.promises.writeFile(this.file,newItems)
     }
 
-    // metodo getById(number)
     async getById(id){
         const currentItems = await fs.promises.readFile(this.file, "utf-8");
         const items = JSON.parse(currentItems);
@@ -33,7 +28,6 @@ class Container{
         }
     }
 
-    // metodo editById(number)
     async editById(id, newItem){
         const currentItems = await fs.promises.readFile(this.file, "utf-8");
         const items = JSON.parse(currentItems);
@@ -52,7 +46,6 @@ class Container{
         }
     }
 
-    // metodo getAll()
     async getAll(){
         const currentItems = await fs.promises.readFile(this.file, "utf-8");
         const items = JSON.parse(currentItems);
@@ -60,7 +53,6 @@ class Container{
         return items
     }
 
-    // metodo deleteById(number)
     async deleteById(id){
         const currentItems = await fs.promises.readFile(this.file, "utf-8");
         const items = JSON.parse(currentItems);
@@ -75,27 +67,11 @@ class Container{
         await fs.promises.writeFile(this.file,newItems)
     }
 
-    // metodo deleteAll()
     async deleteAll(){
         const items = [];
         const newItems = JSON.stringify(items)
         await fs.promises.writeFile(this.file,newItems)
     }
 } 
-
-// const contenedor = new Container("./fileStorage/productos.json"); // esta ruta toma como origen a la carpeta donde estoy parado cuando la ejecuto.
-
-// const productin = new Producto("id","timeStamp","name","description","code","picture","price","stock")
-
-// const ejecutar = async function(){
-//     await contenedor.save(productin); // por ahora se comenta por q sino se van al chori el numero de productos
-//     // await contenedor.getById(2)
-//     // await contenedor.getAll()
-//     // await contenedor.deleteAll()
-//     // await contenedor.deleteById(3)
-//     console.log(`no hay problema willy`)
-
-// }
-// ejecutar()
 
 export { Container }
