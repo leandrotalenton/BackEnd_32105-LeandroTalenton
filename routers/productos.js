@@ -17,8 +17,8 @@ const productos = new Container("./fileStorage/productos.json"); // esta ruta to
     }
 */
 
-const adminOnly = (req, res, next)=>{
-    if(admin){
+const adminOnly = (req, res, next) => {
+    if (admin) {
         next()
     } else {
         res.send({
@@ -28,57 +28,77 @@ const adminOnly = (req, res, next)=>{
     }
 }
 
-router.get("/",(req, res)=>{
-    (async function(){
-        res.send(await productos.getAll())
-    })()
-})
-
-router.get("/:id",(req, res)=>{
-    (async function(){
-        res.send(await productos.getById(req.params.id*1))
-    })()
-})
-
-router.post("/",adminOnly,(req, res)=>{
-    (async function(){
-        const productin = {
-            id: null,
-            timeStamp: Date.now(),
-            name: req.body.name,
-            description: req.body.description,
-            code: req.body.code,
-            picture: req.body.picture,
-            price: req.body.price,
-            stock: req.body.stock
+router.get("/", (req, res) => {
+    (async function () {
+        try {
+            res.send(await productos.read())
+        } catch (e) {
+            console.log(e)
         }
-        await productos.save(productin);
-        res.send(`se agrego: ${productin.name}`)
+    })()
+})
+
+router.get("/:id", (req, res) => {
+    (async function () {
+        try {
+            res.send(await productos.readById(req.params.id * 1))
+        } catch (e) {
+            console.log(e)
+        }
+    })()
+})
+
+router.post("/", adminOnly, (req, res) => {
+    (async function () {
+        try {
+            const productin = {
+                id: null,
+                timeStamp: Date.now(),
+                name: req.body.name,
+                description: req.body.description,
+                code: req.body.code,
+                picture: req.body.picture,
+                price: req.body.price,
+                stock: req.body.stock
+            }
+            await productos.create(productin);
+            res.send(`se agrego: ${productin.name}`)
+        } catch (e) {
+            console.log(e)
+        }
     })();
 })
 
-router.put("/:id",adminOnly,(req, res)=>{
-    (async function(){
-        const productin = {
-            id: null,
-            timeStamp: Date.now(),
-            name: req.body.name,
-            description: req.body.description,
-            code: req.body.code,
-            picture: req.body.picture,
-            price: req.body.price,
-            stock: req.body.stock
+router.put("/:id", adminOnly, (req, res) => {
+    (async function () {
+        try {
+            const productin = {
+                id: null,
+                timeStamp: Date.now(),
+                name: req.body.name,
+                description: req.body.description,
+                code: req.body.code,
+                picture: req.body.picture,
+                price: req.body.price,
+                stock: req.body.stock
+            }
+            const result = await productos.updateById(req.params.id * 1, productin)
+            res.send(result)
+        } catch (e) {
+            console.log(e)
         }
-        await productos.editById(req.params.id*1, productin)
     })();
-    res.send(`se actualizo el producto con id ${req.params.id}: con los datos de ${productin.name}`)
 })
 
-router.delete("/:id",adminOnly,(req, res)=>{
-    (async function(){
-        await productos.deleteById(req.params.id*1)
+router.delete("/:id", adminOnly, (req, res) => {
+    (async function () {
+        try {
+            const result = await productos.deleteById(req.params.id * 1);
+            res.send(result)
+        } catch (e) {
+            console.log(e)
+        };
     })()
-    res.send(`Eliminando producto con id: ${req.params.id}`)
 })
 
 export default router
