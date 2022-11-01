@@ -41,7 +41,7 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
     (async function () {
         try {
-            res.send(await productos.readById(req.params.id * 1))
+            res.send(await productos.readById(req.params.id * 1) || `no se encuentra un item con el ID especificado`)
         } catch (e) {
             console.log(e)
         }

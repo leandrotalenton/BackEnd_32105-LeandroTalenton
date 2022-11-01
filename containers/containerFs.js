@@ -36,9 +36,10 @@ class Container {
             const item = items.find(item => item.id === id)
             if (item) {
                 return item
-            } else {
-                return `no se encuentra un item con el ID especificado`
             }
+            // else {
+            //     return `no se encuentra un item con el ID especificado`
+            // }
         } catch (e) {
             console.log(e)
         }

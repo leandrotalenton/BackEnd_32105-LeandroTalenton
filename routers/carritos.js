@@ -39,7 +39,7 @@ router.get("/:id/productos", (req, res) => {
     (async function () {
         try {
             const response = await carritos.readById(req.params.id * 1)
-            res.send(response.productos || response)
+            res.send(response?.productos || `no se encuentra un item con el ID especificado`)
         } catch (e) {
             console.log(e)
         }
@@ -51,12 +51,12 @@ router.post("/:id/productos", (req, res) => {
     (async function () {
         try {
             const carrito = await carritos.readById(req.params.id * 1)
-            if (carrito === `no se encuentra un item con el ID especificado`) {
-                res.send(`no se encuentra el carrito especificado`)
-            } else {
+            if (carrito) {
                 carrito.productos.push(req.body)
                 const result = await carritos.updateById(req.params.id * 1, carrito)
                 res.send(result)
+            } else {
+                res.send(`no se encuentra el carrito especificado`)
             }
         } catch (e) {
             console.log(e)
@@ -69,9 +69,7 @@ router.delete("/:id/productos/:id_prod", (req, res) => {
     (async function () {
         try {
             const carritoRancio = await carritos.readById(req.params.id * 1)
-            if (carritoRancio === `no se encuentra un item con el ID especificado`) {
-                res.send(`no se encuentra el carrito especificado`)
-            } else {
+            if (carritoRancio) {
                 const contained = carritoRancio.productos.find(producto => producto.id * 1 === req.params.id_prod * 1)
                 if (contained) {
                     carritoRancio.productos = carritoRancio.productos.filter(producto => producto.id * 1 !== req.params.id_prod * 1)
@@ -80,6 +78,8 @@ router.delete("/:id/productos/:id_prod", (req, res) => {
                 } else {
                     res.send(`no se encuentra el producto especificado`)
                 }
+            } else {
+                res.send(`no se encuentra el carrito especificado`)
             }
         } catch (e) {
             console.log(e)
