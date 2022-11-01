@@ -1,10 +1,12 @@
 import express from 'express';
-import { Container } from '../containers/containerFs.js';
+// import { ContainerFs } from '../containers/ContainerFs.js';
+import daos from "../daos/index.js"
 const { Router } = express
 const router = Router()
 
+const { productosDAO } = await daos()
 const admin = true
-const productos = new Container("./fileStorage/productos.json"); // esta ruta toma como origen a la carpeta donde estoy parado cuando la ejecuto.
+// const productos = new ContainerFs("./fileStorage/productos.json"); // esta ruta toma como origen a la carpeta donde estoy parado cuando la ejecuto.
 
 /* //Req body sugerido (json)
     {
@@ -31,7 +33,7 @@ const adminOnly = (req, res, next) => {
 router.get("/", (req, res) => {
     (async function () {
         try {
-            res.send(await productos.read())
+            res.send(await productosDAO.read())
         } catch (e) {
             console.log(e)
         }
@@ -41,7 +43,7 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
     (async function () {
         try {
-            res.send(await productos.readById(req.params.id * 1) || `no se encuentra un item con el ID especificado`)
+            res.send(await productosDAO.readById(req.params.id * 1) || `no se encuentra un item con el ID especificado`)
         } catch (e) {
             console.log(e)
         }
@@ -61,7 +63,7 @@ router.post("/", adminOnly, (req, res) => {
                 price: req.body.price,
                 stock: req.body.stock
             }
-            await productos.create(productin);
+            await productosDAO.create(productin);
             res.send(`se agrego: ${productin.name}`)
         } catch (e) {
             console.log(e)
@@ -82,7 +84,7 @@ router.put("/:id", adminOnly, (req, res) => {
                 price: req.body.price,
                 stock: req.body.stock
             }
-            const result = await productos.updateById(req.params.id * 1, productin)
+            const result = await productosDAO.updateById(req.params.id * 1, productin)
             res.send(result)
         } catch (e) {
             console.log(e)
@@ -93,7 +95,7 @@ router.put("/:id", adminOnly, (req, res) => {
 router.delete("/:id", adminOnly, (req, res) => {
     (async function () {
         try {
-            const result = await productos.deleteById(req.params.id * 1);
+            const result = await productosDAO.deleteById(req.params.id * 1);
             res.send(result)
         } catch (e) {
             console.log(e)
