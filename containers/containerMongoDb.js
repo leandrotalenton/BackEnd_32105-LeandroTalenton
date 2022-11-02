@@ -1,9 +1,10 @@
 import mongoose from 'mongoose'
 import config from '../config.js'
 
+
 await mongoose.connect(config.mongoDb.uri, config.mongoDb.options)
 
-class Container {
+class ContainerMongoDb {
     constructor(collection, scheme) {
         this.db = mongoose.model(collection, scheme)
     }
@@ -27,7 +28,7 @@ class Container {
 
     async readById(id) {
         try {
-            const document = await this.db.findOne({ _id: id})
+            const document = await this.db.findOne({_id: "6361c4baff96c97de9ceaa94"}) // findOne({ _id: id})  findById(id)
             if (document) {
                 return document
             }
@@ -38,14 +39,12 @@ class Container {
 
     async updateById(id, newDocument) {
         try {
-            const aver = await this.db.replaceOne({_id: id}, newDocument)
-            console.log(aver)
-            // REVISAR ESTO EN FS (perate capaz lo puedo usar, voy a revisar esto y destructurar algo que encuentre util)
-            // if (item) {
-            //     return `Se ha actualizado el item ${id}`
-            // } else {
-            //     return `no se encuentra un item con el ID especificado`
-            // }
+            const {modifiedCount} = await this.db.replaceOne({_id: id}, newDocument)
+            if ( modifiedCount > 0 ) {
+                return `Se ha actualizado el item ${id}`
+            } else {
+                return `no se encuentra un item con el ID especificado`
+            }
         } catch (e) {
             console.log(e)
         }
@@ -53,10 +52,9 @@ class Container {
 
     async deleteById(id) {
         try {
-            const { n, nDeleted } = await this.db.deleteOne({_id: id})
-            console.log(aver)
-            if (nDeleted > 0) {
-                return `se elimino el producto con ID ${id}`;
+            const { deletedCount } = await this.db.deleteOne({_id: id}) //{ n, nDeleted }
+            if (deletedCount > 0) {
+                return `se elimino el item con ID ${id}`;
             } else {
                 return `no se encuentra un item con el ID especificado`
             }
@@ -74,4 +72,4 @@ class Container {
     }
 }
 
-export { Container }
+export { ContainerMongoDb }

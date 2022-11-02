@@ -31,15 +31,13 @@ class ContainerFs {
 
     async readById(id) {
         try {
+            id = parseInt(id)
             const currentItems = await fs.promises.readFile(this.file, "utf-8");
             const items = JSON.parse(currentItems);
             const item = items.find(item => item.id === id)
             if (item) {
                 return item
             }
-            // else {
-            //     return `no se encuentra un item con el ID especificado`
-            // }
         } catch (e) {
             console.log(e)
         }
@@ -47,6 +45,7 @@ class ContainerFs {
 
     async updateById(id, newItem) {
         try {
+            id = parseInt(id)
             const currentItems = await fs.promises.readFile(this.file, "utf-8");
             const items = JSON.parse(currentItems);
             const item = items.find(item => item.id === id)
@@ -67,6 +66,7 @@ class ContainerFs {
 
     async deleteById(id) {
         try {
+            id = parseInt(id)
             const currentItems = await fs.promises.readFile(this.file, "utf-8");
             const items = JSON.parse(currentItems);
             const index = items.indexOf(items.find(item => item.id === id));

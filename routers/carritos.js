@@ -1,13 +1,24 @@
 import express from 'express';
 // import { ContainerFs } from '../containers/ContainerFs.js';
-import daos from "../daos/index.js"
+// import daos from "../daos/index.js"
+import { carritosDAO } from '../index.js'
 const { Router } = express;
 const router = Router()
 
-const { carritosDAO } = await daos()
+// const { carritosDAO } = await daos()
 // const carritos = new ContainerFs("./fileStorage/carritos.json");
 
 //funcionalidades de carritos ////////////////////////////////////////////////////////////////////////////////////////////
+router.get("/", (req, res) => {
+    (async function () {
+        try {
+            res.send(await carritosDAO.read())
+        } catch (e) {
+            console.log(e)
+        }
+    })()
+})
+
 router.post("/", (req, res) => {
     (async function () {
         try {
@@ -27,7 +38,7 @@ router.post("/", (req, res) => {
 router.delete("/:id", (req, res) => {
     (async function () {
         try {
-            const response = await carritosDAO.deleteById(req.params.id * 1)
+            const response = await carritosDAO.deleteById(req.params.id)
             res.send(response)
         } catch (e) {
             console.log(e)
@@ -40,7 +51,7 @@ router.delete("/:id", (req, res) => {
 router.get("/:id/productos", (req, res) => {
     (async function () {
         try {
-            const response = await carritosDAO.readById(req.params.id * 1)
+            const response = await carritosDAO.readById(req.params.id)
             res.send(response?.productos || `no se encuentra un item con el ID especificado`)
         } catch (e) {
             console.log(e)
@@ -52,10 +63,10 @@ router.get("/:id/productos", (req, res) => {
 router.post("/:id/productos", (req, res) => {
     (async function () {
         try {
-            const carrito = await carritosDAO.readById(req.params.id * 1)
+            const carrito = await carritosDAO.readById(req.params.id)
             if (carrito) {
                 carrito.productos.push(req.body)
-                const result = await carritosDAO.updateById(req.params.id * 1, carrito)
+                const result = await carritosDAO.updateById(req.params.id, carrito)
                 res.send(result)
             } else {
                 res.send(`no se encuentra el carrito especificado`)
@@ -70,12 +81,12 @@ router.post("/:id/productos", (req, res) => {
 router.delete("/:id/productos/:id_prod", (req, res) => {
     (async function () {
         try {
-            const carritoRancio = await carritosDAO.readById(req.params.id * 1)
+            const carritoRancio = await carritosDAO.readById(req.params.id)
             if (carritoRancio) {
-                const contained = carritoRancio.productos.find(producto => producto.id * 1 === req.params.id_prod * 1)
+                const contained = carritoRancio.productos.find(producto => producto.id === req.params.id_prod)
                 if (contained) {
-                    carritoRancio.productos = carritoRancio.productos.filter(producto => producto.id * 1 !== req.params.id_prod * 1)
-                    await carritosDAO.updateById(req.params.id * 1, carritoRancio)
+                    carritoRancio.productos = carritoRancio.productos.filter(producto => producto.id !== req.params.id_prod)
+                    await carritosDAO.updateById(req.params.id, carritoRancio)
                     res.send(`se borra producto ${req.params.id_prod} del carrito ${req.params.id}`)
                 } else {
                     res.send(`no se encuentra el producto especificado`)

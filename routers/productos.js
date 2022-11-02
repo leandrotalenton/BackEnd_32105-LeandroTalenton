@@ -1,10 +1,11 @@
 import express from 'express';
 // import { ContainerFs } from '../containers/ContainerFs.js';
-import daos from "../daos/index.js"
+// import daos from "../daos/index.js"
+import { productosDAO } from '../index.js'
 const { Router } = express
 const router = Router()
 
-const { productosDAO } = await daos()
+// const { productosDAO } = await daos()
 const admin = true
 // const productos = new ContainerFs("./fileStorage/productos.json"); // esta ruta toma como origen a la carpeta donde estoy parado cuando la ejecuto.
 
@@ -43,7 +44,7 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
     (async function () {
         try {
-            res.send(await productosDAO.readById(req.params.id * 1) || `no se encuentra un item con el ID especificado`)
+            res.send(await productosDAO.readById(req.params.id) || `no se encuentra un item con el ID especificado`)
         } catch (e) {
             console.log(e)
         }
@@ -84,7 +85,7 @@ router.put("/:id", adminOnly, (req, res) => {
                 price: req.body.price,
                 stock: req.body.stock
             }
-            const result = await productosDAO.updateById(req.params.id * 1, productin)
+            const result = await productosDAO.updateById(req.params.id, productin)
             res.send(result)
         } catch (e) {
             console.log(e)
@@ -95,7 +96,7 @@ router.put("/:id", adminOnly, (req, res) => {
 router.delete("/:id", adminOnly, (req, res) => {
     (async function () {
         try {
-            const result = await productosDAO.deleteById(req.params.id * 1);
+            const result = await productosDAO.deleteById(req.params.id);
             res.send(result)
         } catch (e) {
             console.log(e)

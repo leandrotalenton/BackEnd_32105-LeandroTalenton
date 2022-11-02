@@ -6,6 +6,12 @@ app.use(express.urlencoded({extended:true}))
 
 const admin = true
 
+import daos from "./daos/index.js"
+const { productosDAO, carritosDAO } = await daos()
+export {productosDAO, carritosDAO}
+
+
+
 import productos from "./routers/productos.js";
 import carrito from "./routers/carritos.js";
 
