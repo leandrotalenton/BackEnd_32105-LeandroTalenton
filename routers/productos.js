@@ -1,13 +1,9 @@
 import express from 'express';
-// import { ContainerFs } from '../containers/ContainerFs.js';
-// import daos from "../daos/index.js"
 import { productosDAO } from '../index.js'
 const { Router } = express
 const router = Router()
 
-// const { productosDAO } = await daos()
 const admin = true
-// const productos = new ContainerFs("./fileStorage/productos.json"); // esta ruta toma como origen a la carpeta donde estoy parado cuando la ejecuto.
 
 /* //Req body sugerido (json)
     {

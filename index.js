@@ -11,7 +11,6 @@ const { productosDAO, carritosDAO } = await daos()
 export {productosDAO, carritosDAO}
 
 
-
 import productos from "./routers/productos.js";
 import carrito from "./routers/carritos.js";
 
