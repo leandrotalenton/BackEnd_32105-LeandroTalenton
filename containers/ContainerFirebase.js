@@ -4,7 +4,7 @@ import config from '../config.js'
 
 admin.initializeApp({
     credential: admin.credential.cert(config.firebase),
-    databaseURL: "https://ltbackedn.firebaseio.com" // esto puede que ni lo necesite
+    databaseURL: "https://ltbackedn.firebaseio.com"
 })
 
 const db = admin.firestore();
@@ -18,7 +18,6 @@ class ContainerFirebase {
         try {
             const { id } = await this.collection.add({})
             await this.collection.doc(id).set({...newDocument, id: id})
-            console.log("se agrega id",id)
         } catch (e) {
             console.log(e)
         }

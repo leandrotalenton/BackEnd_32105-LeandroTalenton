@@ -74,7 +74,7 @@ class ContainerFs {
                 items.splice(index, 1);
                 const newItems = JSON.stringify(items);
                 await fs.promises.writeFile(this.file, newItems);
-                return `se elimino el producto con ID ${id}`;
+                return `se elimino el item con ID ${id}`;
             } else {
                 return `no se encuentra un item con el ID especificado`
             }
