@@ -11,12 +11,13 @@ const admin = true
 
 /* //Req body sugerido (json)
     {
+        "id": "1",
         "name": "El loco del 60",
         "description": "Sabe muchas cosas que nadie sabe en el mundo",
         "code": "El codigo del FBI es... JJX",
         "picture": "https://cdn3.iconfinder.com/data/icons/education-209/64/clock-stopwatch-timer-time-128.png",
-        "price": 15,
-        "stock": 6
+        "price": 777,
+        "stock": 111
     }
 */
 

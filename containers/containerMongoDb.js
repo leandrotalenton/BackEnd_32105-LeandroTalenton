@@ -28,7 +28,7 @@ class ContainerMongoDb {
 
     async readById(id) {
         try {
-            const document = await this.db.findOne({_id: "6361c4baff96c97de9ceaa94"}) // findOne({ _id: id})  findById(id)
+            const document = await this.db.findOne({_id: id})
             if (document) {
                 return document
             }
