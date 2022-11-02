@@ -11,12 +11,14 @@ const db = admin.firestore();
 
 class ContainerFirebase {
     constructor (collectionName){
-        this.db = db.collection(collectionName)
+        this.collection = db.collection(collectionName)
     }
 
     async create(newDocument) {
         try {
-            // await this.db.add(newDocument)
+            const { id } = await this.collection.add({})
+            await this.collection.doc(id).set({...newDocument, id: id})
+            console.log("se agrega id",id)
         } catch (e) {
             console.log(e)
         }
@@ -24,10 +26,10 @@ class ContainerFirebase {
 
     async read() {
         try {
-            // const querySnapshot = await this.db.get();
-            // const objects = querySnapshot.docs;
-            // const found = objects.map( obj =>{console.log(obj); return ({ ...obj.data()})}) //id: obj.id,
-            return found;
+            const docArray = []
+            const docs = await this.collection.get();
+            docs.forEach( doc => docArray.push(doc.data()))
+            return docArray;
         } catch (e) {
             console.log(e)
         }
@@ -35,9 +37,10 @@ class ContainerFirebase {
 
     async readById(id) {
         try {
-            // const document = await this.db.findOne({_id: id})
-            if (document) {
-                return document
+            const doc = await this.collection.doc(id).get();
+            const docData = doc.data()
+            if (docData) {
+                return docData
             }
         } catch (e) {
             console.log(e)
@@ -46,8 +49,9 @@ class ContainerFirebase {
 
     async updateById(id, newDocument) {
         try {
-            // const {modifiedCount} = await this.db.replaceOne({_id: id}, newDocument)
-            if ( modifiedCount > 0 ) {
+            const doc = await this.collection.doc(id).get();
+            if ( doc.data() ) {
+                await this.collection.doc(id).set({...newDocument, id: doc.id})
                 return `Se ha actualizado el item ${id}`
             } else {
                 return `no se encuentra un item con el ID especificado`
@@ -59,8 +63,9 @@ class ContainerFirebase {
 
     async deleteById(id) {
         try {
-            // const { deletedCount } = await this.db.deleteOne({_id: id}) //{ n, nDeleted }
-            if (deletedCount > 0) {
+            const doc = await this.collection.doc(id).get();
+            if ( doc.data() ) {
+                await this.collection.doc(id).delete();
                 return `se elimino el item con ID ${id}`;
             } else {
                 return `no se encuentra un item con el ID especificado`
@@ -72,7 +77,7 @@ class ContainerFirebase {
 
     async deleteAll() {
         try {
-            // await this.db.deleteMany({})
+            await this.collection.delete();
         } catch (e) {
             console.log(e)
         }
