@@ -57,16 +57,6 @@ router.get("/:id/productos", (req, res) => {
 
 //incorporar productos al carrito(id)
 
-// req.body sugerido: {
-//     "id": "1",
-//     "name": "El loco del 60",
-//     "description": "Sabe muchas cosas que nadie sabe en el mundo",
-//     "code": "El codigo del FBI es... JJX",
-//     "picture": "https://cdn3.iconfinder.com/data/icons/education-209/64/clock-stopwatch-timer-time-128.png",
-//     "price": 777,
-//     "stock": 666
-// }
-
 router.post("/:id/productos", (req, res) => {
     (async function () {
         try {
