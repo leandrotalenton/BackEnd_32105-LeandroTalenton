@@ -1,92 +1,70 @@
-import express from 'express';
-import { productosDAO } from '../index.js'
-const { Router } = express
+import express from 'express'
+const {Router} = express;
 const router = Router()
 
-const admin = true
+// import { Container } from '../dbConnection/container.js';
+// import mySqlConfig from '../dbConnection/mySqlConfig.js';
+// const DbProductos = new Container(mySqlConfig, 'products')
 
-const adminOnly = (req, res, next) => {
-    if (admin) {
-        next()
-    } else {
-        res.send({
-            error: -1,
-            descripcion: `ruta ${req.path} metodo ${req.method} no autorizada`
-        })
+import {DbProductos} from '../index.js'
+
+
+// devuelve todos los productos
+router.get("/", async (req,res)=>{
+    try{
+        const arrProductos = await DbProductos.read()
+        res.render(`./partials/productos`,{arrProductos})
+    } catch(err) {
+        res.status(404).send(err)
     }
-}
-
-router.get("/", (req, res) => {
-    (async function () {
-        try {
-            res.send(await productosDAO.read())
-        } catch (e) {
-            console.log(e)
-        }
-    })()
 })
 
-router.get("/:id", (req, res) => {
-    (async function () {
-        try {
-            res.send(await productosDAO.readById(req.params.id) || `no se encuentra un item con el ID especificado`)
-        } catch (e) {
-            console.log(e)
-        }
-    })()
+//devuelve un producto segun su id
+router.get("/:id", async (req,res)=>{
+    try {
+        const { id } = req.params
+        const producto = await DbProductos.readById(id)
+        res.send(producto)
+    } catch(err) {
+        res.status(404).send(err)
+    }
 })
 
-router.post("/", adminOnly, (req, res) => {
-    (async function () {
-        try {
-            const productin = {
-                id: null,
-                timeStamp: Date.now(),
-                name: req.body.name,
-                description: req.body.description,
-                code: req.body.code,
-                picture: req.body.picture,
-                price: req.body.price,
-                stock: req.body.stock
-            }
-            await productosDAO.create(productin);
-            res.send(`se agrego: ${productin.name}`)
-        } catch (e) {
-            console.log(e)
-        }
-    })();
+//recibe y agrega un producto, y lo devuelve con su id asignado
+router.post("/", (req,res)=>{
+    if(arrProductos.length !== 0 ){
+        req.body.id = arrProductos[arrProductos.length-1]?.id+1
+    } else {
+        req.body.id = 1
+    }
+    arrProductos.push(req.body)
+    res.redirect(`/`)
 })
 
-router.put("/:id", adminOnly, (req, res) => {
-    (async function () {
-        try {
-            const productin = {
-                id: null,
-                timeStamp: Date.now(),
-                name: req.body.name,
-                description: req.body.description,
-                code: req.body.code,
-                picture: req.body.picture,
-                price: req.body.price,
-                stock: req.body.stock
-            }
-            const result = await productosDAO.updateById(req.params.id, productin)
-            res.send(result)
-        } catch (e) {
-            console.log(e)
-        }
-    })();
+//recibe y actualiza un producto segun su id
+router.put("/:id", (req,res)=>{
+    const { id } = req.params
+    const prodcutToReplace = arrProductos.find( p => p.id === parseInt(id))
+    if(prodcutToReplace){
+        req.body.id = prodcutToReplace.id
+        arrProductos.splice(arrProductos.indexOf(prodcutToReplace),1,req.body)
+        res.send(arrProductos)
+    } else {
+        res.status(404).send({error:`producto no encontrado`})
+    }
 })
 
-router.delete("/:id", adminOnly, (req, res) => {
-    (async function () {
-        try {
-            const result = await productosDAO.deleteById(req.params.id);
-            res.send(result)
-        } catch (e) {
-            console.log(e)
-        };
-    })()
+//elimina un producto segun su id
+router.delete("/:id", (req,res)=>{
+    const { id } = req.params
+    const prodcutToDelete = arrProductos.find( p => p.id === parseInt(id))
+    if(prodcutToDelete){
+        req.body.id = prodcutToDelete.id
+        arrProductos.splice(arrProductos.indexOf(prodcutToDelete),1)
+        res.send(arrProductos)
+    } else {
+        res.status(404).send({error:`producto no encontrado`})
+    }
 })
 
-export default router
+export { router }

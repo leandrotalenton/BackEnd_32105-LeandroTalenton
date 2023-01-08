@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page with Username and Password Example</title>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"><link rel="stylesheet" href="./style.css"> -->
+</head>
+
+<body >
+    <% if(error){ %>
+        <h2 style="color:red;">Error! Usuario/clave invalido</h2>
+    <% }; %>
+    <h2>Login:</h2>
+    <div >
+        <form action="<% `http://localhost:${port}` %>" method="POST">
+            <div >
+                <label for="login__username"><span >Username</span></label>
+                <input id="login__username" type="text" name="username"  placeholder="Username" required>
+            </div>
+            <div >
+                <label for="login__password"><span >Password</span></label>
+                <input id="login__password" type="password" name="password"  placeholder="Password" required>
+            </div>
+            <div >
+                <input type="submit" value="Sign In">
+            </div>
+        </form>
+        <p>
+            <span>Not a member?</span>
+            <a href="signup">Sign up now</a>
+        </p>
+    </div>
+</body>
+</html>
