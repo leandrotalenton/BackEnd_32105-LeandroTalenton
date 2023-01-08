@@ -82,3 +82,39 @@
 [2023-01-08T18:45:21.311] [WARN] default - request fallida: GET, a la URL: /favicon.ico
 [2023-01-08T18:45:26.740] [WARN] default - request fallida: GET, a la URL: /favicon.ico
 [2023-01-08T18:45:30.018] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:09:39.358] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:09:41.784] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:13:09.659] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:13:57.770] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:13:58.958] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:14:26.015] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:14:30.685] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:35:41.571] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:35:44.854] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:36:05.325] [ERROR] default - Api de mensajes: ValidationError: pircure: Path `pircure` is required., phone: Path `phone` is required., age: Path `age` is required., email: Path `email` is required.
+[2023-01-08T19:36:05.650] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:44:20.117] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:44:23.249] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:46:24.846] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:46:26.936] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:46:32.627] [ERROR] default - Api de mensajes: ValidationError: pircure: Path `pircure` is required.
+[2023-01-08T19:46:32.968] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:48:26.111] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:48:35.458] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:49:49.069] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:49:51.277] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:49:54.517] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:49:57.774] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:50:06.358] [ERROR] default - Api de mensajes: ValidationError: pircure: Path `pircure` is required.
+[2023-01-08T19:50:07.150] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:51:21.110] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:51:30.421] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:54:22.104] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:54:25.963] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:54:57.895] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:55:12.581] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:55:15.855] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:59:04.272] [WARN] default - request fallida: GET, a la URL: /productos
+[2023-01-08T19:59:04.905] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:59:08.934] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-08T19:59:13.703] [WARN] default - request fallida: GET, a la URL: /favicon.ico

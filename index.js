@@ -12,14 +12,11 @@ const HttpServer = new HTTPServer(app)
 const io = new Server(HttpServer)
 
 // DB
-// import { Container } from './dbConnection/container.js';
-// import mySqlConfig from './dbConnection/mySqlConfig.js';
-// import sqliteConfig from './dbConnection/sqliteConfig.js';
-// const DbProductos = new Container(mySqlConfig, 'products') // <-- esto esta en SQL local ////////////////////////////////
-// const DbMensajes = new Container(sqliteConfig, 'messages')
-
 import DAOProductos from "./daos/productos/ProductosDaoMongo.js";
 export const DbProductos = new DAOProductos();
+
+import DAOUsuarios from "./daos/usuarios/UsuariosDAO.js";
+const MongoUsers = new DAOUsuarios();
 
 // logger
 import logger from "./loggers/configLog4JS.js";
@@ -52,10 +49,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 // template engines
 app.set("views","./views")
 app.set("view engine","ejs")
-
-// esto se agrega para guardar usuarios como se vio en el after del 10/11/2022
-import DAOUsuarios from "./daos/usuarios/UsuariosDAO.js";
-const MongoUsers = new DAOUsuarios();
 
 // esto se agrega para utilizar sessions con mongoAtlas
 import session, { Cookie } from 'express-session';
@@ -91,11 +84,18 @@ const validatePassword = (pass, hashedPassword) => {
 
 passport.use(
     "signUp",
-    new LocalStrategy({}, async (username, password, done) => {
+    new LocalStrategy({passReqToCallback: true}, async (req, username, password, done) => {
         const existantUser = await MongoUsers.readByUsername(username)
         if(existantUser) { return done(null, false) }
 
-        await MongoUsers.create({username, password: hashPassword(password)})
+        await MongoUsers.create({
+            username,
+            password: hashPassword(password),
+            email: req.body.email,
+            age: req.body.age,
+            phone: req.body.phone,
+            pic: req.body.pic
+        })
         const user = await MongoUsers.readByUsername(username)
         return done (null, user)
     })
@@ -128,10 +128,8 @@ app.use(passport.session())
 // routers
 import { router as productosRouter } from "./routers/productos.js"
 import { router as infoRouter } from "./routers/info.js"
-import { router as APIRandoms } from "./routers/randoms.js"
 app.use("/api/productos", productosRouter)
 app.use("/info", infoRouter)
-app.use("/api/randoms", APIRandoms)
 
 //routes
 const authMw = (req, res, next) => {

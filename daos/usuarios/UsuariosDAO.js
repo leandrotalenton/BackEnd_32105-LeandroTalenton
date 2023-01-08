@@ -5,7 +5,11 @@ class DAOUsuarios extends ContainerMongoDb {
     super("usuarios", {
       username: { type: String, required: true },
       password: { type: String, required: true },
-      rank: { type: Number, required: true, default: 0 } // 0 usuario, 1 mod, 2 admin
+      rank: { type: Number, required: true, default: 0 }, // 0 usuario, 1 mod, 2 admin
+      email: { type: String, required: true },
+      age: { type: Number, required: true },
+      phone: { type: String, required: true },
+      pic: { type: String, required: true }
     });
   }
   async readByUsernameAndPassword(username, password) {
