@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="./styles/navBar.css">
+
+
+<header>
+    <div>
+        <img src="https://cdn3.iconfinder.com/data/icons/education-209/64/clock-stopwatch-timer-time-128.png" alt="logo">
+        <p>Bienvenido <br><b><%- nombre %></b></p>
+    </div>
+    <div class="position">
+        <input type="checkbox" class="position__checkbox" id="toggle">
+        <label class="position__button" for="toggle" >
+            <p>MENU</p>
+            <svg width="16" height="10" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 0.5L4 3.5L7 0.5" stroke="#151515"/>
+            </svg>
+        </label>
+        <ul class="position__menu" >
+            <li><a href="/carrito">Carrito</a></li>
+            <li>About me</li>
+        </ul>
+    </div>
+    <a href="/logout">
+        <button>Logout</button>
+    </a>
+</header>

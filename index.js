@@ -18,6 +18,9 @@ export const DbProductos = new DAOProductos();
 import DAOUsuarios from "./daos/usuarios/UsuariosDAO.js";
 const MongoUsers = new DAOUsuarios();
 
+import DAOCarritos from "./daos/carritos/CarritosDaoMongo.js";
+export const MongoCarritos = new DAOCarritos();
+
 // logger
 import logger from "./loggers/configLog4JS.js";
 
@@ -51,7 +54,7 @@ app.set("views","./views")
 app.set("view engine","ejs")
 
 // esto se agrega para utilizar sessions con mongoAtlas
-import session, { Cookie } from 'express-session';
+import session from 'express-session';
 import MongoStore from 'connect-mongo';
 const mongoOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 
@@ -96,7 +99,15 @@ passport.use(
             phone: req.body.phone,
             pic: req.body.pic
         })
+
         const user = await MongoUsers.readByUsername(username)
+
+        await MongoCarritos.create({
+            usuarioId: user._id,
+            carritoActivo: true,
+            productos: []
+        })
+
         return done (null, user)
     })
 )
@@ -106,6 +117,16 @@ passport.use(
     new LocalStrategy({}, async (username, password, done) => {
         const user = await MongoUsers.readByUsername(username)
         if (!user || !validatePassword(password, user.password)) { return done(null, false) }
+
+        let carritoActivoExistente = await MongoCarritos.carritoActivoByUserId(user._id)
+        if(!carritoActivoExistente) {
+            await MongoCarritos.create({
+                usuarioId: user._id,
+                carritoActivo:  true,
+                productos: []
+            });
+        }
+
         return done(null, user)
     })
 )
@@ -128,8 +149,10 @@ app.use(passport.session())
 // routers
 import { router as productosRouter } from "./routers/productos.js"
 import { router as infoRouter } from "./routers/info.js"
+import { router as carritosRouter } from "./routers/carritos.js"
 app.use("/api/productos", productosRouter)
 app.use("/info", infoRouter)
+app.use("/carrito", carritosRouter)
 
 //routes
 const authMw = (req, res, next) => {
@@ -137,9 +160,11 @@ const authMw = (req, res, next) => {
 }
 
 app.get("/", authMw ,async (req, res)=>{
+    console.log("esta data la puedo usar en todos los request desde el back",req.user)
     res.render(`./index`, {
         arrProductos: await DbProductos.read(),
-        nombre: req.user.username
+        nombre: req.user.username,
+        rank: req.user.rank
     })
 })
 

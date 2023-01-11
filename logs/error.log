@@ -1,14 +1,11 @@
-[2022-12-31T15:09:16.209] [ERROR] default - Api de mensajes: ValidationError: autor: Cast to string failed for value "{
-  id: 'test@test.test',
-  nombre: 'test',
-  apellido: 'test',
-  edad: '4',
-  alias: 'test',
-  avatar: 'test'
-}" (type Object) at path "autor"
-[2022-12-31T16:05:39.441] [ERROR] default - Api de mensajes: ValidationError: msj: Path `msj` is required.
-[2022-12-31T16:05:40.356] [ERROR] default - Api de mensajes: ValidationError: msj: Path `msj` is required.
-[2022-12-31T16:05:40.929] [ERROR] default - Api de mensajes: ValidationError: msj: Path `msj` is required.
-[2023-01-08T19:36:05.325] [ERROR] default - Api de mensajes: ValidationError: pircure: Path `pircure` is required., phone: Path `phone` is required., age: Path `age` is required., email: Path `email` is required.
-[2023-01-08T19:46:32.627] [ERROR] default - Api de mensajes: ValidationError: pircure: Path `pircure` is required.
-[2023-01-08T19:50:06.358] [ERROR] default - Api de mensajes: ValidationError: pircure: Path `pircure` is required.
+[2023-01-09T19:25:11.705] [ERROR] default - Api de mensajes: ValidationError: autor.avatar: Path `autor.avatar` is required., autor.alias: Path `autor.alias` is required., autor.edad: Path `autor.edad` is required., autor.apellido: Path `autor.apellido` is required., autor.nombre: Path `autor.nombre` is required., msj: Path `msj` is required.
+[2023-01-09T19:27:33.337] [ERROR] default - Api de mensajes: ValidationError: thumbnail: Path `thumbnail` is required., price: Path `price` is required., title: Path `title` is required.
+[2023-01-09T19:27:33.859] [ERROR] default - Api de mensajes: ValidationError: thumbnail: Path `thumbnail` is required., price: Path `price` is required., title: Path `title` is required.
+[2023-01-09T19:27:36.136] [ERROR] default - Api de mensajes: ValidationError: thumbnail: Path `thumbnail` is required., price: Path `price` is required., title: Path `title` is required.
+[2023-01-10T19:58:21.768] [ERROR] default - Api de mensajes: ValidationError: autor.avatar: Path `autor.avatar` is required., autor.alias: Path `autor.alias` is required., autor.edad: Path `autor.edad` is required., autor.apellido: Path `autor.apellido` is required., autor.nombre: Path `autor.nombre` is required., msj: Path `msj` is required.
+[2023-01-10T19:58:23.751] [ERROR] default - Api de mensajes: ValidationError: autor.avatar: Path `autor.avatar` is required., autor.alias: Path `autor.alias` is required., autor.edad: Path `autor.edad` is required., autor.apellido: Path `autor.apellido` is required., autor.nombre: Path `autor.nombre` is required., msj: Path `msj` is required.
+[2023-01-10T19:58:24.259] [ERROR] default - Api de mensajes: ValidationError: autor.avatar: Path `autor.avatar` is required., autor.alias: Path `autor.alias` is required., autor.edad: Path `autor.edad` is required., autor.apellido: Path `autor.apellido` is required., autor.nombre: Path `autor.nombre` is required., msj: Path `msj` is required.
+[2023-01-10T19:58:24.489] [ERROR] default - Api de mensajes: ValidationError: autor.avatar: Path `autor.avatar` is required., autor.alias: Path `autor.alias` is required., autor.edad: Path `autor.edad` is required., autor.apellido: Path `autor.apellido` is required., autor.nombre: Path `autor.nombre` is required., msj: Path `msj` is required.
+[2023-01-10T22:06:34.407] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "123" (type string) at path "_id" for model "carritos"
+[2023-01-10T22:08:25.300] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "123" (type string) at path "_id" for model "carritos"
+[2023-01-10T22:08:41.193] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "123" (type string) at path "_id" for model "carritos"

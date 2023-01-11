@@ -21,9 +21,10 @@ thead{
     background-color: aquamarine;
 }
 
-td{
-    width: 33%;
+td, th{
+    min-width: 100px;
     border: 1px solid black;
+    text-align: center;
 }
 
 .productos img {

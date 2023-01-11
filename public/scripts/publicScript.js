@@ -49,19 +49,38 @@ socket.on("new_msg", (dataNormalizada) => {
 
 // productos ////////////////////////////////////////////////////////////////
 
+
 function renderProductos(data) {
     const productosHTML = data.map((producto) => {
+        console.log(producto)
         return `
             <tr>
                 <td>${producto.title}</td>
                 <td>${producto.price}</td>
-                <td><img src=${producto.thumbnail}></td>
+                <td>
+                    <img src=${producto.thumbnail}>
+                </td>
+                <td>
+                    <button class="prodBtn" data-id="${producto._id}">+</button>
+                </td>
             </tr>
         `
     }
     ).join(" ");
 
     document.querySelector(`#productos--tbody`).innerHTML = productosHTML;
+    const productButtons = document.querySelectorAll(".prodBtn")
+    productButtons.forEach(button=>{
+        button.addEventListener('click', async (e)=>{
+            try{
+                const productId = e.currentTarget.getAttribute("data-id")
+                console.log(productId)
+                await fetch(`/carrito/${productId}/productos`, {method: "POST"})
+            } catch (e) {
+                console.log(e)
+            }
+        })
+    })
 }
 
 function enviarProducto() {

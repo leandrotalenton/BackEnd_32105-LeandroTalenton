@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+</head>
+<body>
+    <h3>Productos en el carrito activo:</h3>
+    <br>
+    <span>
+        <% productos.forEach((producto, i)=>{ %>
+            <div>
+                <span>
+                <%= producto.prodId %>
+                </span>
+                <button class="borrar" data-timeStamp="<%= producto.timeStamp %>">X</button>
+            </div>
+        <% }) %>
+    </span>
+    <br>
+    <a href="/">volver a pagina principal</a>
+    <script>
+        document.querySelectorAll(".borrar")
+            .forEach(button => button.addEventListener('click', async (e)=>{
+                try{
+                    const dataTimestamp = e.currentTarget.getAttribute("data-timestamp")
+                    console.log("dataTimestamp: ",dataTimestamp)
+                    await fetch(`/carrito/${dataTimestamp}/productos`, {method: "DELETE"})
+                } catch (e) {
+                    console.log(e)
+                }
+            }))
+    </script>
+</body>
+</html>

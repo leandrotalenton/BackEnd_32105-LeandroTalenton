@@ -3,27 +3,18 @@
 
 
 <div class="productos">
-    <% if(arrProductos.length === 0){ %>
-        <h2>No hay informacion para mostrar</h2>
-    <% }else{ %>
+
         <table>
             <thead>
                 <tr>
-                    <td>Title</td>
-                    <td>Price</td>
-                    <td>Thumbnail</td>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Thumbnail</th>
+                    <th>Agregar producto</th>
                 </tr>
             </thead>
             <tbody id="productos--tbody">
-            <% arrProductos.forEach(producto => { %>
-                <tr>
-                    <td> <%= producto.title %> </td>
-                    <td> <%= producto.price %> </td>
-                    <td> <img src=<%= producto.thumbnail %> alt="<%= producto.thumbnail %>"></td>
-                </tr>
-            <% }) %>
             </tbody>
         </table>
-    <% } %>
 
 </div>
