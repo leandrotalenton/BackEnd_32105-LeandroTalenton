@@ -4,28 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test</title>
+    <title>Logout</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/navBar.css">
-    <link rel="stylesheet" href="./styles/formulario.css">
-    <link rel="stylesheet" href="./styles/productos.css">
     <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="./styles/navBar.css">
+    <link rel="stylesheet" href="./styles/sobreMi.css">
 </head>
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.min.js"></script>
-    <script src="socket.io/socket.io.js"></script>
-    <script src="./scripts/publicScript.js"></script>
-
-
     <%- include( './partials/navBar' ) %>
-    <% if(rank){ %>
-        <%- include( './partials/formulario' ) %>
-    <% } %>
-    <%- include( './partials/productos' ) %>
-    <%- include( './partials/chat' ) %>
-
-
+    <div class="userData">
+        <img src="<%= pic %>">
+        <div>nombre:
+            <span><%= nombre %></span></div>
+        <div>email: 
+            <span><%= email %></span>
+        </div>
+        <div>edad: 
+            <span><%= edad %></span>
+        </div>
+        <div>tel: 
+            <span><%= tel %></span>
+        </div>
+    </div>
 </body>
 </html>

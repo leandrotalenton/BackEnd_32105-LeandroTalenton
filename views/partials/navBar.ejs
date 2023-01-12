@@ -1,9 +1,6 @@
-<link rel="stylesheet" href="./styles/navBar.css">
-
-
 <header>
     <div>
-        <img src="https://cdn3.iconfinder.com/data/icons/education-209/64/clock-stopwatch-timer-time-128.png" alt="logo">
+        <a href="/"><img src="https://cdn3.iconfinder.com/data/icons/education-209/64/clock-stopwatch-timer-time-128.png" alt="logo"></a>
         <p>Bienvenido <br><b><%- nombre %></b></p>
     </div>
     <div class="position">
@@ -16,15 +13,20 @@
         </label>
         <ul class="position__menu" >
             <li>
+                <a href="/">
+                    <span>Productos</span>
+                </a>
+            </li>
+            <li>
                 <a href="/carrito">
                     <span>Carrito</span>
                 </a>
             </li>
-            <!-- <li>
-                <a href="/carrito">
+            <li>
+                <a href="/usuario">
                     <span>About me</span>
                 </a>
-            </li> -->
+            </li>
         </ul>
     </div>
     <a href="/logout">

@@ -18,8 +18,7 @@ router.get("/", async (req, res) => {
     );
     // console.log("arrarrarrarrarrarrarr",prodCarrito)
     const total = prodCarrito.reduce(function(valorAnterior, valorActual){return Number(valorAnterior) + Number(valorActual.price);}, 0)
-    console.log(total)
-    res.render("./carrito", {prodCarrito, total})
+    res.render("./carrito", {prodCarrito, total, nombre: req.user.username})
     } catch (e) {
         console.log(e)
     }
@@ -54,6 +53,7 @@ router.put("/", async (req, res) => {
     try{
         const carrito = await MongoCarritos.carritoActivoByUserId(req.user._id)
         await MongoCarritos.comprar(carrito._id, req.user._id, carrito.productos.length)
+        res.redirect(303, "/")
     } catch (e) {
         console.log(e)
     }
