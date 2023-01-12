@@ -20,6 +20,7 @@
         <% }) %>
     </span>
     <br>
+    <button id="comprar">comprar</button>
     <a href="/">volver a pagina principal</a>
     <script>
         document.querySelectorAll(".borrar")
@@ -32,6 +33,13 @@
                     console.log(e)
                 }
             }))
+        document.querySelector("#comprar").addEventListener("click", async ()=>{
+                try{
+                    await fetch(`/carrito`, {method: "PUT"})
+                } catch (e) {
+                    console.log(e)
+                }
+            })
     </script>
 </body>
 </html>

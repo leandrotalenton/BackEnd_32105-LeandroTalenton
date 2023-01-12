@@ -160,7 +160,6 @@ const authMw = (req, res, next) => {
 }
 
 app.get("/", authMw ,async (req, res)=>{
-    console.log("esta data la puedo usar en todos los request desde el back",req.user)
     res.render(`./index`, {
         arrProductos: await DbProductos.read(),
         nombre: req.user.username,

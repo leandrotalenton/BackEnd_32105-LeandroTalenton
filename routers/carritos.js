@@ -38,4 +38,14 @@ router.delete("/:timeStamp/productos", async (req, res) => {
     }
 })
 
+//Eliminar un producto(id_prod) del carrito(id)
+router.put("/", async (req, res) => {
+    try{
+        const carrito = await MongoCarritos.carritoActivoByUserId(req.user._id)
+        await MongoCarritos.comprar(carrito._id, req.user._id, carrito.productos.length)
+    } catch (e) {
+        console.log(e)
+    }
+})
+
 export { router }

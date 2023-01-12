@@ -38,15 +38,24 @@ class DAOCarritosMongo extends ContainerMongoDb {
     async deleteProductFrom(idCarrito, prodTimestamp) {
         try {
             const {productos} = await this.db.findOne({_id: idCarrito})
-            console.log("productos antes",productos)
-            const newProductos = productos.filter(producto => {
-                console.log(typeof(producto.timeStamp),producto.timeStamp)
-                console.log(typeof(Number(prodTimestamp)),Number(prodTimestamp))
-                console.log(producto.timeStamp !== Number(prodTimestamp))
-                return producto.timeStamp !== Number(prodTimestamp)
-            })
-            console.log("productos despues",productos)
+            const newProductos = productos.filter(producto => producto.timeStamp !== Number(prodTimestamp))
             await this.db.updateOne({_id: idCarrito}, { $set:{ productos: newProductos }})
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
+    async comprar(idCarrito, idUser, validacion) {
+        try {
+            if(validacion){
+                await this.db.updateOne({_id: idCarrito}, { $set:{ carritoActivo: false }})
+                await this.db.create({
+                    usuarioId: idUser,
+                    carritoActivo:  true,
+                    productos: []
+                })
+            }
+            console.log("cuchame una cosa.. no voy a cerrar un carrito vacio")
         } catch (e) {
             console.log(e)
         }
