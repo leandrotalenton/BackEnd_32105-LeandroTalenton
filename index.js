@@ -146,6 +146,11 @@ passport.deserializeUser( async(someId, done)=>{
 app.use(passport.initialize())
 app.use(passport.session())
 
+//routes
+const authMw = (req, res, next) => {
+    req.isAuthenticated() ? next() : res.render('./login', { error: req.query.error, port } )
+}
+
 // routers
 import { router as productosRouter } from "./routers/productos.js"
 import { router as infoRouter } from "./routers/info.js"
@@ -153,11 +158,6 @@ import { router as carritosRouter } from "./routers/carritos.js"
 app.use("/api/productos", productosRouter)
 app.use("/info", infoRouter)
 app.use("/carrito", carritosRouter)
-
-//routes
-const authMw = (req, res, next) => {
-    req.isAuthenticated() ? next() : res.render('./login', { error: req.query.error, port } )
-}
 
 app.get("/", authMw ,async (req, res)=>{
     res.render(`./index`, {

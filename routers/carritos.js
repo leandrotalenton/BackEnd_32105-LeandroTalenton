@@ -1,5 +1,5 @@
 import express from 'express';
-import { MongoCarritos } from '../index.js';
+import { DbProductos, MongoCarritos } from '../index.js';
 const { Router } = express;
 const router = Router()
 
@@ -7,14 +7,25 @@ const router = Router()
 router.get("/", async (req, res) => {
     try{
     const { productos } = await MongoCarritos.carritoActivoByUserId(req.user._id)
-    res.render("./carrito", {productos})
+    let prodCarrito = []
+    await Promise.all(
+        productos.map(async (prod) => {
+            let data = await DbProductos.readById(prod.prodId);
+            data = {timeStamp: prod.timeStamp, ...data._doc}
+            console.log("data", data)
+            prodCarrito.push(data)
+        })
+    );
+    // console.log("arrarrarrarrarrarrarr",prodCarrito)
+    const total = prodCarrito.reduce(function(valorAnterior, valorActual){return Number(valorAnterior) + Number(valorActual.price);}, 0)
+    console.log(total)
+    res.render("./carrito", {prodCarrito, total})
     } catch (e) {
         console.log(e)
     }
 })
 
 //incorporar producto(id) al carrito(id)
-
 router.post("/:id_prod/productos", async (req, res) => {
     try{
         const carrito = await MongoCarritos.carritoActivoByUserId(req.user._id)
@@ -38,7 +49,7 @@ router.delete("/:timeStamp/productos", async (req, res) => {
     }
 })
 
-//Eliminar un producto(id_prod) del carrito(id)
+//Cerrar el carrito/comprar
 router.put("/", async (req, res) => {
     try{
         const carrito = await MongoCarritos.carritoActivoByUserId(req.user._id)

@@ -5,20 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logout</title>
+    <link rel="stylesheet" href="./styles/carrito.css">
 </head>
 <body>
     <h3>Productos en el carrito activo:</h3>
     <br>
-    <span>
-        <% productos.forEach((producto, i)=>{ %>
+    <div class="carritoGrid">
+        <h4>Thumbnail</h4>
+        <h4>Nombre</h4>
+        <h4>Price</h4>
+        <h4>Remover</h4>
+        <% prodCarrito.forEach((producto, i)=>{ %>
+            <img src="<%= producto.thumbnail %>">
             <div>
-                <span>
-                <%= producto.prodId %>
-                </span>
-                <button class="borrar" data-timeStamp="<%= producto.timeStamp %>">X</button>
+            <%= producto.title %>
             </div>
+            <div>
+            <%= producto.price %>
+            </div>
+            <button class="borrar" data-timeStamp="<%= producto.timeStamp %>">X</button>
         <% }) %>
-    </span>
+        <h4> </h4>
+        <h4> </h4>
+        <h4><%= prodCarrito.reduce(function(valorAnterior, valorActual){return valorAnterior + Number(valorActual.price);}, 0) %></h4>
+        <h4> </h4>
+    </div>
     <br>
     <button id="comprar">comprar</button>
     <a href="/">volver a pagina principal</a>
