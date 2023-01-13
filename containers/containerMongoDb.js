@@ -1,3 +1,4 @@
+// se cambia el nombre del file
 import mongoose from 'mongoose'
 import logger from "../loggers/configLog4JS.js";
 
