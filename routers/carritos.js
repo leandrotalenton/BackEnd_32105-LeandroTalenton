@@ -1,5 +1,6 @@
 import express from 'express';
 import { DbProductos, emailAdministrador, MongoCarritos } from '../index.js';
+import { enviarMensajeTxt, enviarMensajeWsp } from '../transportadores/mensajesTwilio.js';
 import { sendMail } from '../transportadores/nodeMailer.js';
 const { Router } = express;
 const router = Router()
@@ -58,7 +59,9 @@ router.put("/", async (req, res) => {
             emailAdministrador,
             `nuevo pedido de ${req.user.username}, email ${req.user.email}`,
             `<div>${JSON.stringify(carrito)}</div>`
-        )
+        ) // email con datos de la compra al administrador
+        await enviarMensajeWsp(`nuevo pedido de ${req.user.username}, email ${req.user.email}`) // mensaje de whatsapp al administrador
+        await enviarMensajeTxt("Tu pedid se ha recibido y se encuentra en proceso", req.user.phone) // mensaje de texto al cliente
         res.redirect(303, "/")
     } catch (e) {
         console.log(e)
