@@ -15,7 +15,6 @@
 <body>
     <%- include( './partials/navBar' ) %>
     <div class="userData">
-        <img src="<%= pic %>">
         <div>nombre:
             <span><%= nombre %></span></div>
         <div>email: 
@@ -27,6 +26,11 @@
         <div>tel: 
             <span><%= tel %></span>
         </div>
+        <form action="/cambiarfoto" method="POST" enctype="multipart/form-data">
+            <label for="signup__pic"><span>Actualizar foto de perfil: </span></label>
+            <input id="signup__pic" type="file" name="myImage" placeholder="pic">
+            <input type="submit" value="Actualizar">
+        </form>
     </div>
 </body>
 </html>

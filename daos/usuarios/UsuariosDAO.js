@@ -35,5 +35,12 @@ class DAOUsuarios extends ContainerMongoDb {
       console.log(e)
     }
   }
+  async updatePictureByUsername(username, path) {
+    try {
+      await this.db.updateOne({username: username}, { $set:{ pic: path }})
+    } catch (e) {
+      console.log(e)
+    }
+  }
 }
 export default DAOUsuarios;

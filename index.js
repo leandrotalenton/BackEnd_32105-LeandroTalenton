@@ -97,8 +97,8 @@ passport.use(
             password: hashPassword(password),
             email: req.body.email,
             age: req.body.age,
-            phone: req.body.phone,
-            pic: "123"
+            phone: String(req.body.countryCode) + req.body.phone,
+            pic: "./images/placeholder.webp"
         })
 
         const user = await MongoUsers.readByUsername(username)
@@ -164,7 +164,8 @@ app.get("/", authMw ,async (req, res)=>{
     res.render(`./index`, {
         arrProductos: await DbProductos.read(),
         nombre: req.user.username,
-        rank: req.user.rank
+        rank: req.user.rank,
+        pic: req.user.pic
     })
 })
 
@@ -230,21 +231,33 @@ const upload = multer({
 //signUp POST
 app.post(
     "/signup",
-    passport.authenticate("signUp", {failureRedirect: "/?error=true"}),
+    passport.authenticate("signUp"),
     async(req, res) => {
-        // upload(req,res,(err)=>{
-        //     if(err){
-        //         res.render('asd',{msg: err})
-        //     } else {
-        //         if(req.file == undefined){
-        //             res.render('asd',{msg: 'Error: No se seleciono un archivo!'})
-        //         } else {
-        //             console.log("file:",req.file)
-        //             res.redirect("/")
-        //         }
-        //     }
-        // })
         res.redirect("/")
+    }
+)
+
+//actualizarfoto POST
+app.post(
+    "/cambiarfoto",
+    async (req, res) => {
+
+        upload(req,res,(err)=>{
+            if(err) return(res.send({error: true}))
+                
+            if(req.file == undefined){
+                res.send({error: true})
+            } else {
+                (async ()=>{
+                    // console.log("file:",req.file.path)
+                    // const newPath = String(req.file.path).substring(7)
+                    // console.log(`.\\${newPath}`)
+                    await MongoUsers.updatePictureByUsername(req.user.username, `./images/${req.file.filename}`)
+                    console.log("se cambia la foto")
+                    res.redirect("/")
+                })()
+            }
+        })
     }
 )
 
