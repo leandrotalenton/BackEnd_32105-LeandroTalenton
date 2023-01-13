@@ -1,4 +1,4 @@
-import { ContainerMongoDb } from "../../containers/ContainerMongoDb.js";
+import { ContainerMongoDb } from "../../containers/ContainerMongoDbNew.js";
 
 class DAOChatsMongo extends ContainerMongoDb {
     constructor() {
