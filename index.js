@@ -85,6 +85,10 @@ const validatePassword = (pass, hashedPassword) => {
     return bcrypt.compareSync(pass, hashedPassword)
 }
 
+// agrego lo de sendmail
+import { sendMail } from './transportadores/nodeMailer.js';
+export const emailAdministrador = "taurean.volkman65@ethereal.email"
+
 passport.use(
     "signUp",
     new LocalStrategy({passReqToCallback: true}, async (req, username, password, done) => {
@@ -108,6 +112,14 @@ passport.use(
             carritoActivo: true,
             productos: []
         })
+
+        await sendMail(
+            emailAdministrador,
+            "nuevo registro",
+            `<div>se registro el usuario: ${username} de ${req.body.age} años</div>
+            <div>email: ${req.body.email}</div>
+            <div>telefono: ${String(req.body.countryCode) + req.body.phone}</div>`
+        )
 
         return done (null, user)
     })

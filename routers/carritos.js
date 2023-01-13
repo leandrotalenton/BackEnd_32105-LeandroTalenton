@@ -1,5 +1,6 @@
 import express from 'express';
-import { DbProductos, MongoCarritos } from '../index.js';
+import { DbProductos, emailAdministrador, MongoCarritos } from '../index.js';
+import { sendMail } from '../transportadores/nodeMailer.js';
 const { Router } = express;
 const router = Router()
 
@@ -53,6 +54,11 @@ router.put("/", async (req, res) => {
     try{
         const carrito = await MongoCarritos.carritoActivoByUserId(req.user._id)
         await MongoCarritos.comprar(carrito._id, req.user._id, carrito.productos.length)
+        await sendMail(
+            emailAdministrador,
+            `nuevo pedido de ${req.user.username}, email ${req.user.email}`,
+            `<div>${JSON.stringify(carrito)}</div>`
+        )
         res.redirect(303, "/")
     } catch (e) {
         console.log(e)
