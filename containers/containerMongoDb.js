@@ -1,8 +1,7 @@
 import mongoose from 'mongoose'
-import config from '../config.js'
+import logger from "../loggers/configLog4JS.js";
 
-
-await mongoose.connect(config.mongoDb.uri, config.mongoDb.options)
+await mongoose.connect('mongodb+srv://LeandroCoder:Coder123123@clusterleandrocoder.fyskstk.mongodb.net/leandroCoderDb?retryWrites=true&w=majority', { serverSelectionTimeoutMS: 4000 })
 
 class ContainerMongoDb {
     constructor(collection, scheme) {
@@ -13,7 +12,7 @@ class ContainerMongoDb {
         try {
             await this.db.create(newDocument)
         } catch (e) {
-            console.log(e)
+            logger.error(`Api de mensajes: ${e}`)
         }
     }
 
@@ -22,7 +21,7 @@ class ContainerMongoDb {
             const documents = await this.db.find({})
             return documents
         } catch (e) {
-            console.log(e)
+            logger.error(`Api de mensajes: ${e}`)
         }
     }
 
@@ -33,7 +32,7 @@ class ContainerMongoDb {
                 return document
             }
         } catch (e) {
-            console.log(e)
+            logger.error(`Api de mensajes: ${e}`)
         }
     }
 
@@ -46,7 +45,7 @@ class ContainerMongoDb {
                 return `no se encuentra un item con el ID especificado`
             }
         } catch (e) {
-            console.log(e)
+            logger.error(`Api de mensajes: ${e}`)
         }
     }
 
@@ -59,7 +58,7 @@ class ContainerMongoDb {
                 return `no se encuentra un item con el ID especificado`
             }
         } catch (e) {
-            console.log(e)
+            logger.error(`Api de mensajes: ${e}`)
         }
     }
 
@@ -67,7 +66,7 @@ class ContainerMongoDb {
         try {
             await this.db.deleteMany({})
         } catch (e) {
-            console.log(e)
+            logger.error(`Api de mensajes: ${e}`)
         }
     }
 }

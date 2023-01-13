@@ -1,0 +1,158 @@
+header button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+header img {
+width: 70px;
+height: 70px;
+}
+
+header{
+    display: flex;
+    gap: 3.5rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 7.1rem;
+    padding: 1.9rem 3rem;
+    background-color: hsl(0, 0%, 100%);
+    align-items: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: #000000;
+    box-shadow: .0rem .2rem .6rem .1rem rgba(0, 0, 0, 0.25);
+}
+
+.headderPlaceholder{
+    margin-top: 9rem;
+}
+
+header>div:first-child{
+    display: flex;
+    align-items: center;
+}
+
+header>div:first-child>p{
+    padding-left: 0.5rem;
+    font-size: 1rem;
+    line-height: 0.9rem;
+}
+
+header>div:first-child>p>b{
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 1.475rem;
+}
+
+header>div:nth-child(2){
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+header>div:nth-child(2)>svg{
+    padding-left: 0.4rem;
+    height: 0.6rem;
+    width: 1.1rem;
+}
+
+header>div:last-child{
+    margin-left: 3rem;
+}
+
+.position{
+    position: relative;
+}
+
+.position__checkbox{
+    display: none;
+}
+
+.position__button{
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.position__button:hover{
+    cursor: pointer;
+}
+
+.position__button>{
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.position__menu{
+    max-height: 0rem;
+    overflow: hidden;
+    position: absolute;
+    width: 8rem;
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    align-items: center;
+    top: 2.5rem;
+    transition: max-height 0.1s linear 0s;
+}
+
+.position__checkbox:checked ~ .position__menu{
+    max-height: 6.2rem;
+    box-shadow: .2rem .2rem .6rem .1rem rgba(0, 0, 0, 0.25);
+    transition: max-height 0.1s linear 0s;
+}
+
+.position__button>svg{
+    transition: transform 0.2s linear 0s;
+}
+
+.position__checkbox:checked ~ .position__button>svg{
+    transform: rotate(180deg);
+    transition: transform 0.2s linear 0s;
+}
+
+.position__menu>li{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.0rem;
+    color: #000000;
+    background: #FFFFFF;
+    border-top: 0.1rem solid #E6E6E6;
+}
+
+.position__menu>li a{
+    display: block;
+    width: 90%;
+    height: 100%;
+    padding: 0.5rem 0;
+}
+
+.position__menu a:hover{
+    background: #FFF6E6;
+    color: #FFA500;
+    cursor: pointer;
+}
+
+.position__menu>li a span{
+    padding: 0 0.5rem;
+}
+
+.position__menu>li:first-child{
+    border-top: none;
+}
+
+.position__menu>li:hover, .position__menu>li a:hover{
+    background: #FFF6E6;
+    color: #FFA500;
+}

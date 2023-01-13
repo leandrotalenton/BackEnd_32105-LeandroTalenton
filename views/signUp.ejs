@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Page with Username and Password Example</title>
+</head>
+
+<body>
+    <h2>Sign Up:</h2>
+    <div>
+        <form action="/signup" method="POST">
+            <div>
+                <label for="signup__username"><span>Username</span></label>
+                <input id="signup__username" type="text" name="username" placeholder="Username" required>
+            </div>
+            <div>
+                <label for="signup__password"><span>Password</span></label>
+                <input id="signup__password" type="password" name="password" placeholder="Password" required>
+            </div>
+            <div>
+                <label for="signup__email"><span>Email</span></label>
+                <input id="signup__email" type="text" name="email" placeholder="email" required>
+            </div>
+            <div>
+                <label for="signup__age"><span>Age</span></label>
+                <input id="signup__age" type="number" name="age" placeholder="age" required>
+            </div>
+            
+            <div>
+                <label for="signup__area"><span>Area Code</span></label>
+                <%- include( './partials/areaCode' ) %>
+            </div>
+            <div>
+                <label for="signup__phone"><span>Phone</span></label>
+                <input id="signup__phone" type="text" name="phone" placeholder="phone" required>
+            </div>
+            <div>
+                <input type="submit" value="Sign Up">
+            </div>
+        </form>
+        <p>
+            <span>Member?</span> 
+            <a href="/">Login now</a>
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="./styles/navBar.css">
+    <link rel="stylesheet" href="./styles/sobreMi.css">
+</head>
+<body>
+    <%- include( './partials/navBar' ) %>
+    <div class="userData">
+        <div>nombre:
+            <span><%= nombre %></span></div>
+        <div>email: 
+            <span><%= email %></span>
+        </div>
+        <div>edad: 
+            <span><%= edad %></span>
+        </div>
+        <div>tel: 
+            <span><%= tel %></span>
+        </div>
+        <form action="/cambiarfoto" method="POST" enctype="multipart/form-data">
+            <label for="signup__pic"><span>Actualizar foto de perfil: </span></label>
+            <input id="signup__pic" type="file" name="myImage" placeholder="pic">
+            <input type="submit" value="Actualizar">
+        </form>
+    </div>
+</body>
+</html>

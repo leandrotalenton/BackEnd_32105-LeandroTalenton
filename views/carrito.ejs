@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/carrito.css">
+    <link rel="stylesheet" href="./styles/navBar.css">
+    <link rel="stylesheet" href="./styles/normalize.css">
+</head>
+<body>
+    <%- include( './partials/navBar' ) %>
+    <h3>Productos en el carrito activo:</h3>
+    <br>
+    <div class="carritoGrid">
+        <h4>Thumbnail</h4>
+        <h4>Nombre</h4>
+        <h4>Price</h4>
+        <h4>Remover</h4>
+        <% prodCarrito.forEach((producto, i)=>{ %>
+            <img src="<%= producto.thumbnail %>">
+            <div>
+            <%= producto.title %>
+            </div>
+            <div>
+            <%= producto.price %>
+            </div>
+            <button class="borrar" data-timeStamp="<%= producto.timeStamp %>">X</button>
+        <% }) %>
+        <h4> </h4>
+        <h4>Precio Total: </h4>
+        <h4><%= prodCarrito.reduce(function(valorAnterior, valorActual){return valorAnterior + Number(valorActual.price);}, 0) %></h4>
+        <h4><button id="comprar">comprar</button></h4>
+    </div>
+    
+    <script>
+        document.querySelectorAll(".borrar")
+            .forEach(button => button.addEventListener('click', async (e)=>{
+                try{
+                    const dataTimestamp = e.currentTarget.getAttribute("data-timestamp")
+                    console.log("dataTimestamp: ",dataTimestamp)
+                    await fetch(`/carrito/${dataTimestamp}/productos`, {method: "DELETE"})
+                    location.reload()
+                } catch (e) {
+                    console.log(e)
+                }
+            }))
+        document.querySelector("#comprar").addEventListener("click", async ()=>{
+                try{
+                    console.log("se va a hacer el put")
+                    await fetch(`/carrito`, {method: "PUT"})
+                    console.log("se va a hizo el put")
+                    window.location.href = "/compra"
+                } catch (e) {
+                    console.log(e)
+                }
+            })
+    </script>
+</body>
+</html>

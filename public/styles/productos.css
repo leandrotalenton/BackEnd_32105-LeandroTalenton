@@ -1,0 +1,27 @@
+.productos{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.productos table {
+border-collapse: separate;
+border-spacing: 0px;
+}
+
+.productos thead{
+    background-color: aquamarine;
+}
+
+.productos td,.productos th{
+    min-width: 100px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.productos img {
+    height: 75px;
+    width: 75px;
+}
