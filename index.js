@@ -11,18 +11,22 @@ import { Server } from 'socket.io';
 const HttpServer = new HTTPServer(app)
 const io = new Server(HttpServer)
 
+// DAOs
+import daos from "./src/daos/index.js"
+const { carritosDAO, chatsDAO, productosDAO, usuariosDAO } = await daos() // esta linea deberia salir de aca y estar solo en los routers o donde se lo necesite
+
 // DB
-import DAOProductos from "./daos/productos/ProductosDaoMongo.js";
+import DAOProductos from "./src/daos/productos/ProductosDaoMongo.js";
 export const DbProductos = new DAOProductos();
 
-import DAOUsuarios from "./daos/usuarios/UsuariosDAO.js";
+import DAOUsuarios from "./src/daos/usuarios/UsuariosDAOMongo.js";
 const MongoUsers = new DAOUsuarios();
 
-import DAOCarritos from "./daos/carritos/CarritosDaoMongo.js";
+import DAOCarritos from "./src/daos/carritos/CarritosDaoMongo.js";
 export const MongoCarritos = new DAOCarritos();
 
 // logger
-import logger from "./loggers/configLog4JS.js";
+import logger from "./src/loggers/configLog4JS.js";
 
 app.use((req, res, next) => {
     logger.info(`Request con metodo: ${req.method}, a la URL: ${req.url}`)
@@ -50,7 +54,7 @@ const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, 'public')));
 
 // template engines
-app.set("views","./views")
+app.set("views","./src/views")
 app.set("view engine","ejs")
 
 // esto se agrega para utilizar sessions con mongoAtlas
@@ -86,7 +90,7 @@ const validatePassword = (pass, hashedPassword) => {
 }
 
 // agrego lo de sendmail
-import { sendMail } from './transportadores/nodeMailer.js';
+import { sendMail } from './src/transportadores/nodeMailer.js';
 export const emailAdministrador = "taurean.volkman65@ethereal.email"
 
 passport.use(
@@ -165,9 +169,9 @@ const authMw = (req, res, next) => {
 }
 
 // routers
-import { router as productosRouter } from "./routers/productos.js"
-import { router as infoRouter } from "./routers/info.js"
-import { router as carritosRouter } from "./routers/carritos.js"
+import { router as productosRouter } from "./src/routers/productos.js"
+import { router as infoRouter } from "./src/routers/info.js"
+import { router as carritosRouter } from "./src/routers/carritos.js"
 app.use("/api/productos", productosRouter)
 app.use("/info", infoRouter)
 app.use("/carrito", carritosRouter)
@@ -181,7 +185,7 @@ app.get("/", authMw ,async (req, res)=>{
     })
 })
 
-app.get("/usuario", (req,res)=>{
+app.get("/usuario", (req,res)=>{ // <-- usuario
     res.render("./sobreMi", {
         nombre: req.user.username,
         email: req.user.email,
@@ -191,12 +195,12 @@ app.get("/usuario", (req,res)=>{
     })
 })
 
-app.get("/signup", (req,res)=>{
+app.get("/signup", (req,res)=>{ // <-- usuario
     req.session.destroy()
     res.render("./signUp", { port })
 })
 
-app.get("/logout", (req, res)=>{
+app.get("/logout", (req, res)=>{ // <-- usuario
     let nombre = req.user.username
     req.logOut({},(err)=>{
         if (err) { return next(err); }
@@ -204,12 +208,22 @@ app.get("/logout", (req, res)=>{
     })
 })
 
-app.get("/compra", (req, res)=>{
+app.get("/compra", (req, res)=>{ // <-- carrito o usuario?
     let nombre = req.user.username
     res.render("./agradecimiento", { nombre })
 })
 
-// seteo multer
+
+//signUp POST  <-- usuarios
+app.post(
+    "/signup",
+    passport.authenticate("signUp"),
+    async(req, res) => {
+        res.redirect("/")
+    }
+)
+
+// seteo multer <-- iria a utils (es users y tambien prod eventualmente)
 import multer from 'multer';
 
 const storage = multer.diskStorage({
@@ -239,17 +253,7 @@ const upload = multer({
 }).single('myImage')
 
 
-
-//signUp POST
-app.post(
-    "/signup",
-    passport.authenticate("signUp"),
-    async(req, res) => {
-        res.redirect("/")
-    }
-)
-
-//actualizarfoto POST
+//actualizarfoto POST  <-- usuarios
 app.post(
     "/cambiarfoto",
     async (req, res) => {
@@ -261,9 +265,6 @@ app.post(
                 res.send({error: true})
             } else {
                 (async ()=>{
-                    // console.log("file:",req.file.path)
-                    // const newPath = String(req.file.path).substring(7)
-                    // console.log(`.\\${newPath}`)
                     await MongoUsers.updatePictureByUsername(req.user.username, `./images/${req.file.filename}`)
                     console.log("se cambia la foto")
                     res.redirect("/")
@@ -273,7 +274,7 @@ app.post(
     }
 )
 
-//login POST
+//login POST <-- usuarios
 app.post(
     "/",
     passport.authenticate("logIn", {failureRedirect: "/?error=true"}),
@@ -282,9 +283,7 @@ app.post(
     }
 )
 
-// DAOs
-import daos from "./daos/index.js"
-const { chatsDAO } = await daos()
+
 
 // normalizr
 

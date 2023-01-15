@@ -6,7 +6,7 @@ const router = Router()
 // import mySqlConfig from '../dbConnection/mySqlConfig.js';
 // const DbProductos = new Container(mySqlConfig, 'products')
 
-import {DbProductos} from '../index.js'
+import {DbProductos} from '../../index.js'
 
 
 // devuelve todos los productos
