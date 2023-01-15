@@ -1,5 +1,6 @@
 import express from 'express';
-import { DbProductos, emailAdministrador, MongoCarritos } from '../../index.js';
+import { emailAdministrador } from '../../index.js';
+import { productosDAO, carritosDAO } from '../daos/index.js'
 import { enviarMensajeTxt, enviarMensajeWsp } from '../transportadores/mensajesTwilio.js';
 import { sendMail } from '../transportadores/nodeMailer.js';
 const { Router } = express;
@@ -8,11 +9,11 @@ const router = Router()
 // lista productos del carrito(id)
 router.get("/", async (req, res) => {
     try{
-    const { productos } = await MongoCarritos.carritoActivoByUserId(req.user._id)
+    const { productos } = await carritosDAO.carritoActivoByUserId(req.user._id)
     let prodCarrito = []
     await Promise.all(
         productos.map(async (prod) => {
-            let data = await DbProductos.readById(prod.prodId);
+            let data = await productosDAO.readById(prod.prodId);
             data = {timeStamp: prod.timeStamp, ...data._doc}
             console.log("data", data)
             prodCarrito.push(data)
@@ -29,8 +30,8 @@ router.get("/", async (req, res) => {
 //incorporar producto(id) al carrito(id)
 router.post("/:id_prod/productos", async (req, res) => {
     try{
-        const carrito = await MongoCarritos.carritoActivoByUserId(req.user._id)
-        await MongoCarritos.addProductTo(carrito._id,{
+        const carrito = await carritosDAO.carritoActivoByUserId(req.user._id)
+        await carritosDAO.addProductTo(carrito._id,{
             prodId:req.params.id_prod,
             timeStamp: Date.now()
         })
@@ -42,8 +43,8 @@ router.post("/:id_prod/productos", async (req, res) => {
 //Eliminar un producto(id_prod) del carrito(id)
 router.delete("/:timeStamp/productos", async (req, res) => {
     try{
-        const carrito = await MongoCarritos.carritoActivoByUserId(req.user._id)
-        await MongoCarritos.deleteProductFrom(carrito._id, req.params.timeStamp)
+        const carrito = await carritosDAO.carritoActivoByUserId(req.user._id)
+        await carritosDAO.deleteProductFrom(carrito._id, req.params.timeStamp)
         res.redirect(303, "/")
     } catch (e) {
         console.log(e)
@@ -53,8 +54,8 @@ router.delete("/:timeStamp/productos", async (req, res) => {
 //Cerrar el carrito/comprar
 router.put("/", async (req, res) => {
     try{
-        const carrito = await MongoCarritos.carritoActivoByUserId(req.user._id)
-        await MongoCarritos.comprar(carrito._id, req.user._id, carrito.productos.length)
+        const carrito = await carritosDAO.carritoActivoByUserId(req.user._id)
+        await carritosDAO.comprar(carrito._id, req.user._id, carrito.productos.length)
         await sendMail(
             emailAdministrador,
             `nuevo pedido de ${req.user.username}, email ${req.user.email}`,

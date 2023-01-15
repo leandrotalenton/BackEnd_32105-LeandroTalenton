@@ -12,21 +12,12 @@ const HttpServer = new HTTPServer(app)
 const io = new Server(HttpServer)
 
 // DAOs
-import daos from "./src/daos/index.js"
-const { carritosDAO, chatsDAO, productosDAO, usuariosDAO } = await daos() // esta linea deberia salir de aca y estar solo en los routers o donde se lo necesite
+// import daos from "./src/daos/index.js"
+import { carritosDAO, chatsDAO, productosDAO, usuariosDAO } from './src/daos/index.js' // esta linea deberia salir de aca y estar solo en los routers o donde se lo necesite
 
-// DB
-import DAOProductos from "./src/daos/productos/ProductosDaoMongo.js";
-export const DbProductos = new DAOProductos();
-
-import DAOUsuarios from "./src/daos/usuarios/UsuariosDAOMongo.js";
-const MongoUsers = new DAOUsuarios();
-
-import DAOCarritos from "./src/daos/carritos/CarritosDaoMongo.js";
-export const MongoCarritos = new DAOCarritos();
 
 // logger
-import logger from "./src/loggers/configLog4JS.js";
+import logger from "./src/loggers/configLog4JS.js"; // esta linea deberia salir de aca y estar donde se la necesite
 
 app.use((req, res, next) => {
     logger.info(`Request con metodo: ${req.method}, a la URL: ${req.url}`)
@@ -77,6 +68,12 @@ app.use(session({
     cookie: { maxAge: 600000 } // 10min
 }))
 
+
+// agrego lo de sendmail
+import { sendMail } from './src/transportadores/nodeMailer.js';
+export const emailAdministrador = "taurean.volkman65@ethereal.email"
+
+
 // se agregan las cosas para trabajar con passport-local y encriptador de contrasenias
 import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
@@ -89,18 +86,14 @@ const validatePassword = (pass, hashedPassword) => {
     return bcrypt.compareSync(pass, hashedPassword)
 }
 
-// agrego lo de sendmail
-import { sendMail } from './src/transportadores/nodeMailer.js';
-export const emailAdministrador = "taurean.volkman65@ethereal.email"
-
 passport.use(
     "signUp",
     new LocalStrategy({passReqToCallback: true}, async (req, username, password, done) => {
         console.log("arranca signUpsignUpsignUpsignUpsignUpsignUpsignUpsignUpsignUp")
-        const existantUser = await MongoUsers.readByUsername(username)
+        const existantUser = await usuariosDAO.readByUsername(username)
         if(existantUser) { return done(null, false) }
 
-        await MongoUsers.create({
+        await usuariosDAO.create({
             username,
             password: hashPassword(password),
             email: req.body.email,
@@ -109,9 +102,9 @@ passport.use(
             pic: "./images/placeholder.webp"
         })
 
-        const user = await MongoUsers.readByUsername(username)
+        const user = await usuariosDAO.readByUsername(username)
 
-        await MongoCarritos.create({
+        await carritosDAO.create({
             usuarioId: user._id,
             carritoActivo: true,
             productos: []
@@ -132,12 +125,12 @@ passport.use(
 passport.use(
     "logIn",
     new LocalStrategy({}, async (username, password, done) => {
-        const user = await MongoUsers.readByUsername(username)
+        const user = await usuariosDAO.readByUsername(username)
         if (!user || !validatePassword(password, user.password)) { return done(null, false) }
 
-        let carritoActivoExistente = await MongoCarritos.carritoActivoByUserId(user._id)
+        let carritoActivoExistente = await carritosDAO.carritoActivoByUserId(user._id)
         if(!carritoActivoExistente) {
-            await MongoCarritos.create({
+            await carritosDAO.create({
                 usuarioId: user._id,
                 carritoActivo:  true,
                 productos: []
@@ -155,7 +148,7 @@ passport.serializeUser((userObj, done) => {
 
 passport.deserializeUser( async(someId, done)=>{
     console.log("se ejecuta el deserializeUser con esta info: ", someId)
-    const user = await MongoUsers.readById(someId)
+    const user = await usuariosDAO.readById(someId)
     console.log("esto me trae el deserializer: ", user)
     done(null, user)
 })
@@ -178,7 +171,7 @@ app.use("/carrito", carritosRouter)
 
 app.get("/", authMw ,async (req, res)=>{
     res.render(`./index`, {
-        arrProductos: await DbProductos.read(),
+        arrProductos: await productosDAO.read(),
         nombre: req.user.username,
         rank: req.user.rank,
         pic: req.user.pic
@@ -265,7 +258,7 @@ app.post(
                 res.send({error: true})
             } else {
                 (async ()=>{
-                    await MongoUsers.updatePictureByUsername(req.user.username, `./images/${req.file.filename}`)
+                    await usuariosDAO.updatePictureByUsername(req.user.username, `./images/${req.file.filename}`)
                     console.log("se cambia la foto")
                     res.redirect("/")
                 })()
@@ -311,11 +304,11 @@ io.on('connection', async (socket)=>{
     });
 
     // prod
-    socket.emit("new_prod", await DbProductos.read());
+    socket.emit("new_prod", await productosDAO.read());
     socket.on("new_prod", async (data) => {
         try{
-            await DbProductos.create(data);
-            const productos = await DbProductos.read();
+            await productosDAO.create(data);
+            const productos = await productosDAO.read();
             io.sockets.emit('new_prod', productos);
         } catch(err) {
             console.log(err)

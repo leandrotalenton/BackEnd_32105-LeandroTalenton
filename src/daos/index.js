@@ -20,12 +20,13 @@ const daos = {
         const { default: DAOProductosMongo } = await import("./productos/ProductosDaoMongo.js")
         const { default: DAOUsuariosMongo } = await import("./usuarios/UsuariosDAOMongo.js")
         return {
-            // carritosDAO: new DAOCarritosMongo(),
+            carritosDAO: new DAOCarritosMongo(),
             chatsDAO: new DAOChatsMongo(),
-            // productosDAO: new DAOProductosMongo(),
-            // usuariosDAO: new DAOUsuariosMongo(),
+            productosDAO: new DAOProductosMongo(),
+            usuariosDAO: new DAOUsuariosMongo(),
         }
     }
 }
 
-export default daos[process.env.TIPO]
+export const { carritosDAO, chatsDAO, productosDAO, usuariosDAO } = await daos[process.env.TIPO]()
+
