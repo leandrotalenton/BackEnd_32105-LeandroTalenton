@@ -37,3 +37,11 @@
 [2023-01-15T17:14:58.447] [WARN] default - request fallida: GET, a la URL: /favicon.ico
 [2023-01-15T17:15:04.004] [WARN] default - request fallida: GET, a la URL: /favicon.ico
 [2023-01-15T17:15:08.879] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-15T17:42:38.886] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-15T17:42:44.277] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-15T17:42:47.666] [WARN] default - request fallida: GET, a la URL: /styles/sobreMi.css
+[2023-01-15T17:42:48.396] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-15T17:43:47.412] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-15T17:43:50.039] [WARN] default - request fallida: GET, a la URL: /styles/sobreMi.css
+[2023-01-15T17:43:50.753] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-15T17:43:58.467] [WARN] default - request fallida: GET, a la URL: /favicon.ico

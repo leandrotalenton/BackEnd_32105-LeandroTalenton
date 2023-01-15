@@ -8,6 +8,6 @@ const router = Router()
 
 
 // devuelve todos los productos
-router.get("/", async (req,res)=>{}
+router.get("/", async (req,res)=>{})
 
 export { router }
