@@ -1,6 +1,6 @@
 import express from 'express';
 import { emailAdministrador } from '../../index.js';
-import { productosDAO, carritosDAO } from '../daos/index.js'
+import { productosDAO, carritosDAO }  from '../daos/index.js'
 import { enviarMensajeTxt, enviarMensajeWsp } from '../transportadores/mensajesTwilio.js';
 import { sendMail } from '../transportadores/nodeMailer.js';
 const { Router } = express;
@@ -25,6 +25,11 @@ router.get("/", async (req, res) => {
     } catch (e) {
         console.log(e)
     }
+})
+
+router.get("/compra", (req, res)=>{ // <-- carrito
+    let nombre = req.user.username
+    res.render("./agradecimiento", { nombre })
 })
 
 //incorporar producto(id) al carrito(id)

@@ -1,13 +1,7 @@
 import express from 'express'
 const {Router} = express;
+import { productosDAO } from '../daos/index.js'
 const router = Router()
-
-// import { Container } from '../dbConnection/container.js';
-// import mySqlConfig from '../dbConnection/mySqlConfig.js';
-// const productosDAO = new Container(mySqlConfig, 'products')
-
-import {productosDAO} from '../daos/index.js'
-
 
 // devuelve todos los productos
 router.get("/", async (req,res)=>{

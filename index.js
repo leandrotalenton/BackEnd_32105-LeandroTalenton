@@ -15,7 +15,6 @@ const io = new Server(HttpServer)
 // import daos from "./src/daos/index.js"
 import { carritosDAO, chatsDAO, productosDAO, usuariosDAO } from './src/daos/index.js' // esta linea deberia salir de aca y estar solo en los routers o donde se lo necesite
 
-
 // logger
 import logger from "./src/loggers/configLog4JS.js"; // esta linea deberia salir de aca y estar donde se la necesite
 
@@ -156,98 +155,15 @@ passport.deserializeUser( async(someId, done)=>{
 app.use(passport.initialize())
 app.use(passport.session())
 
-//routes
-const authMw = (req, res, next) => {
-    req.isAuthenticated() ? next() : res.render('./login', { error: req.query.error, port } )
-}
-
 // routers
+import { router as usuariosRouter, authMw } from "./src/routers/usuarios.js"
 import { router as productosRouter } from "./src/routers/productos.js"
 import { router as infoRouter } from "./src/routers/info.js"
 import { router as carritosRouter } from "./src/routers/carritos.js"
-app.use("/api/productos", productosRouter)
+app.use("/", usuariosRouter)
+app.use("/api/productos", authMw, productosRouter)
+app.use("/carrito", authMw, carritosRouter)
 app.use("/info", infoRouter)
-app.use("/carrito", carritosRouter)
-
-app.get("/", authMw ,async (req, res)=>{
-    res.render(`./index`, {
-        arrProductos: await productosDAO.read(),
-        nombre: req.user.username,
-        rank: req.user.rank,
-        pic: req.user.pic
-    })
-})
-
-app.get("/usuario", (req,res)=>{ // <-- usuario
-    res.render("./sobreMi", {
-        nombre: req.user.username,
-        email: req.user.email,
-        edad: req.user.age,
-        tel: req.user.phone,
-        pic: req.user.pic
-    })
-})
-
-app.get("/signup", (req,res)=>{ // <-- usuario
-    req.session.destroy()
-    res.render("./signUp", { port })
-})
-
-app.get("/logout", (req, res)=>{ // <-- usuario
-    let nombre = req.user.username
-    req.logOut({},(err)=>{
-        if (err) { return next(err); }
-        res.render("./logout", { nombre })
-    })
-})
-
-app.get("/compra", (req, res)=>{ // <-- carrito o usuario?
-    let nombre = req.user.username
-    res.render("./agradecimiento", { nombre })
-})
-
-
-//signUp POST  <-- usuarios
-app.post(
-    "/signup",
-    passport.authenticate("signUp"),
-    async(req, res) => {
-        res.redirect("/")
-    }
-)
-
-//actualizarfoto POST  <-- usuarios
-import { upload } from './src/utils/multerDiskStorage.js';
-
-app.post(
-    "/cambiarfoto",
-    async (req, res) => {
-
-        upload(req,res,(err)=>{
-            if(err) return(res.send({error: true}))
-                
-            if(req.file == undefined){
-                res.send({error: true})
-            } else {
-                (async ()=>{
-                    await usuariosDAO.updatePictureByUsername(req.user.username, `./images/${req.file.filename}`)
-                    console.log("se cambia la foto")
-                    res.redirect("/")
-                })()
-            }
-        })
-    }
-)
-
-//login POST <-- usuarios
-app.post(
-    "/",
-    passport.authenticate("logIn", {failureRedirect: "/?error=true"}),
-    async(req, res) => {
-        res.redirect("/")
-    }
-)
-
 
 
 // normalizr
@@ -294,9 +210,9 @@ app.all("*", (req, res, next) => {
     next();
 })
 
-import cluster from 'cluster';
 
 // server listen
+import cluster from 'cluster';
 if(method == "CLUSTER"){
     if (cluster.isPrimary) {
         console.log(`Cluster Primary ${process.pid} corriendo`);
