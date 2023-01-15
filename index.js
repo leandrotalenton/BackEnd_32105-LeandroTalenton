@@ -47,6 +47,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set("views","./src/views")
 app.set("view engine","ejs")
 
+
+
 // esto se agrega para utilizar sessions con mongoAtlas
 import session from 'express-session';
 import MongoStore from 'connect-mongo';
