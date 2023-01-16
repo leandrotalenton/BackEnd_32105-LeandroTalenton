@@ -19,7 +19,6 @@ router.get("/", async (req, res) => {
             prodCarrito.push(data)
         })
     );
-    // console.log("arrarrarrarrarrarrarr",prodCarrito)
     const total = prodCarrito.reduce(function(valorAnterior, valorActual){return Number(valorAnterior) + Number(valorActual.price);}, 0)
     res.render("./carrito", {prodCarrito, total, nombre: req.user.username, pic: req.user.pic})
     } catch (e) {

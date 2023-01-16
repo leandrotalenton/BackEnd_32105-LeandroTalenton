@@ -51,9 +51,7 @@
             }))
         document.querySelector("#comprar").addEventListener("click", async ()=>{
                 try{
-                    console.log("se va a hacer el put")
                     await fetch(`/carrito`, {method: "PUT"})
-                    console.log("se va a hizo el put")
                     window.location.href = "/carrito/compra"
                 } catch (e) {
                     console.log(e)

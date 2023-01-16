@@ -52,7 +52,6 @@ socket.on("new_msg", (dataNormalizada) => {
 
 function renderProductos(data) {
     const productosHTML = data.map((producto) => {
-        console.log(producto)
         return `
             <tr>
                 <td>${producto.title}</td>
@@ -74,7 +73,6 @@ function renderProductos(data) {
         button.addEventListener('click', async (e)=>{
             try{
                 const productId = e.currentTarget.getAttribute("data-id")
-                console.log(productId)
                 await fetch(`/carrito/${productId}/productos`, {method: "POST"})
             } catch (e) {
                 console.log(e)
