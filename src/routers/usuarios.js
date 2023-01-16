@@ -51,7 +51,7 @@ router.post(
 )
 
 //actualizarfoto POST
-import { upload } from '../utils/multerDiskStorage.js' //'./src/utils/multerDiskStorage.js';
+import { upload } from '../utils/multer.js' //'./src/utils/multerDiskStorage.js';
 
 router.post(
     "/cambiarfoto",

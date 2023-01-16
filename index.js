@@ -51,113 +51,19 @@ app.set("view engine","ejs")
 
 // esto se agrega para utilizar sessions con mongoAtlas
 import session from 'express-session';
-import MongoStore from 'connect-mongo';
-const mongoOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 
 import * as dotenv from "dotenv";
 dotenv.config();
 
-app.use(session({
-    secret: "secret123123",
-    store: MongoStore.create({
-        mongoUrl: `mongodb+srv://${process.env.DB_SESSION_USER}:${process.env.DB_SESSION_PASS}@cluster${process.env.DB_SESSION_CLUSTERNAME}.fyskstk.mongodb.net/${process.env.DB_SESSION_NAME}`,
-        // mongoUrl: "mongodb+srv://LeandroCoder:Coder123123@clusterleandrocoder.fyskstk.mongodb.net/leandroCoderDb",
-        mongoOptions,
-    }),
-    resave: false,
-    saveUninitialized: false,
-    cookie: { maxAge: 600000 } // 10min
-}))
+import { sessionObj } from './src/utils/session.js'
+app.use(session(sessionObj))
 
-
-// agrego lo de sendmail
-import { sendMail } from './src/transportadores/nodeMailer.js';
-export const emailAdministrador = "taurean.volkman65@ethereal.email"
-
-
-// se agregan las cosas para trabajar con passport-local y encriptador de contrasenias
-import passport from 'passport';
-import { Strategy as LocalStrategy } from 'passport-local';
-
-import bcrypt from "bcrypt"
-const hashPassword = (pass) => {
-    return bcrypt.hashSync(pass, bcrypt.genSaltSync(10), null)
-}
-const validatePassword = (pass, hashedPassword) => {
-    return bcrypt.compareSync(pass, hashedPassword)
-}
-
-passport.use(
-    "signUp",
-    new LocalStrategy({passReqToCallback: true}, async (req, username, password, done) => {
-        console.log("arranca signUpsignUpsignUpsignUpsignUpsignUpsignUpsignUpsignUp")
-        const existantUser = await usuariosDAO.readByUsername(username)
-        if(existantUser) { return done(null, false) }
-
-        await usuariosDAO.create({
-            username,
-            password: hashPassword(password),
-            email: req.body.email,
-            age: req.body.age,
-            phone: String(req.body.countryCode) + req.body.phone,
-            pic: "./images/placeholder.webp"
-        })
-
-        const user = await usuariosDAO.readByUsername(username)
-
-        await carritosDAO.create({
-            usuarioId: user._id,
-            carritoActivo: true,
-            productos: []
-        })
-
-        await sendMail(
-            emailAdministrador,
-            "nuevo registro",
-            `<div>se registro el usuario: ${username} de ${req.body.age} años</div>
-            <div>email: ${req.body.email}</div>
-            <div>telefono: ${String(req.body.countryCode) + req.body.phone}</div>`
-        )
-
-        return done (null, user)
-    })
-)
-
-passport.use(
-    "logIn",
-    new LocalStrategy({}, async (username, password, done) => {
-        const user = await usuariosDAO.readByUsername(username)
-        if (!user || !validatePassword(password, user.password)) { return done(null, false) }
-
-        let carritoActivoExistente = await carritosDAO.carritoActivoByUserId(user._id)
-        if(!carritoActivoExistente) {
-            await carritosDAO.create({
-                usuarioId: user._id,
-                carritoActivo:  true,
-                productos: []
-            });
-        }
-
-        return done(null, user)
-    })
-)
-
-passport.serializeUser((userObj, done) => {
-    console.log("se ejecuta el serializeUser con esta info: ", userObj)
-    done(null, userObj._id)
-})
-
-passport.deserializeUser( async(someId, done)=>{
-    console.log("se ejecuta el deserializeUser con esta info: ", someId)
-    const user = await usuariosDAO.readById(someId)
-    console.log("esto me trae el deserializer: ", user)
-    done(null, user)
-})
+import passport from './src/utils/passport.js'
 
 app.use(passport.initialize())
 app.use(passport.session())
 
-import { createSocketsChatsProductos } from './src/sockets/sockets.js';
+import { createSocketsChatsProductos } from './src/utils/sockets.js';
 createSocketsChatsProductos()
 
 // routers

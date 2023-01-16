@@ -143,3 +143,6 @@
 [2023-01-15T19:53:37.357] [WARN] default - request fallida: GET, a la URL: /favicon.ico
 [2023-01-15T19:53:44.568] [WARN] default - request fallida: GET, a la URL: /favicon.ico
 [2023-01-15T19:56:29.207] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-15T20:44:00.850] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-15T20:44:06.247] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-15T21:08:25.013] [WARN] default - request fallida: GET, a la URL: /favicon.ico

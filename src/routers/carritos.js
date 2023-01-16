@@ -1,8 +1,8 @@
 import express from 'express';
-import { emailAdministrador } from '../../index.js';
 import { productosDAO, carritosDAO }  from '../daos/index.js'
 import { enviarMensajeTxt, enviarMensajeWsp } from '../transportadores/mensajesTwilio.js';
 import { sendMail } from '../transportadores/nodeMailer.js';
+import { emailAdministrador } from '../utils/passport.js';
 const { Router } = express;
 const router = Router()
 
