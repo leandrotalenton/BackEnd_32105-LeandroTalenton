@@ -54,8 +54,9 @@ class DAOCarritosMongo extends ContainerMongoDb {
                     carritoActivo:  true,
                     productos: []
                 })
+            } else {
+                console.log("cuchame una cosa.. no voy a cerrar un carrito vacio")
             }
-            console.log("cuchame una cosa.. no voy a cerrar un carrito vacio")
         } catch (e) {
             console.log(e)
         }

@@ -7,7 +7,7 @@ import session from 'express-session';
 import * as dotenv from "dotenv";
 import cluster from 'cluster';
 
-import { carritosDAO, chatsDAO, productosDAO, usuariosDAO } from './src/daos/index.js'
+import { usuariosDAO } from './src/daos/index.js'
 import logger from "./src/loggers/configLog4JS.js";
 import { yargsResult } from './src/utils/yargs.js';
 import { sessionObj } from './src/utils/session.js'
