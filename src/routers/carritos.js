@@ -1,10 +1,14 @@
 import express from 'express';
-import { productosDAO, carritosDAO }  from '../daos/index.js'
+// import { productosDAO, carritosDAO }  from '../daos/index.js'
+import { DaoFactory } from '../daos/daoFactory.js';
 import { enviarMensajeTxt, enviarMensajeWsp } from '../transportadores/mensajesTwilio.js';
 import { sendMail } from '../transportadores/nodeMailer.js';
 import { emailAdministrador } from '../utils/passport.js';
 const { Router } = express;
 const router = Router()
+
+const productosDAO = DaoFactory.getProductosDao()
+const carritosDAO = DaoFactory.getCarritosDao()
 
 // lista productos del carrito(id)
 router.get("/", async (req, res) => {

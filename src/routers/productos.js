@@ -1,7 +1,10 @@
 import express from 'express'
 const {Router} = express;
-import { productosDAO } from '../daos/index.js'
+import { DaoFactory } from '../daos/daoFactory.js';
+// import { productosDAO } from '../daos/index.js'
 const router = Router()
+
+const productosDAO = DaoFactory.getProductosDao()
 
 // devuelve todos los productos
 router.get("/", async (req,res)=>{

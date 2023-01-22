@@ -3,7 +3,12 @@ import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
 
 import bcrypt from "bcrypt"
-import { carritosDAO, usuariosDAO } from '../daos/index.js';
+import { DaoFactory } from '../daos/daoFactory.js';
+// import { carritosDAO, usuariosDAO } from '../daos/index.js';
+
+const usuariosDAO = DaoFactory.getUsuariosDao()
+const carritosDAO = DaoFactory.getCarritosDao()
+
 const hashPassword = (pass) => {
     return bcrypt.hashSync(pass, bcrypt.genSaltSync(10), null)
 }

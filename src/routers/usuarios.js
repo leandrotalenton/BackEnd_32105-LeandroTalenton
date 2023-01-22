@@ -1,9 +1,13 @@
 import express from 'express'
 // import { authMw } from '../../index.js';
 import passport from 'passport';
-import { productosDAO, usuariosDAO } from '../daos/index.js'
+import { DaoFactory } from '../daos/daoFactory.js';
+// import { productosDAO, usuariosDAO } from '../daos/index.js'
 const {Router} = express;
 const router = Router()
+
+const productosDAO = DaoFactory.getProductosDao()
+const usuariosDAO = DaoFactory.getUsuariosDao()
 
 export const authMw = (req, res, next) => {
     req.isAuthenticated() ? next() : res.render('./login', { error: req.query.error } )

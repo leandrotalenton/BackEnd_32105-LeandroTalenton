@@ -4,10 +4,9 @@ import { Server as HTTPServer } from "http";
 import { Server } from 'socket.io';
 import path from 'path'
 import session from 'express-session';
-import * as dotenv from "dotenv";
 import cluster from 'cluster';
 
-import { usuariosDAO } from './src/daos/index.js'
+import {} from './src/utils/dotenv.js' // tengo conflictos cuando la configuracion de dotEnv no viene de un file externo, por lo que lei a otra gente tambien le pasa: https://github.com/motdotla/dotenv/issues/89
 import logger from "./src/loggers/configLog4JS.js";
 import { yargsResult } from './src/utils/yargs.js';
 import { sessionObj } from './src/utils/session.js'
@@ -39,9 +38,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 // template engines
 app.set("views", "./src/views")
 app.set("view engine", "ejs")
-
-
-dotenv.config();
 
 app.use(session(sessionObj))
 
