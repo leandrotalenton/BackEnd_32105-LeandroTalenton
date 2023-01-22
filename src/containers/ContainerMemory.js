@@ -1,7 +1,9 @@
 import logger from "../loggers/configLog4JS.js";
+import { ContainerFactory } from "./ContainerFactory.js";
 
-class ContainerMemory {
+class ContainerMemory extends ContainerFactory{
     constructor() {
+        super();
         this.memoryArray = [];
     }
 
