@@ -1,4 +1,4 @@
-import { ContainerMongoDb } from "../../containers/ContainerMongoDbNew.js";
+import { ContainerMongoDb } from "../../containers/ContainerMongoDb.js";
 
 class DAOCarritosMongo extends ContainerMongoDb {
     constructor() {
@@ -54,8 +54,9 @@ class DAOCarritosMongo extends ContainerMongoDb {
                     carritoActivo:  true,
                     productos: []
                 })
+            } else {
+                console.log("cuchame una cosa.. no voy a cerrar un carrito vacio")
             }
-            console.log("cuchame una cosa.. no voy a cerrar un carrito vacio")
         } catch (e) {
             console.log(e)
         }

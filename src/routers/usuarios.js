@@ -1,9 +1,13 @@
 import express from 'express'
 // import { authMw } from '../../index.js';
 import passport from 'passport';
-import { productosDAO, usuariosDAO } from '../daos/index.js'
+import { DaoFactory } from '../daos/daoFactory.js';
+import { GetMeDTO } from '../dtos/usuarios/usuario.dto.js';
 const {Router} = express;
 const router = Router()
+
+const productosDAO = DaoFactory.getProductosDao()
+const usuariosDAO = DaoFactory.getUsuariosDao()
 
 export const authMw = (req, res, next) => {
     req.isAuthenticated() ? next() : res.render('./login', { error: req.query.error } )
@@ -19,13 +23,8 @@ router.get("/", authMw ,async (req, res)=>{
 })
 
 router.get("/usuario", authMw, (req,res)=>{
-    res.render("./sobreMi", {
-        nombre: req.user.username,
-        email: req.user.email,
-        edad: req.user.age,
-        tel: req.user.phone,
-        pic: req.user.pic
-    })
+    const user = new GetMeDTO(req.user)
+    res.render("./sobreMi", {...user})
 })
 
 router.get("/signup", (req,res)=>{

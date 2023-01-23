@@ -1,11 +1,14 @@
 // se cambia el nombre del file
 import mongoose from 'mongoose'
 import logger from "../loggers/configLog4JS.js";
+import { ContainerFactory } from './ContainerFactory.js';
 
-await mongoose.connect('mongodb+srv://LeandroCoder:Coder123123@clusterleandrocoder.fyskstk.mongodb.net/leandroCoderDb?retryWrites=true&w=majority', { serverSelectionTimeoutMS: 4000 })
+// await mongoose.connect('mongodb+srv://LeandroCoder:Coder123123@clusterleandrocoder.fyskstk.mongodb.net/leandroCoderDb?retryWrites=true&w=majority', { serverSelectionTimeoutMS: 4000 })
+await mongoose.connect('mongodb+srv://LeandroCoder:Coder123123@clusterleandrocoder.fyskstk.mongodb.net/leandroCoderDb', { serverSelectionTimeoutMS: 4000 })
 
-class ContainerMongoDb {
+class ContainerMongoDb extends ContainerFactory{
     constructor(collection, scheme) {
+        super();
         this.db = mongoose.model(collection, scheme)
     }
 

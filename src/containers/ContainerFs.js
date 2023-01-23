@@ -1,8 +1,10 @@
 import fs from "fs";
 import logger from "../loggers/configLog4JS.js";
+import { ContainerFactory } from "./ContainerFactory.js";
 
-class ContainerFs {
+class ContainerFs extends ContainerFactory{
     constructor(file) {
+        super();
         this.file = file;
     }
 

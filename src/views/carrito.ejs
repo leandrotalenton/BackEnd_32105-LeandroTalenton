@@ -21,7 +21,7 @@
         <h4>Nombre</h4>
         <h4>Price</h4>
         <h4>Remover</h4>
-        <% prodCarrito.forEach((producto, i)=>{ %>
+        <% arrayProdData.forEach((producto, i)=>{ %>
             <img src="<%= producto.thumbnail %>">
             <div>
             <%= producto.title %>
@@ -33,7 +33,7 @@
         <% }) %>
         <h4> </h4>
         <h4>Precio Total: </h4>
-        <h4><%= prodCarrito.reduce(function(valorAnterior, valorActual){return valorAnterior + Number(valorActual.price);}, 0) %></h4>
+        <h4><%= subTotal %></h4>
         <h4><button id="comprar">comprar</button></h4>
     </div>
     

@@ -1,10 +1,14 @@
 import { io } from '../../index.js';
-import { chatsDAO, productosDAO } from '../daos/index.js';
+// import { chatsDAO, productosDAO } from '../daos/index.js';
+import { DaoFactory } from '../daos/daoFactory.js';
 
 import util from 'util'
 import { normalize, denormalize, schema } from 'normalizr';
 const autoresSchema = new schema.Entity("autores");
 const chatsSchema = new schema.Entity("chats", {mensajes:[{autor:autoresSchema}]});
+
+const chatsDAO = DaoFactory.getChatsDao()
+const productosDAO = DaoFactory.getProductosDao()
 
 export async function createSocketsChatsProductos() {
     return (

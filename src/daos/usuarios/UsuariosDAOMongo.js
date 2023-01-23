@@ -1,6 +1,6 @@
-import { ContainerMongoDb } from "../../containers/ContainerMongoDbNew.js";
+import { ContainerMongoDb } from "../../containers/ContainerMongoDb.js";
 
-class DAOUsuarios extends ContainerMongoDb {
+class DAOUsuariosMongo extends ContainerMongoDb {
   constructor() {
     super("usuarios", {
       username: { type: String, required: true },
@@ -43,4 +43,4 @@ class DAOUsuarios extends ContainerMongoDb {
     }
   }
 }
-export default DAOUsuarios;
+export default DAOUsuariosMongo;
