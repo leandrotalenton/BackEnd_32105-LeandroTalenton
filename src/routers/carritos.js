@@ -1,6 +1,6 @@
 import express from 'express';
-// import { productosDAO, carritosDAO }  from '../daos/index.js'
 import { DaoFactory } from '../daos/daoFactory.js';
+import { CompletarCarritoDTO } from '../dtos/carritos/completarCarrito.dto.js';
 import { enviarMensajeTxt, enviarMensajeWsp } from '../transportadores/mensajesTwilio.js';
 import { sendMail } from '../transportadores/nodeMailer.js';
 import { emailAdministrador } from '../utils/passport.js';
@@ -10,21 +10,19 @@ const router = Router()
 const productosDAO = DaoFactory.getProductosDao()
 const carritosDAO = DaoFactory.getCarritosDao()
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// checkeo de que si llamo 2 veces a la misma factory con la misma opccion elegida, me devuelve el mismo objeto:
+const otraLlamadaACarritosDAO = DaoFactory.getCarritosDao()
+console.log("checkeo de que si llamo 2 veces a la misma factory con la misma opccion elegida, me devuelve el mismo objeto: si da true esta comprobado que me devuelve el mismo objeto",  carritosDAO === otraLlamadaACarritosDAO)
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 // lista productos del carrito(id)
 router.get("/", async (req, res) => {
     try{
-    const { productos } = await carritosDAO.carritoActivoByUserId(req.user._id)
-    let prodCarrito = []
-    await Promise.all(
-        productos.map(async (prod) => {
-            let data = await productosDAO.readById(prod.prodId);
-            data = {timeStamp: prod.timeStamp, ...data._doc}
-            console.log("data", data)
-            prodCarrito.push(data)
-        })
-    );
-    const total = prodCarrito.reduce(function(valorAnterior, valorActual){return Number(valorAnterior) + Number(valorActual.price);}, 0)
-    res.render("./carrito", {prodCarrito, total, nombre: req.user.username, pic: req.user.pic})
+    const carritoCompleto = new CompletarCarritoDTO(req.user._id)
+    const {arrayProdData, subTotal} = await carritoCompleto.calculateProductsDataAndSubtotal()
+    res.render("./carrito", {arrayProdData, subTotal, nombre: req.user.username, pic: req.user.pic})
     } catch (e) {
         console.log(e)
     }
