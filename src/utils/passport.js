@@ -1,10 +1,9 @@
-// se agregan las cosas para trabajar con passport-local y encriptador de contrasenias
 import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
-
 import bcrypt from "bcrypt"
+
 import { DaoFactory } from '../daos/daoFactory.js';
-// import { carritosDAO, usuariosDAO } from '../daos/index.js';
+import { sendMail } from '../transporters/nodeMailer.js'
 
 const usuariosDAO = DaoFactory.getUsuariosDao()
 const carritosDAO = DaoFactory.getCarritosDao()
@@ -16,8 +15,6 @@ const validatePassword = (pass, hashedPassword) => {
     return bcrypt.compareSync(pass, hashedPassword)
 }
 
-// agrego lo de sendmail
-import { sendMail } from '../transportadores/nodeMailer.js'
 export const emailAdministrador = "taurean.volkman65@ethereal.email"
 
 passport.use(

@@ -1,4 +1,3 @@
-// seteo multer <-- iria a utils (es users y tambien prod eventualmente)
 import multer from 'multer';
 import path from 'path'
 

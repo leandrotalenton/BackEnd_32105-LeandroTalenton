@@ -2,14 +2,14 @@ import express from 'express';
 import { cpus } from "os";
 // import compression from "compression";
 const {Router} = express;
-const router = Router()
+const infoRouter = Router()
 
 const cpu = cpus()
 
 // sin compresion: 638 B
 // con compresion: 661 B <-- la info que se enviaba parece ser demasiado pequeña como para que el middleware de compression pueda comprimirla
 
-router.get("/", /* compression(), */ async (req,res)=>{
+infoRouter.get("/", /* compression(), */ async (req,res)=>{
     try{
         const data = {
             argumentosDeEntrada: process.argv.slice(2),
@@ -28,4 +28,4 @@ router.get("/", /* compression(), */ async (req,res)=>{
     }
 })
 
-export { router }
+export { infoRouter }
