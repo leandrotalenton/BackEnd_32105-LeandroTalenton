@@ -361,3 +361,17 @@
 [2023-01-29T19:33:55.075] [WARN] default - request fallida: GET, a la URL: /styles/sobreMi.css
 [2023-01-29T19:33:55.793] [WARN] default - request fallida: GET, a la URL: /favicon.ico
 [2023-01-29T19:33:59.735] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-29T19:37:34.612] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-29T19:37:37.809] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-29T19:37:42.326] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-29T19:37:45.976] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-29T19:37:48.419] [WARN] default - request fallida: GET, a la URL: /styles/sobreMi.css
+[2023-01-29T19:37:49.146] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-29T20:27:02.034] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-29T20:27:32.089] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-29T20:27:37.155] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-29T20:27:44.379] [WARN] default - request fallida: PUT, a la URL: /
+[2023-01-29T20:27:45.363] [WARN] default - request fallida: GET, a la URL: /carrito/styles/normalize.css
+[2023-01-29T20:27:46.121] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-29T20:27:50.131] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-29T20:28:01.484] [WARN] default - request fallida: GET, a la URL: /favicon.ico

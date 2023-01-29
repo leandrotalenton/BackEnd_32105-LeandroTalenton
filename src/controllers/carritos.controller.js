@@ -58,7 +58,7 @@ export const putCartAsClosed = async (req, res) => {
             `<div>${JSON.stringify(carrito)}</div>`
         ) // email con datos de la compra al administrador
         await enviarMensajeWsp(`nuevo pedido de ${req.user.username}, email ${req.user.email}`) // mensaje de whatsapp al administrador
-        await enviarMensajeTxt("Tu pedid se ha recibido y se encuentra en proceso", req.user.phone) // mensaje de texto al cliente
+        await enviarMensajeTxt("Tu pedido se ha recibido y se encuentra en proceso", req.user.phone) // mensaje de texto al cliente
         res.redirect("/")
     } catch (e) {
         console.log(e)
