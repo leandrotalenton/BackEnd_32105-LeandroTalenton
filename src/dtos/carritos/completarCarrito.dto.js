@@ -1,4 +1,5 @@
 import { DaoFactory } from '../../daos/daoFactory.js';
+import { carritoActivoByUserId } from '../../services/carritos.service.js';
 const productosDAO = DaoFactory.getProductosDao()
 const carritosDAO = DaoFactory.getCarritosDao()
 
@@ -9,7 +10,7 @@ export class CompletarCarritoDTO {
         this.subTotal = 0
     }
     async calculateProductsDataAndSubtotal(){
-        const { productos } = await carritosDAO.carritoActivoByUserId(this.userId)
+        const { productos } = await carritoActivoByUserId(this.userId)
         await Promise.all(
             productos.map(async (prod) => {
                 let data = await productosDAO.readById(prod.prodId);

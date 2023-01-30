@@ -4,6 +4,8 @@ import bcrypt from "bcrypt"
 
 import { DaoFactory } from '../daos/daoFactory.js';
 import { sendMail } from '../transporters/nodeMailer.js'
+import { carritoActivoByUserId } from '../services/carritos.service.js';
+import { readByUsername } from '../services/usuarios.service.js';
 
 const usuariosDAO = DaoFactory.getUsuariosDao()
 const carritosDAO = DaoFactory.getCarritosDao()
@@ -20,7 +22,7 @@ export const emailAdministrador = "taurean.volkman65@ethereal.email"
 passport.use(
     "signUp",
     new LocalStrategy({passReqToCallback: true}, async (req, username, password, done) => {
-        const existantUser = await usuariosDAO.readByUsername(username)
+        const existantUser = await readByUsername(username)
         if(existantUser) { return done(null, false) }
 
         await usuariosDAO.create({
@@ -32,7 +34,7 @@ passport.use(
             pic: "./images/placeholder.webp"
         })
 
-        const user = await usuariosDAO.readByUsername(username)
+        const user = await readByUsername(username)
 
         await carritosDAO.create({
             usuarioId: user._id,
@@ -55,10 +57,10 @@ passport.use(
 passport.use(
     "logIn",
     new LocalStrategy({}, async (username, password, done) => {
-        const user = await usuariosDAO.readByUsername(username)
+        const user = await readByUsername(username)
         if (!user || !validatePassword(password, user.password)) { return done(null, false) }
 
-        let carritoActivoExistente = await carritosDAO.carritoActivoByUserId(user._id)
+        let carritoActivoExistente = await carritoActivoByUserId(user._id)
         if(!carritoActivoExistente) {
             await carritosDAO.create({
                 usuarioId: user._id,

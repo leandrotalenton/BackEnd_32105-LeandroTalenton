@@ -1,6 +1,7 @@
 import { upload } from '../utils/multer.js';
 import { DaoFactory } from '../daos/daoFactory.js';
 import { GetMeDTO } from '../dtos/usuarios/usuario.dto.js';
+import { updatePictureByUsername } from '../services/usuarios.service.js';
 
 const productosDAO = DaoFactory.getProductosDao()
 const usuariosDAO = DaoFactory.getUsuariosDao()
@@ -47,7 +48,7 @@ export const postNewProfilePictureAndUploadImage = async (req, res) => {
             res.send({ error: true })
         } else {
             (async () => {
-                await usuariosDAO.updatePictureByUsername(req.user.username, `./images/${req.file.filename}`)
+                await updatePictureByUsername(req.user.username, `./images/${req.file.filename}`)
                 console.log("se cambia la foto")
                 res.redirect("/")
             })()

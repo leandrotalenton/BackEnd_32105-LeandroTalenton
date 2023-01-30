@@ -12,35 +12,35 @@ class DAOUsuariosMongo extends ContainerMongoDb {
       pic: { type: String, required: true }
     });
   }
-  async readByUsernameAndPassword(username, password) {
-    try {
-      const document = await this.db.findOne({$and: [
-        {username: username},
-        {password: password}
-      ]})
-      if (document) {
-        return document
-      }
-    } catch (e) {
-      console.log(e)
-    }
-  }
-  async readByUsername(username) {
-    try {
-      const document = await this.db.findOne({username: username})
-      if (document) {
-        return document
-      }
-    } catch (e) {
-      console.log(e)
-    }
-  }
-  async updatePictureByUsername(username, path) {
-    try {
-      await this.db.updateOne({username: username}, { $set:{ pic: path }})
-    } catch (e) {
-      console.log(e)
-    }
-  }
+  // async readByUsernameAndPassword(username, password) {
+  //   try {
+  //     const document = await this.db.findOne({$and: [
+  //       {username: username},
+  //       {password: password}
+  //     ]})
+  //     if (document) {
+  //       return document
+  //     }
+  //   } catch (e) {
+  //     console.log(e)
+  //   }
+  // }
+  // async readByUsername(username) {
+  //   try {
+  //     const document = await this.db.findOne({username: username})
+  //     if (document) {
+  //       return document
+  //     }
+  //   } catch (e) {
+  //     console.log(e)
+  //   }
+  // }
+  // async updatePictureByUsername(username, path) {
+  //   try {
+  //     await this.db.updateOne({username: username}, { $set:{ pic: path }})
+  //   } catch (e) {
+  //     console.log(e)
+  //   }
+  // }
 }
 export default DAOUsuariosMongo;
