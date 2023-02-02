@@ -13,14 +13,14 @@ import { usuariosRouter, authMw } from "./routers/usuarios.js"
 import { productosRouter } from "./routers/productos.js"
 import { infoRouter } from "./routers/info.js"
 import { carritosRouter } from "./routers/carritos.js"
-import cors from 'cors'
+// import cors from 'cors'
 
 const app = express();
 export const HttpServer = new HTTPServer(app)
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+// app.use(cors());
 
 export const io = new Server(HttpServer)
 

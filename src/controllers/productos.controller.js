@@ -27,7 +27,7 @@ export const getProductById = async (req, res) => {
 export const postNewProduct = async (req, res) => {
     try {
         const producto = await productosDAO.create(req.body)
-        res.send(producto)
+        res.status(201).send(producto)
     } catch (e) {
         console.log(e)
     }

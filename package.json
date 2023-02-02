@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node src/server.js",
-    "test": "node test/axiosTest.js"
+    "test-axios": "node test/axiosTest.js",
+    "test": "mocha test/prod.test.js"
   },
   "repository": {
     "type": "git",
@@ -43,5 +44,10 @@
     "sqlite3": "^5.1.2",
     "twilio": "^3.84.1",
     "yargs": "^17.6.2"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "supertest": "^6.3.3"
   }
 }
