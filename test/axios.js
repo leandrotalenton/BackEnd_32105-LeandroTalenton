@@ -16,8 +16,15 @@ const api = axios.create({
 // }
 
 try{
+    const productos = await api.get('/api/productos/')
+    console.log('console.log del get', productos.data)
+} catch (e) {
+    console.log(e)
+}
+
+try{
     const productoDisponiblePorId = await api.get('/api/productos/63bb81a16b7d72717fa7cf22')
-    console.log('console.log del get', productoDisponiblePorId.data)
+    console.log('console.log del get por id', productoDisponiblePorId.data)
 } catch (e) {
     console.log(e)
 }

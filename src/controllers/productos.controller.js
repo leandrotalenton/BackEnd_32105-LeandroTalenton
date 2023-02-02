@@ -6,7 +6,7 @@ const productosDAO = DaoFactory.getProductosDao()
 export const getAllProducts = async (req, res) => {
     try {
         const arrProductos = await productosDAO.read()
-        res.render(`./partials/productos`, { arrProductos })
+        res.send(arrProductos)
     } catch (err) {
         res.status(404).send(err)
     }
@@ -17,6 +17,7 @@ export const getProductById = async (req, res) => {
     try {
         const { id } = req.params
         const producto = await productosDAO.readById(id)
+        console.log(producto)
         res.send(producto)
     } catch (err) {
         res.status(404).send(err)
@@ -27,7 +28,7 @@ export const getProductById = async (req, res) => {
 export const postNewProduct = async (req, res) => {
     try {
         const producto = await productosDAO.create(req.body)
-        res.status(201).send(producto)
+        res.status(201).json(producto)
     } catch (e) {
         console.log(e)
     }
@@ -56,7 +57,7 @@ export const deleteProductById = async (req, res) => {
         const prodcutToDelete = await productosDAO.readById(id)
         if (prodcutToDelete) {
             const mensajeProductoBorrado = await productosDAO.deleteById(id)
-            res.send(mensajeProductoBorrado)
+            res.status(204).send(mensajeProductoBorrado)
         } else {
             res.status(404).send({ error: `producto no encontrado` })
         }

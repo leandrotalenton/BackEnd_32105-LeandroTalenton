@@ -23,7 +23,20 @@
     <% if(rank){ %>
         <%- include( './partials/formulario' ) %>
     <% } %>
-    <%- include( './partials/productos' ) %>
+    <div class="productos">
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Thumbnail</th>
+                    <th>Agregar producto</th>
+                </tr>
+            </thead>
+            <tbody id="productos--tbody">
+            </tbody>
+        </table>
+    </div>
     <%- include( './partials/chat' ) %>
 
 
