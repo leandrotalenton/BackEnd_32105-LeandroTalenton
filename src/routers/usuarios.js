@@ -12,10 +12,10 @@ export const authMw = (req, res, next) => {
 usuariosRouter
     .get("/", authMw, usuariosController.getMainPage)
     .get("/usuario", authMw, usuariosController.getUserInfo)
-    .get("/signup", usuariosController.getSingnUpPage)
     .get("/logout", authMw, usuariosController.getLogoutPage)
-    .post("/cambiarfoto", usuariosController.postNewProfilePictureAndUploadImage)
+    .get("/signup", usuariosController.getSingnUpPage)
     .post("/signup", passport.authenticate("signUp"), usuariosController.redirectToMainPage)
+    .post("/cambiarfoto", usuariosController.postNewProfilePictureAndUploadImage)
     .post("/", passport.authenticate("logIn", { failureRedirect: "/?error=true" }), usuariosController.redirectToMainPage)
 
 export { usuariosRouter }

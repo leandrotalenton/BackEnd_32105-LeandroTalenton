@@ -459,3 +459,82 @@
 [2023-01-29T22:49:22.382] [WARN] default - request fallida: GET, a la URL: /favicon.ico
 [2023-01-29T22:49:26.693] [WARN] default - request fallida: GET, a la URL: /favicon.ico
 [2023-01-29T22:49:55.779] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-29T23:38:42.732] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-29T23:38:48.555] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-30T19:13:41.139] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-30T19:13:46.080] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-30T19:14:06.705] [WARN] default - request fallida: GET, a la URL: /styles/sobreMi.css
+[2023-01-30T19:14:07.399] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-30T19:14:31.718] [WARN] default - request fallida: GET, a la URL: /styles/sobreMi.css
+[2023-01-30T19:14:32.498] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-30T19:14:45.022] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-30T19:15:25.570] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-30T19:30:59.660] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-30T19:31:17.030] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-30T19:42:50.284] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-30T19:59:57.292] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-30T20:00:07.390] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-30T20:00:42.271] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-30T20:00:49.226] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-30T20:01:02.688] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-30T20:01:09.674] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-30T20:01:19.299] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-01-30T20:06:33.730] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T19:15:55.780] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T19:46:01.596] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T19:46:08.470] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T20:49:08.607] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T20:49:36.689] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T21:33:24.569] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T21:33:30.593] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T21:33:35.759] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T21:33:39.069] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T21:33:45.036] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T21:34:10.982] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T21:34:19.652] [WARN] default - request fallida: GET, a la URL: /222
+[2023-02-01T21:42:37.188] [WARN] default - request fallida: GET, a la URL: /222
+[2023-02-01T21:43:44.610] [WARN] default - request fallida: GET, a la URL: /222
+[2023-02-01T22:00:36.015] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "63" (type number) at path "_id" for model "productos"
+[2023-02-01T22:02:50.019] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "63" (type number) at path "_id" for model "productos"
+[2023-02-01T22:04:06.565] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "63" (type number) at path "_id" for model "productos"
+[2023-02-01T22:21:34.654] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T22:21:39.856] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T22:23:11.491] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T22:23:14.722] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T22:23:22.100] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T22:23:41.703] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T22:23:45.786] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T22:23:48.081] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T22:23:54.235] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T22:24:02.363] [WARN] default - request fallida: PUT, a la URL: /
+[2023-02-01T22:24:03.314] [WARN] default - request fallida: GET, a la URL: /carrito/styles/normalize.css
+[2023-02-01T22:24:04.073] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T22:24:08.089] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T22:24:11.253] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T22:31:54.275] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T22:31:57.958] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T23:01:11.280] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "productos"
+[2023-02-01T23:01:11.292] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "productos"
+[2023-02-01T23:02:12.923] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "productos"
+[2023-02-01T23:02:12.935] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "productos"
+[2023-02-01T23:06:02.942] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "productos"
+[2023-02-01T23:06:02.950] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "productos"
+[2023-02-01T23:06:02.958] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "productos"
+[2023-02-01T23:14:02.588] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "productos"
+[2023-02-01T23:14:02.602] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "productos"
+[2023-02-01T23:14:57.929] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "productos"
+[2023-02-01T23:14:57.940] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "productos"
+[2023-02-01T23:16:31.242] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "productos"
+[2023-02-01T23:18:29.376] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "productos"
+[2023-02-01T23:18:29.391] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "productos"
+[2023-02-01T23:28:14.578] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "productos"
+[2023-02-01T23:28:14.590] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "productos"
+[2023-02-01T23:29:14.386] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "productos"
+[2023-02-01T23:29:14.397] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "productos"
+[2023-02-01T23:40:35.631] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "productos"
+[2023-02-01T23:40:35.641] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "productos"
+[2023-02-01T23:45:59.054] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T23:46:07.987] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T23:46:51.340] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T23:46:55.742] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-01T23:46:58.482] [WARN] default - request fallida: GET, a la URL: /favicon.ico

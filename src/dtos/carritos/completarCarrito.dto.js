@@ -15,7 +15,6 @@ export class CompletarCarritoDTO {
             productos.map(async (prod) => {
                 let data = await productosDAO.readById(prod.prodId);
                 data = { timeStamp: prod.timeStamp, ...data._doc }
-                console.log("data", data)
                 this.arrayProdData.push(data)
             })
         );
