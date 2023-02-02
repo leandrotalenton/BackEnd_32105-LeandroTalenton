@@ -14,7 +14,8 @@ class ContainerMongoDb extends ContainerFactory{
 
     async create(newDocument) {
         try {
-            await this.db.create(newDocument)
+            const document = await this.db.create(newDocument)
+            return document
         } catch (e) {
             logger.error(`Api de mensajes: ${e}`)
         }
@@ -42,9 +43,10 @@ class ContainerMongoDb extends ContainerFactory{
 
     async updateById(id, newDocument) {
         try {
-            const {modifiedCount} = await this.db.replaceOne({_id: id}, newDocument)
+            const { modifiedCount } = await this.db.replaceOne({_id: id}, newDocument)
             if ( modifiedCount > 0 ) {
-                return `Se ha actualizado el item ${id}`
+                console.log(`Se ha actualizado el item ${id}`)
+                return newDocument
             } else {
                 return `no se encuentra un item con el ID especificado`
             }
