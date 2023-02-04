@@ -19,13 +19,12 @@ describe('Test de endpoints de productos', async () => {
                 thumbnail: 'https://cdn3.iconfinder.com/data/icons/education-209/64/clock-stopwatch-timer-time-128.png'
             })
             .expect(201)
-            // console.log('postResponse', postResponse)
         prodId = JSON.parse(postResponse.res.text)._id
         console.log('id producot creado: ', prodId)
     })
 
     it('deberia editar el producto creado anteriormente', async () => {
-        const putResponse = await request(HttpServer)
+        await request(HttpServer)
             .put(`/api/productos/${prodId}`)
             .send({
                 title: 'test prod modificado',
@@ -33,20 +32,40 @@ describe('Test de endpoints de productos', async () => {
                 thumbnail: 'https://cdn3.iconfinder.com/data/icons/education-209/64/clock-stopwatch-timer-time-128.png'
             })
             .expect(200)
-            // console.log('putResponse',putResponse)
+    })
+
+    it('deberia traer un 404 al poder editar un producto que no existe', async () => {
+        await request(HttpServer)
+            .put(`/api/productos/prodInexistente`)
+            .send({
+                title: 'test prod modificado',
+                price: '2',
+                thumbnail: 'https://cdn3.iconfinder.com/data/icons/education-209/64/clock-stopwatch-timer-time-128.png'
+            })
+            .expect(404)
     })
 
     it('deberia traer un producto por id', async () => {
-        const getResponse = await request(HttpServer)
+        await request(HttpServer)
             .get(`/api/productos/${prodId}`)
             .expect(200)
-            // console.log('getResponse',getResponse)
+    })
+    
+    it('deberia traer un 404 al no encontrar un producto que no existe', async () => {
+        await request(HttpServer)
+            .get(`/api/productos/prodInexistente`)
+            .expect(404)
     })
 
     it('deberia borrar el producto creado anteriormente', async () => {
-        const deleteResponse = await request(HttpServer)
+        await request(HttpServer)
             .delete(`/api/productos/${prodId}`)
             .expect(204)
-            // console.log('deleteResponse',deleteResponse)
+    })
+
+    it('deberia traer un 404 al no poder borrar un producto que no existe', async () => {
+        await request(HttpServer)
+            .delete(`/api/productos/prodInexistente`)
+            .expect(404)
     })
 })

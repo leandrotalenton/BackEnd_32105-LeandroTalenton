@@ -18,7 +18,8 @@ export const getProductById = async (req, res) => {
         const { id } = req.params
         const producto = await productosDAO.readById(id)
         console.log(producto)
-        res.send(producto)
+        producto && res.status(200).send(producto)
+        res.status(404).send({ error: `producto no encontrado` })
     } catch (err) {
         res.status(404).send(err)
     }

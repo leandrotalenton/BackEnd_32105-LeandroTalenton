@@ -587,3 +587,24 @@
 [2023-02-02T18:59:19.053] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "productos"
 [2023-02-02T18:59:19.063] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "productos"
 [2023-02-02T18:59:19.068] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "productos"
+[2023-02-02T19:07:12.980] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-02T19:07:18.658] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-02T19:33:48.550] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-02T19:33:53.613] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-02-04T13:31:25.975] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "productos"
+[2023-02-04T13:31:25.986] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "productos"
+[2023-02-04T13:31:25.990] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "productos"
+[2023-02-04T13:40:47.974] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "prodInexistente" (type string) at path "_id" for model "productos"
+[2023-02-04T13:41:08.483] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "prodInexistente" (type string) at path "_id" for model "productos"
+[2023-02-04T13:41:28.571] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "prodInexistente" (type string) at path "_id" for model "productos"
+[2023-02-04T13:43:27.079] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "prodInexistente" (type string) at path "_id" for model "productos"
+[2023-02-04T13:46:30.538] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "prodInexistente" (type string) at path "_id" for model "productos"
+[2023-02-04T13:49:27.193] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "prodInexistente" (type string) at path "_id" for model "productos"
+[2023-02-04T13:51:44.064] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "prodInexistente" (type string) at path "_id" for model "productos"
+[2023-02-04T13:51:44.300] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "prodInexistente" (type string) at path "_id" for model "productos"
+[2023-02-04T13:53:04.684] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "prodInexistente" (type string) at path "_id" for model "productos"
+[2023-02-04T13:53:04.921] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "prodInexistente" (type string) at path "_id" for model "productos"
+[2023-02-04T13:53:05.397] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "prodInexistente" (type string) at path "_id" for model "productos"
+[2023-02-04T13:54:09.202] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "prodInexistente" (type string) at path "_id" for model "productos"
+[2023-02-04T13:54:09.441] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "prodInexistente" (type string) at path "_id" for model "productos"
+[2023-02-04T13:54:09.919] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "prodInexistente" (type string) at path "_id" for model "productos"
