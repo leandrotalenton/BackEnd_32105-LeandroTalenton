@@ -13,6 +13,7 @@ import { usuariosRouter, authMw } from "./routers/usuarios.js"
 import { productosRouter } from "./routers/productos.js"
 import { infoRouter } from "./routers/info.js"
 import { carritosRouter } from "./routers/carritos.js"
+import { productosGraphQL } from './graphql/productosGraphql.js';
 // import cors from 'cors'
 
 const app = express();
@@ -47,6 +48,9 @@ app.use("/", usuariosRouter)
 app.use("/api/productos", /* authMw ,*/ productosRouter)
 app.use("/carrito", authMw, carritosRouter)
 app.use("/info", infoRouter)
+
+// graphQL
+app.use("/graphql", productosGraphQL)
 
 app.all("*", (req, res, next) => {
     logger.warn(`request fallida: ${req.method}, a la URL: ${req.url}`);
