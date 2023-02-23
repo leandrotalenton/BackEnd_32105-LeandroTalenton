@@ -19,18 +19,32 @@
     <div class="carritoGrid">
         <h4>Thumbnail</h4>
         <h4>Nombre</h4>
-        <h4>Price</h4>
+        <h4>Precio</h4>
+        <h4>Cantidad</h4>
+        <h4>Subtotal</h4>
         <h4>Remover</h4>
         <% arrayProdData.forEach((producto, i)=>{ %>
+        <% console.log("fffff",producto) %>
             <img src="<%= producto.thumbnail %>">
             <div>
-            <%= producto.title %>
+                <%= producto.title %>
             </div>
             <div>
-            <%= producto.price %>
+                <%= producto.price %>
             </div>
-            <button class="borrar" data-timeStamp="<%= producto.timeStamp %>">X</button>
+            <div>
+                <%= producto.cantidad %>
+            </div>
+            <div>
+                <%= producto.subtotal %>
+            </div>
+            <div>
+                <input id="<%= 'q-'+producto.prodId %>" type="number" value="1" />
+                <button class="borrar" data-id="<%= producto.prodId %>">X</button>
+            </div>
         <% }) %>
+        <h4> </h4>
+        <h4> </h4>
         <h4> </h4>
         <h4>Precio Total: </h4>
         <h4><%= subTotal %></h4>
@@ -41,9 +55,11 @@
         document.querySelectorAll(".borrar")
             .forEach(button => button.addEventListener('click', async (e)=>{
                 try{
-                    const dataTimestamp = e.currentTarget.getAttribute("data-timestamp")
-                    console.log("dataTimestamp: ",dataTimestamp)
-                    await fetch(`/carrito/${dataTimestamp}/productos`, {method: "DELETE"})
+                    const dataId = e.currentTarget.getAttribute("data-id")
+                    const cantidad = document.querySelector(`#q-${dataId}`).value
+                    console.log("dataId: ",dataId)
+                    console.log("cantidad: ",cantidad)
+                    await fetch(`/carrito/${dataId}/productos?cantidad=${cantidad}`, {method: "DELETE"})
                     location.reload()
                 } catch (e) {
                     console.log(e)

@@ -1,6 +1,6 @@
 .carritoGrid{
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(6, auto);
     align-items: center;
     justify-items: center;
     max-width: 700px;

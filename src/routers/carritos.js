@@ -9,6 +9,6 @@ carritosRouter
     .get("/compra", carritosController.getThankYouScreen)
     .post("/:id_prod/productos", carritosController.postProductToActiveCart)
     .put("/", carritosController.putCartAsClosed)
-    .delete("/:timeStamp/productos", carritosController.deleteProductFromActiveCart)
+    .delete("/:id_prod/productos", carritosController.deleteProductFromActiveCart)
 
 export { carritosRouter }

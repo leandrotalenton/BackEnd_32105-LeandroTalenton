@@ -60,6 +60,9 @@ function renderProductos(data) {
                     <img src=${producto.thumbnail}>
                 </td>
                 <td>
+                    <input id="q-${producto._id}" type="number" value="1" />
+                </td>
+                <td>
                     <button class="prodBtn" data-id="${producto._id}">+</button>
                 </td>
             </tr>
@@ -73,7 +76,10 @@ function renderProductos(data) {
         button.addEventListener('click', async (e)=>{
             try{
                 const productId = e.currentTarget.getAttribute("data-id")
-                await fetch(`/carrito/${productId}/productos`, {method: "POST"})
+                console.log(`q-${productId}`)
+                const cantidad = document.querySelector(`#q-${productId}`).value
+                console.log(cantidad)
+                await fetch(`/carrito/${productId}/productos?cantidad=${cantidad}`, {method: "POST"})
             } catch (e) {
                 console.log(e)
             }

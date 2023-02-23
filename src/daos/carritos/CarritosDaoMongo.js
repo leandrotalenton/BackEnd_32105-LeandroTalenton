@@ -9,7 +9,8 @@ class DAOCarritosMongo extends ContainerMongoDb {
                 carritoActivo: { type: Boolean, required: true},
                 productos: [{
                     prodId: { type: String, required: true},
-                    timeStamp: { type: Number, required: true},
+                    // timeStamp: { type: Number, required: true},
+                    cantidad: { type: Number, required: true},
                 }]
             }
         );
