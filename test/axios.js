@@ -16,14 +16,14 @@ const api = axios.create({
 // }
 
 try{
-    const productos = await api.get('/api/productos/')
+    const productos = await api.get('/productos/')
     console.log('console.log del get', productos.data)
 } catch (e) {
     console.log(e)
 }
 
 try{
-    const productoDisponiblePorId = await api.get('/api/productos/63bb81a16b7d72717fa7cf22')
+    const productoDisponiblePorId = await api.get('/productos/63bb81a16b7d72717fa7cf22')
     console.log('console.log del get por id', productoDisponiblePorId.data)
 } catch (e) {
     console.log(e)
@@ -32,7 +32,7 @@ try{
 let productoDePrueba
 
 try{
-    const incorporacionNuevoProducto = await api.post('/api/productos/', {
+    const incorporacionNuevoProducto = await api.post('/productos/', {
         title: 'test prod',
         price: '1',
         thumbnail: 'https://cdn3.iconfinder.com/data/icons/education-209/64/clock-stopwatch-timer-time-128.png'
@@ -44,7 +44,7 @@ try{
 }
 
 try{
-    const modificacionProducto = await api.put(`/api/productos/${productoDePrueba._id}`, {
+    const modificacionProducto = await api.put(`/productos/${productoDePrueba._id}`, {
         title: 'test prod modificado',
         price: '2',
         thumbnail: 'https://cdn3.iconfinder.com/data/icons/education-209/64/clock-stopwatch-timer-time-128.png'
@@ -55,7 +55,7 @@ try{
 }
 
 try{
-    const borradoProducto = await api.delete(`/api/productos/${productoDePrueba._id}`)
+    const borradoProducto = await api.delete(`/productos/${productoDePrueba._id}`)
     console.log(borradoProducto.data)
 } catch (e) {
     console.log(e)

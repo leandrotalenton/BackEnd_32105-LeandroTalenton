@@ -44,7 +44,7 @@ app.use(passport.session())
 createSocketsChatsProductos()
 
 app.use("/", usuariosRouter)
-app.use("/api/productos", /* authMw ,*/ productosRouter)
+app.use("/productos", authMw, productosRouter)
 app.use("/carrito", authMw, carritosRouter)
 app.use("/info", infoRouter)
 
