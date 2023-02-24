@@ -7,8 +7,6 @@ const productosDAO = DaoFactory.getProductosDao()
 export const getAllProducts = async (req, res) => {
     try {
         const { arrayProdData } = await new ProductosDTO().filterProductos(req.query.category)
-        // const { arrayProdData } = await productosObj.filterProductos(req.query.category)
-        console.log(arrayProdData)
         res.send(arrayProdData)
     } catch (err) {
         res.status(404).send(err)
