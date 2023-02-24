@@ -13,9 +13,7 @@ export class CompletarCarritoDTO {
     const { productos } = await carritoActivoByUserId(this.userId);
     await Promise.all(
       productos.map(async (prod) => {
-        // console.log("esto es el prod del DTO: ", prod)
         let data = await productosDAO.readById(prod.prodId);
-        // console.log("la data del DTO es esto: ", data)
         data = {
           prodId: prod.prodId,
           cantidad: prod.cantidad,
@@ -26,19 +24,12 @@ export class CompletarCarritoDTO {
       })
     );
     this.arrayProdData.sort((a, b) => {
-      const nameA = a.title.toUpperCase(); // ignore upper and lowercase
-      const nameB = b.title.toUpperCase(); // ignore upper and lowercase
-      if (nameA < nameB) {
-        return -1;
-      }
-      if (nameA > nameB) {
-        return 1;
-      }
-
-      // names must be equal
+      const prodA = a.title.toUpperCase();
+      const prodB = b.title.toUpperCase();
+      if (prodA < prodB) return -1
+      if (prodA > prodB) return 1
       return 0;
     });
-    console.log("asi queda el arrayProdData: ", this.arrayProdData);
     this.subTotal = this.arrayProdData.reduce(
       (pv, cv) => pv + Number(cv.subtotal),
       0

@@ -9,7 +9,7 @@ import { addProductTo, carritoActivoByUserId, comprar, deleteProductFrom } from 
 export const getAllActiveCartProducts = async (req, res) => {
     try {
         const carritoCompleto = new CompletarCarritoDTO(req.user._id)
-        console.log("carritoCompleto",carritoCompleto)
+        // console.log("carritoCompleto",carritoCompleto)
         const { arrayProdData, subTotal } = await carritoCompleto.calculateProductsDataAndSubtotal()
         res.render("./carrito", { arrayProdData, subTotal, nombre: req.user.username, pic: req.user.pic })
     } catch (e) {

@@ -7,7 +7,11 @@ export class ProductosDTO {
   }
   async filterProductos(queryFilter) {
     const productos = await productosDAO.read();
-    this.arrayProdData = productos.filter() ///////////////////////////
+    queryFilter
+      ? (this.arrayProdData = productos.filter(
+          (producto) => producto.category === queryFilter
+        ))
+      : (this.arrayProdData = productos);
     return this;
   }
 }

@@ -1,12 +1,15 @@
 import { DaoFactory } from '../daos/daoFactory.js';
+import { ProductosDTO } from '../dtos/productos/productos.dto.js';
 
 const productosDAO = DaoFactory.getProductosDao()
 
 // devuelve todos los productos
 export const getAllProducts = async (req, res) => {
     try {
-        const arrProductos = await productosDAO.read()
-        res.send(arrProductos)
+        const { arrayProdData } = await new ProductosDTO().filterProductos(req.query.category)
+        // const { arrayProdData } = await productosObj.filterProductos(req.query.category)
+        console.log(arrayProdData)
+        res.send(arrayProdData)
     } catch (err) {
         res.status(404).send(err)
     }
