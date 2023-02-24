@@ -54,7 +54,16 @@ function renderProductos(data) {
     const productosHTML = data.map((producto) => {
         return `
             <tr>
-                <td>${producto.title}</td>
+                <td>
+                    <a href="/productos/${producto._id}">
+                        ${producto.title}
+                    </a>
+                </td>
+                <td>
+                    <a href="/productos?category=${producto.category}">
+                        ${producto.category}
+                    </a>
+                </td>
                 <td>${producto.price}</td>
                 <td>
                     <img src=${producto.thumbnail}>
@@ -70,7 +79,7 @@ function renderProductos(data) {
     }
     ).join(" ");
 
-    document.querySelector(`#productos--tbody`).innerHTML = productosHTML;
+    document.querySelector(`#productos--tbody`).innerHTML = productosHTML || "No hay productos que coincidan con la categoria seleccionada";
     const productButtons = document.querySelectorAll(".prodBtn")
     productButtons.forEach(button=>{
         button.addEventListener('click', async (e)=>{

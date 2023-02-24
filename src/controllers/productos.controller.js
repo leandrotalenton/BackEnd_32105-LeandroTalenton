@@ -24,9 +24,13 @@ export const getProductById = async (req, res) => {
     try {
         const { id } = req.params
         const producto = await productosDAO.readById(id)
-        console.log(producto)
-        producto && res.status(200).send(producto)
-        res.status(404).send({ error: `producto no encontrado` })
+        producto
+            ? res.status(200).render("./producto", {
+                nombre: req.user.username,
+                pic: req.user.pic,
+                arrayProdData: [producto]
+            } )
+            : res.status(404).send({ error: `producto no encontrado` })
     } catch (err) {
         res.status(404).send(err)
     }
