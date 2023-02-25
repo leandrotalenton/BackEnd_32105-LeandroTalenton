@@ -58,6 +58,10 @@ export async function comprar(idCarrito, idUser, validacion) {
     if (validacion) {
       const carrito = await carritosDAO.readById(idCarrito);
       carrito.carritoActivo = false;
+      carrito.datosFinalizacionCompra = {
+        timeStamp: Date.now(), // fecha y hora a la que se finalizo la compra
+        estado: "generada", // "generada" | "entregada"
+      }
       await carritosDAO.updateById(idCarrito, carrito);
       await carritosDAO.create({
         usuarioId: idUser,

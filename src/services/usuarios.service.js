@@ -38,5 +38,3 @@ export async function updatePictureByUsername(username, path) {
         console.log(e)
     }
 }
-
-// updatePictureByUsername('leny','./images/myImage-1673571313770.JPG')

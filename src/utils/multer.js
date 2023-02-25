@@ -1,9 +1,17 @@
 import multer from 'multer';
 import path from 'path'
 
-const storage = multer.diskStorage({
-    destination: './public/images',
+const profilePicStorage = multer.diskStorage({
+    destination: './public/images/profilePics',
     filename: function(req, file, cb){
+        console.log(req)
+        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+    }
+})
+const productStorage = multer.diskStorage({
+    destination: './public/images/productPics',
+    filename: function(req, file, cb){
+        console.log(req)
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
     }
 })
@@ -19,8 +27,16 @@ function checkFileType(file, cb){
     }
 }
 
-export const upload = multer({
-    storage: storage,
+export const uploadProfilePic = multer({
+    storage: profilePicStorage,
+    limits:{fieldSize: 1000000},
+    fileFilter: function(req,file,cb){
+        checkFileType(file,cb);
+    }
+}).single('myImage')
+
+export const uploadProductPic = multer({
+    storage: productStorage,
     limits:{fieldSize: 1000000},
     fileFilter: function(req,file,cb){
         checkFileType(file,cb);

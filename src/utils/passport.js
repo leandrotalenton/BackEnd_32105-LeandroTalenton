@@ -30,6 +30,7 @@ passport.use(
             password: hashPassword(password),
             email: req.body.email,
             age: req.body.age,
+            address: req.body.address,
             phone: String(req.body.countryCode) + req.body.phone,
             pic: "./images/placeholder.webp"
         })

@@ -35,6 +35,7 @@ export async function createSocketsChatsProductos() {
             socket.emit("new_prod", await productosDAO.read());
             socket.on("new_prod", async (data) => {
                 try{
+                    console.log("esto es la data del socket io para postear un producto nuevo", data)
                     await productosDAO.create(data);
                     const productos = await productosDAO.read();
                     io.sockets.emit('new_prod', productos);
