@@ -27,18 +27,18 @@ function checkFileType(file, cb){
     }
 }
 
-export const uploadProfilePic = multer({
-    storage: profilePicStorage,
-    limits:{fieldSize: 1000000},
-    fileFilter: function(req,file,cb){
-        checkFileType(file,cb);
-    }
-}).single('myImage')
-
 export const uploadProductPic = multer({
     storage: productStorage,
     limits:{fieldSize: 1000000},
     fileFilter: function(req,file,cb){
         checkFileType(file,cb);
     }
-}).single('myImage')
+})
+
+export const uploadProfilePicNew = multer({
+    storage: profilePicStorage,
+    limits:{fieldSize: 1000000},
+    fileFilter: function(req,file,cb){
+        checkFileType(file,cb);
+    }
+})

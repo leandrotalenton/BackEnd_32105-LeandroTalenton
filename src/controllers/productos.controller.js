@@ -1,3 +1,4 @@
+import { io } from '../app.js';
 import { DaoFactory } from '../daos/daoFactory.js';
 import { ProductosDTO } from '../dtos/productos/productos.dto.js';
 
@@ -39,8 +40,19 @@ export const getProductById = async (req, res) => {
 //recibe y agrega un producto, y lo devuelve con su id asignado
 export const postNewProduct = async (req, res) => {
     try {
-        const producto = await productosDAO.create(req.body)
-        res.status(201).json(producto)
+        const producto = await productosDAO.create(
+            {
+                title: req.body.title,
+                price: req.body.price,
+                thumbnail: `/images/productPics/${req.file.filename}`,
+                category: req.body.category,
+                description: req.body.description
+            }
+        )
+        const productos = await productosDAO.read();
+        io.sockets.emit('new_prod', productos);
+        res.status(201).redirect('back')
+        // .json(producto)
     } catch (e) {
         console.log(e)
     }

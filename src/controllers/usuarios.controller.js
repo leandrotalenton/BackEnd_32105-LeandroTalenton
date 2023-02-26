@@ -1,4 +1,3 @@
-import { uploadProfilePic } from '../utils/multer.js';
 import { DaoFactory } from '../daos/daoFactory.js';
 import { GetMeDTO } from '../dtos/usuarios/usuario.dto.js';
 import { updatePictureByUsername } from '../services/usuarios.service.js';
@@ -40,18 +39,13 @@ export const redirectToMainPage = async (req, res) => {
 
 //actualizarfoto POST
 export const postNewProfilePictureAndUploadImage = async (req, res) => {
-
-    uploadProfilePic(req, res, (err) => {
-        if (err) return (res.send({ error: true }))
-
-        if (req.file == undefined) {
-            res.send({ error: true })
-        } else {
-            (async () => {
-                await updatePictureByUsername(req.user.username, `./images/profilePics/${req.file.filename}`)
-                console.log("se cambia la foto")
-                res.redirect("/")
-            })()
-        }
-    })
+    if (req.file == undefined) {
+        res.send({ error: true })
+    } else {
+        (async () => {
+            await updatePictureByUsername(req.user.username, `./images/profilePics/${req.file.filename}`)
+            console.log("se cambia la foto")
+            res.redirect("/")
+        })()
+    }
 }

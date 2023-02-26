@@ -25,6 +25,8 @@ passport.use(
         const existantUser = await readByUsername(username)
         if(existantUser) { return done(null, false) }
 
+        // console.log("req.file asdf: ",req.file)
+        // console.log("req.body asdf: ",req.body)
         await usuariosDAO.create({
             username,
             password: hashPassword(password),
@@ -32,7 +34,7 @@ passport.use(
             age: req.body.age,
             address: req.body.address,
             phone: String(req.body.countryCode) + req.body.phone,
-            pic: "./images/placeholder.webp"
+            pic: `/images/profilePics/${req.file.filename}`
         })
 
         const user = await readByUsername(username)

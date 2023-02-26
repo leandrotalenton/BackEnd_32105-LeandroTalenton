@@ -1,5 +1,6 @@
 import express from 'express'
 import * as productosController from '../controllers/productos.controller.js'
+import { uploadProductPic } from '../utils/multer.js';
 
 const { Router } = express;
 const productosRouter = Router()
@@ -7,7 +8,8 @@ const productosRouter = Router()
 productosRouter
     .get("/", productosController.getAllProducts)
     .get("/:id", productosController.getProductById)
-    .post("/", productosController.postNewProduct)
+    .post("/", uploadProductPic.single('uploaded_file') ,productosController.postNewProduct)
+    // .post("/picture", productosController.postNewProduct)
     .put("/:id", productosController.putUpdateProductById)
     .delete("/:id", productosController.deleteProductById)
 

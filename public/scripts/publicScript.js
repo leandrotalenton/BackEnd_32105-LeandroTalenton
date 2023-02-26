@@ -96,21 +96,22 @@ function renderProductos(data) {
     })
 }
 
-function enviarProducto() {
-    socket.emit("new_prod", {
-        title: document.getElementById("title").value,
-        price: document.getElementById("price").value,
-        thumbnail:document.getElementById("thumbnail").value,
-        category:document.getElementById("category").value,
-        description:document.getElementById("description").value
-    });
-    document.getElementById("title").value=""
-    document.getElementById("price").value=""
-    document.getElementById("thumbnail").value=""
-    document.getElementById("category").value=""
-    document.getElementById("description").value=""
-    return false;
-}
+// function enviarProducto() {
+
+//     socket.emit("new_prod", {
+//         title: document.getElementById("title").value,
+//         price: document.getElementById("price").value,
+//         thumbnail:document.getElementById("thumbnail").value,
+//         category:document.getElementById("category").value,
+//         description:document.getElementById("description").value
+//     });
+//     document.getElementById("title").value=""
+//     document.getElementById("price").value=""
+//     document.getElementById("thumbnail").value=""
+//     document.getElementById("category").value=""
+//     document.getElementById("description").value=""
+//     return false;
+// }
 
 socket.on("new_prod", (data) => {
     renderProductos(data);
