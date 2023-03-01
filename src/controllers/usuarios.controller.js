@@ -8,6 +8,7 @@ const usuariosDAO = DaoFactory.getUsuariosDao()
 export const getMainPage = async (req, res) => {
     res.render(`./index`, {
         arrProductos: await productosDAO.read(),
+        id: req.user.id,
         nombre: req.user.username,
         rank: req.user.rank,
         pic: req.user.pic

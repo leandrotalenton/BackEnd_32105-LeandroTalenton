@@ -24,22 +24,6 @@ app.use(express.urlencoded({ extended: true }));
 
 export const io = new Server(HttpServer)
 
-
-// convert a connect middleware to a Socket.IO middleware
-// const wrap = middleware => (socket, next) => middleware(socket.request, {}, next);
-// io.use(wrap(sessionObj));
-
-// // only allow authenticated users
-// io.use((socket, next) => {
-//     const session = socket.request.session;
-//     if (session && session.authenticated) {
-//         next();
-//     } else {
-//         next(new Error("unauthorized"));
-//     }
-// });
-
-
 app.use((req, res, next) => {
     logger.info(`Request con metodo: ${req.method}, a la URL: ${req.url}`)
     next();

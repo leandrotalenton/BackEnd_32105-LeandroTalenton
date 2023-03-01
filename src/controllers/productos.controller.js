@@ -13,7 +13,8 @@ export const getAllProducts = async (req, res) => {
             arrProductos: await productosDAO.read(),
             nombre: req.user.username,
             pic: req.user.pic,
-            arrayProdData: arrayProdData
+            arrayProdData: arrayProdData,
+            id: req.user.id,
         } )
     } catch (err) {
         res.status(404).send(err)
@@ -29,7 +30,8 @@ export const getProductById = async (req, res) => {
             ? res.status(200).render("./producto", {
                 nombre: req.user.username,
                 pic: req.user.pic,
-                arrayProdData: [producto]
+                arrayProdData: [producto],
+                id: req.user.id
             } )
             : res.status(404).send({ error: `producto no encontrado` })
     } catch (err) {

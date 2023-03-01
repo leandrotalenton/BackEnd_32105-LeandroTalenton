@@ -87,3 +87,5 @@
 [2023-02-24T16:13:37.079] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "63f80730a8b8c7f9ffaee6022" (type string) at path "_id" for model "productos"
 [2023-02-24T16:13:46.187] [ERROR] default - Api de mensajes: CastError: Cast to ObjectId failed for value "63f80730a8b8c7f9ffaee6022" (type string) at path "_id" for model "productos"
 [2023-02-24T17:37:19.640] [ERROR] default - Api de mensajes: ValidationError: datosFinalizacionCompra.estado: Path `datosFinalizacionCompra.estado` is required., datosFinalizacionCompra.timeStamp: Path `datosFinalizacionCompra.timeStamp` is required., datosFinalizacionCompra.numeroDeOrden: Path `datosFinalizacionCompra.numeroDeOrden` is required.
+[2023-03-01T16:39:41.477] [ERROR] default - Api de mensajes: ValidationError: msj: Path `msj` is required.
+[2023-03-01T16:39:58.434] [ERROR] default - Api de mensajes: ValidationError: msj: Path `msj` is required.

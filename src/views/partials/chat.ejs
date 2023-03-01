@@ -1,16 +1,52 @@
 
 <div class="chatContainer">
-    <ul>
-        <li>Cargando mensajes...</li>
+    <ul class="chatWindow">
+        <ul>
+            <li>Cargando mensajes...</li>
+        </ul>
+        <!-- <li class="messageContainer --own">
+            <a href="/asdf">
+                <img class="senderImg" src="/images/profilePics/uploaded_file-1677537593472.JPG">
+            </a>
+            <div class="message">
+                <a class="sender" href="/asdf">
+                    <span class="name">Juanca_64</span>
+                    <p class="time">28-02-2023 5pm</p>
+                </a>
+                <div class="content">
+                    <div class="recipient --all">
+                        To Everyone
+                    </div>
+                    <div class="text">
+                        Hola Mundo
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="messageContainer --third">
+            <a href="/asdf">
+                <img class="senderImg" src="https://time.com/wp-content/uploads/2017/10/229-westerlund-21.jpg?w=2000">
+            </a>
+                <div class="message">
+                    <a class="sender" href="/asdf">
+                        <span class="name">Mundo_-13.7B</span>
+                        <p class="time">28-02-2023 6pm</p>
+                    </a>
+                    <div class="content">
+                        <div class="recipient --particular">
+                            To Juanca_64
+                        </div>
+                        <div class="text">
+                            Hola Juanca
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li> -->
     </ul>
-    <div class="input">
-        <input id="email" placeholder="email" type="text">
-        <input id="nombre" placeholder="nombre" type="text">
-        <input id="apellido" placeholder="apellido" type="text">
-        <input id="edad" placeholder="edad" type="number">
-        <input id="alias" placeholder="alias" type="text">
-        <input id="avatar" placeholder="avatar" type="text">
-        <input id="chat_mensaje" placeholder="mensaje" type="text">
-        <button onclick="return enviarMensaje()" id="enviar">enviar</button>
+    <div class="chatInput">
+        <textarea id="chat_mensaje" placeholder="mensaje" type="text"></textarea>
+        <button onclick="return enviarMensaje()" id="enviar" data-autor-username="<%- nombre %>" data-autor-pic="<%- pic %>">Enviar</button>
+        <input id="chat_destinatario" placeholder="destinatario" type="text">
     </div>
 </div>

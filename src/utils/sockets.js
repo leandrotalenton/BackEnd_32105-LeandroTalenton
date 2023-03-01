@@ -15,8 +15,6 @@ export async function createSocketsChatsProductos() {
         io.on('connection', async (socket)=>{
             console.log(`Cliente conectado, id: ${socket.id}`)
 
-            console.log("socket.request.session:",socket.request.session)
-        
             // // chat 
             // // <-- el deserializador seguramente se rompio con el cambio de DB, si tnego tiempo despues lo reviso
             // socket.emit("new_msg", normalize({id: 'chats', mensajes: await chatsDAO.read() }, chatsSchema));
@@ -35,18 +33,13 @@ export async function createSocketsChatsProductos() {
 
             // chat 
             // <-- el deserializador seguramente se rompio con el cambio de DB, si tnego tiempo despues lo reviso
-            socket.emit("new_msg", normalize({id: 'chats', mensajes: await chatsDAO.read() }, chatsSchema));
+            socket.emit("new_msg", await chatsDAO.read());
             socket.on("new_msg", async (data) => {
                 try{
                     const currDate = new Date()
                     data.date= `${currDate.toLocaleString()}`
                     await chatsDAO.create(data)
-                    const mensajesNormalizados = normalize({id: 'chats', mensajes: await (async()=>{
-                        const todosLosMensajes = await chatsDAO.read()////////////////////////////////////////////////// <---------------- ESTOY HACIENDO ESTO PARA QUE SE FILTREN SOLO POR MESNAJES DIRIGIDOS A ALL O AL DESTINATARIO Y PARA ESO TENGO QUE ACCEDER A LA INFORMACION DE LA SESSION
-                        
-                    })() }, chatsSchema)
-                    // console.log("mensajesNormalizados: ", util.inspect(mensajesNormalizados, false, 10, true ))
-                    io.sockets.emit("new_msg", mensajesNormalizados);
+                    io.sockets.emit("new_msg", await chatsDAO.read());
                 } catch(err) {
                     console.log(err)
                 }

@@ -5,7 +5,10 @@ class DAOChatsMongo extends ContainerMongoDb {
         super(
             "chats",
             {
-                autor: {type: String, required: true}, //username
+                autor: {
+                    username: {type: String, required: true},
+                    pic: {type: String, required: true}
+                },
                 destinatario: {type: String, required: true, default:"All"},
                 msj: {type: String, required: true},
                 date: {type: String, required: true}

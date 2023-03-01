@@ -21,26 +21,7 @@
 
 
     <%- include( './partials/navBar' ) %>
-    <% if(rank){ %>
-        <%- include( './partials/formulario' ) %>
-    <% } %>
-    <div class="productos">
-        <table>
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Category</th>
-                    <th>Price</th>
-                    <th>Thumbnail</th>
-                    <th>Cantidad</th>
-                    <th>Agregar producto</th>
-                </tr>
-            </thead>
-            <tbody id="productos--tbody">
-            </tbody>
-        </table>
-    </div>
-    <div data-chatProfile="general">Chat general</div>
+    <div data-chatProfile="individual">Chat individual</div>
     <%- include( './partials/chat' ) %>
 
 

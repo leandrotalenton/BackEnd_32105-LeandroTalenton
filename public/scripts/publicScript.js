@@ -3,52 +3,66 @@ const socket = io.connect();
 
 // chat ///////////////////////////////////////////////////////////////////
 
-// desnormalizacion de data:
-const autoresSchema = new normalizr.schema.Entity("autores");
-const chatsSchema = new normalizr.schema.Entity("chats", {mensajes:[{autor:autoresSchema}]});
-
 function renderChat(data) {
+    const chatOwnerUsername = document.querySelector("[data-autor-username]").getAttribute("data-autor-username")
+    console.log(chatOwnerUsername)
     const chatHTML = data.map((msg) => {
+        let ownOrThird
+        chatOwnerUsername === msg.autor.username ? ownOrThird = "--own" : ownOrThird = "--third"
+
+        let recipientAllOrParticular
+        msg.destinatario === "Everyone" ? recipientAllOrParticular = "--all" : recipientAllOrParticular = "--particular"
+
+        if(!(msg.destinatario === "Everyone" || msg.destinatario === chatOwnerUsername || msg.autor.username === chatOwnerUsername )) return ''
         return `
-            <li>
-                <div>
-                    <span>${msg._doc.autor.alias} on [${msg._doc.date}]: ${msg._doc.msj}</span>
+            <li class="messageContainer ${ownOrThird}">
+                <a href="/chat/${msg.autor.username}">
+                    <img class="senderImg" src="${msg.autor.pic}">
+                </a>
+                <div class="message">
+                    <a class="sender" href="/chat/${msg.autor.username}">
+                        <span class="name">${msg.autor.username}</span>
+                        <p class="time">${msg.date}</p>
+                    </a>
+                    <div class="content">
+                        <div class="recipient ${recipientAllOrParticular}">
+                            To ${msg.destinatario}
+                        </div>
+                        <div class="text">
+                            ${msg.msj}
+                        </div>
+                    </div>
                 </div>
             </li>
         `
     }).join(" ");
 
-    document.querySelector(`.chatContainer>ul`).innerHTML = chatHTML;
+    const chatWindow = document.querySelector(`.chatWindow`)
+    chatWindow.innerHTML = chatHTML;
+    chatWindow.scrollTop = chatWindow.scrollHeight;
 }
 
 function enviarMensaje() {
+    const msj = document.getElementById("chat_mensaje").value
     const data = {
         autor: {
-            id: document.getElementById("email").value,
-            nombre: document.getElementById("nombre").value,
-            apellido: document.getElementById("apellido").value,
-            edad: document.getElementById("edad").value,
-            alias: document.getElementById("alias").value,
-            avatar: document.getElementById("avatar").value,
+            username: document.querySelector("[data-autor-username]").getAttribute("data-autor-username"),
+            pic: document.querySelector("[data-autor-pic]").getAttribute("data-autor-pic")
         },
-        msj: document.getElementById("chat_mensaje").value 
+        destinatario: document.getElementById("chat_destinatario").value || "Everyone",
+        msj
     }
-    socket.emit("new_msg", data);
+    msj && socket.emit("new_msg", data);
     document.getElementById("chat_mensaje").value = "";
     return false;
 }
 
-socket.on("new_msg", (dataNormalizada) => {
-    //denormalizacion de la data
-    // console.log("esto recibe el front: ",dataNormalizada)
-    const data = normalizr.denormalize(dataNormalizada.result, chatsSchema, dataNormalizada.entities).mensajes
-    // console.log("esto intenta renderizar el front", normalizr.denormalize(dataNormalizada.result, chatsSchema, dataNormalizada.entities))
-    console.log("porcentaje de reduccion de datos: ", (JSON.stringify(dataNormalizada).length/JSON.stringify(normalizr.denormalize(dataNormalizada.result, chatsSchema, dataNormalizada.entities)).length)*100,"%")
+socket.on("new_msg", (data) => {
     renderChat(data);
 })
 
-// productos ////////////////////////////////////////////////////////////////
 
+// productos ////////////////////////////////////////////////////////////////
 
 function renderProductos(data) {
     const productosHTML = data.map((producto) => {
