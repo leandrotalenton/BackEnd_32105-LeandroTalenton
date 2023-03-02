@@ -4,11 +4,9 @@ const socket = io.connect();
 
 function renderChat(data) {
     const chatProfile = document.querySelector("[data-chatprofile]").getAttribute("data-chatprofile")
-    console.log(chatProfile)
     const chatOwnerUsername = document.querySelector("[data-autor-username]")?.getAttribute("data-autor-username")
-    console.log(chatOwnerUsername)
     const chatSubjectUsername = document.querySelector("[data-destinatario]")?.getAttribute("data-destinatario")
-    console.log(chatSubjectUsername)
+
     const chatHTML = data.map((msg) => {
         let ownOrThird
         chatOwnerUsername === msg.autor.username ? ownOrThird = "--own" : ownOrThird = "--third"
@@ -115,9 +113,7 @@ function renderProductos(data) {
         button.addEventListener('click', async (e)=>{
             try{
                 const productId = e.currentTarget.getAttribute("data-id")
-                console.log(`q-${productId}`)
                 const cantidad = document.querySelector(`#q-${productId}`).value
-                console.log(cantidad)
                 await fetch(`/carrito/${productId}/productos?cantidad=${cantidad}`, {method: "POST"})
             } catch (e) {
                 console.log(e)

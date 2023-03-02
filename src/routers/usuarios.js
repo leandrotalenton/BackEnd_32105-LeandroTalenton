@@ -12,8 +12,6 @@ export const authMw = (req, res, next) => {
 
 usuariosRouter
     .get("/", authMw, usuariosController.getMainPage)
-    .get("/chat", authMw, usuariosController.getChatGeneral)
-    .get("/chat/:destinatario", authMw, usuariosController.getChatIndividual)
     .get("/usuario", authMw, usuariosController.getUserInfo)
     .get("/logout", authMw, usuariosController.getLogoutPage)
     .get("/signup", usuariosController.getSingnUpPage)

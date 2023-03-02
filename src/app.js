@@ -13,6 +13,7 @@ import { usuariosRouter, authMw } from "./routers/usuarios.js"
 import { productosRouter } from "./routers/productos.js"
 import { infoRouter } from "./routers/info.js"
 import { carritosRouter } from "./routers/carritos.js"
+import { chatRouter } from './routers/chat.js';
 // import cors from 'cors'
 
 const app = express();
@@ -44,6 +45,7 @@ app.use(passport.session())
 createSocketsChatsProductos()
 
 app.use("/", usuariosRouter)
+app.use("/chat", chatRouter)
 app.use("/productos", authMw, productosRouter)
 app.use("/carrito", authMw, carritosRouter)
 app.use("/info", infoRouter)

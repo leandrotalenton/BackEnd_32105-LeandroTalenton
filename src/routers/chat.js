@@ -1,5 +1,5 @@
 import express from 'express'
-import * as usuariosController from '../controllers/usuarios.controller.js'
+import * as chatController from '../controllers/chat.controller.js'
 
 const { Router } = express;
 const chatRouter = Router()
@@ -9,7 +9,7 @@ export const authMw = (req, res, next) => {
 }
 
 chatRouter
-    .get("/", authMw, usuariosController.getChatGeneral)
-    .get("/:destinatario", authMw, usuariosController.getChatIndividual)
+    .get("/", authMw, chatController.getChatGeneral)
+    .get("/:destinatario", authMw, chatController.getChatIndividual)
 
 export { chatRouter }
