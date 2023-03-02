@@ -1,5 +1,6 @@
 import { DaoFactory } from "../daos/daoFactory.js";
 const carritosDAO = DaoFactory.getCarritosDao();
+const ordenesDAO = DaoFactory.getOrdenesDao();
 
 export async function carritoActivoByUserId(idUser) {
   try {
@@ -58,11 +59,17 @@ export async function comprar(idCarrito, idUser, validacion) {
     if (validacion) {
       const carrito = await carritosDAO.readById(idCarrito);
       carrito.carritoActivo = false;
-      carrito.datosFinalizacionCompra = {
-        timeStamp: Date.now(), // fecha y hora a la que se finalizo la compra
-        estado: "generada", // "generada" | "entregada"
-      }
+      // carrito.datosFinalizacionCompra = {
+      //   timeStamp: Date.now(), // fecha y hora a la que se finalizo la compra
+      //   estado: "generada", // "generada" | "entregada"
+      // }
       await carritosDAO.updateById(idCarrito, carrito);
+      await ordenesDAO.create({
+        usuarioId: idUser,
+        carritoId: idCarrito,
+        timeStamp: new Date().toLocaleString(),
+        estado: "generada"
+      })
       await carritosDAO.create({
         usuarioId: idUser,
         carritoActivo: true,

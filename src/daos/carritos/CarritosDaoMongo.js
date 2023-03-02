@@ -11,10 +11,10 @@ class DAOCarritosMongo extends ContainerMongoDb {
                     prodId: { type: String, required: true},
                     cantidad: { type: Number, required: true},
                 }],
-                datosFinalizacionCompra: {
-                    timeStamp: {type: Number}, // fecha y hora a la que se finalizo la compra
-                    estado: {type: String}, // "generada" | "entregada"
-                },
+                // datosFinalizacionCompra: {
+                //     timeStamp: {type: Number}, // fecha y hora a la que se finalizo la compra
+                //     estado: {type: String}, // "generada" | "entregada"
+                // },
             }
         );
     }

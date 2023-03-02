@@ -1,5 +1,6 @@
 import DAOCarritosMongo from "./carritos/CarritosDaoMongo.js";
 import DAOChatsMongo from "./chats/ChatsDaoMongo.js";
+import DAOOrdenesMongo from "./ordenes/OrdenesDAOMongo.js";
 import DAOProductosMongo from "./productos/ProductosDaoMongo.js";
 import DAOUsuariosMongo from "./usuarios/UsuariosDAOMongo.js";
 
@@ -9,6 +10,7 @@ let daoUsuarios;
 let daoCarritos;
 let daoProductos;
 let daoChats;
+let daoOrdenes;
 
 switch (opcion) {
     // case "File":
@@ -22,6 +24,7 @@ switch (opcion) {
         daoCarritos = new DAOCarritosMongo();
         daoProductos = new DAOProductosMongo();
         daoChats = new DAOChatsMongo();
+        daoOrdenes = new DAOOrdenesMongo();
 }
 
 export class DaoFactory {
@@ -36,5 +39,8 @@ export class DaoFactory {
     }
     static getChatsDao() {
         return daoChats;
+    }
+    static getOrdenesDao() {
+        return daoOrdenes;
     }
 }
