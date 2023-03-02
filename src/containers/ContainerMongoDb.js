@@ -3,8 +3,11 @@ import mongoose from 'mongoose'
 import logger from "../loggers/configLog4JS.js";
 import { ContainerFactory } from './ContainerFactory.js';
 
-// await mongoose.connect('mongodb+srv://LeandroCoder:Coder123123@clusterleandrocoder.fyskstk.mongodb.net/leandroCoderDb?retryWrites=true&w=majority', { serverSelectionTimeoutMS: 4000 })
-await mongoose.connect('mongodb+srv://LeandroCoder:Coder123123@clusterleandrocoder.fyskstk.mongodb.net/leandroCoderDb', { serverSelectionTimeoutMS: 4000 })
+// producción
+// await mongoose.connect('mongodb+srv://LeandroCoder:Coder123123@clusterleandrocoder.fyskstk.mongodb.net/leandroCoderDb', { serverSelectionTimeoutMS: 4000 })
+
+// desarrollo
+await mongoose.connect('mongodb://localhost:27017/proyectoFinal', { serverSelectionTimeoutMS: 4000 })
 
 class ContainerMongoDb extends ContainerFactory{
     constructor(collection, scheme) {

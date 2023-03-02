@@ -23,7 +23,7 @@
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 12px;
 
   max-width: 500px;
   margin-right: auto;
@@ -129,7 +129,7 @@
 }
 
 .text {
-  font-size: 15px;
+  font-size: 12px;
 }
 
 .chatInput{
