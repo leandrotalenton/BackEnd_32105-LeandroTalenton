@@ -1,14 +1,26 @@
 import MongoStore from 'connect-mongo';
+import { yargsResult } from './yargs.js';
+
+const { sessionExpirationTime, environment } = yargsResult
+
+console.log("environment yargs:",environment)
+
 const mongoOptions = { useNewUrlParser: true, useUnifiedTopology: true };
+
+let mongoUrlEnvSession
+if(environment === "DESARROLLO"){
+    mongoUrlEnvSession = `mongodb://${process.env.DES_HOST_SPECIFIER}/${process.env.DES_AUTH_DATABASE}`
+} else {
+    mongoUrlEnvSession = `mongodb+srv://${process.env.DB_SESSION_USER}:${process.env.DB_SESSION_PASS}@cluster${process.env.DB_SESSION_CLUSTERNAME}.fyskstk.mongodb.net/${process.env.DB_SESSION_NAME}`
+}
 
 export const sessionObj = {
     secret: "secret123123",
     store: MongoStore.create({
-        // mongoUrl: `mongodb+srv://${process.env.DB_SESSION_USER}:${process.env.DB_SESSION_PASS}@cluster${process.env.DB_SESSION_CLUSTERNAME}.fyskstk.mongodb.net/${process.env.DB_SESSION_NAME}`,
-        mongoUrl: `mongodb://localhost:27017/proyectoFinal`,
+        mongoUrl: mongoUrlEnvSession,
         mongoOptions,
     }),
     resave: false,
     saveUninitialized: false,
-    cookie: { maxAge: 600000 } // 10min
+    cookie: { maxAge: sessionExpirationTime } // default 10min
 }

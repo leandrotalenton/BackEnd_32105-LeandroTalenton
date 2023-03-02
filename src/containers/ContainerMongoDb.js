@@ -1,13 +1,21 @@
 // se cambia el nombre del file
 import mongoose from 'mongoose'
 import logger from "../loggers/configLog4JS.js";
+import { yargsResult } from '../utils/yargs.js';
 import { ContainerFactory } from './ContainerFactory.js';
 
-// producción
-// await mongoose.connect('mongodb+srv://LeandroCoder:Coder123123@clusterleandrocoder.fyskstk.mongodb.net/leandroCoderDb', { serverSelectionTimeoutMS: 4000 })
 
-// desarrollo
-await mongoose.connect('mongodb://localhost:27017/proyectoFinal', { serverSelectionTimeoutMS: 4000 })
+const { environment } = yargsResult
+
+let mongoUrlEnvSession
+if( environment === "DESARROLLO" ){
+    mongoUrlEnvSession = `mongodb://${process.env.DES_HOST_SPECIFIER}/${process.env.DES_AUTH_DATABASE}`
+} else {
+    mongoUrlEnvSession = `mongodb+srv://${process.env.DB_SESSION_USER}:${process.env.DB_SESSION_PASS}@cluster${process.env.DB_SESSION_CLUSTERNAME}.fyskstk.mongodb.net/${process.env.DB_SESSION_NAME}`
+}
+
+
+await mongoose.connect(mongoUrlEnvSession, { serverSelectionTimeoutMS: 4000 })
 
 class ContainerMongoDb extends ContainerFactory{
     constructor(collection, scheme) {
