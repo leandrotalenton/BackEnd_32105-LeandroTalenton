@@ -1,11 +1,14 @@
 const socket = io.connect();
 
-
 // chat ///////////////////////////////////////////////////////////////////
 
 function renderChat(data) {
-    const chatOwnerUsername = document.querySelector("[data-autor-username]").getAttribute("data-autor-username")
+    const chatProfile = document.querySelector("[data-chatprofile]").getAttribute("data-chatprofile")
+    console.log(chatProfile)
+    const chatOwnerUsername = document.querySelector("[data-autor-username]")?.getAttribute("data-autor-username")
     console.log(chatOwnerUsername)
+    const chatSubjectUsername = document.querySelector("[data-destinatario]")?.getAttribute("data-destinatario")
+    console.log(chatSubjectUsername)
     const chatHTML = data.map((msg) => {
         let ownOrThird
         chatOwnerUsername === msg.autor.username ? ownOrThird = "--own" : ownOrThird = "--third"
@@ -14,6 +17,15 @@ function renderChat(data) {
         msg.destinatario === "Everyone" ? recipientAllOrParticular = "--all" : recipientAllOrParticular = "--particular"
 
         if(!(msg.destinatario === "Everyone" || msg.destinatario === chatOwnerUsername || msg.autor.username === chatOwnerUsername )) return ''
+        if((chatProfile === "individual") && (
+            //              SENDER                                      RECEIVER
+            (msg.autor.username !== chatOwnerUsername && msg.destinatario !== chatOwnerUsername) || 
+            (msg.autor.username === chatSubjectUsername && msg.destinatario !== chatOwnerUsername) ||
+            (msg.autor.username === chatOwnerUsername && msg.destinatario !== chatSubjectUsername) ||
+            //              SENDER                                       SENDER
+            (msg.autor.username !== chatOwnerUsername && msg.autor.username !== chatSubjectUsername)
+            )) return ''
+
         return `
             <li class="messageContainer ${ownOrThird}">
                 <a href="/chat/${msg.autor.username}">
@@ -40,6 +52,9 @@ function renderChat(data) {
     const chatWindow = document.querySelector(`.chatWindow`)
     chatWindow.innerHTML = chatHTML;
     chatWindow.scrollTop = chatWindow.scrollHeight;
+
+    const dataDestinatario = document.querySelector("[data-destinatario]")?.getAttribute("data-destinatario")
+    dataDestinatario && (document.querySelector("#chat_destinatario").value = dataDestinatario)
 }
 
 function enviarMensaje() {
@@ -93,7 +108,8 @@ function renderProductos(data) {
     }
     ).join(" ");
 
-    document.querySelector(`#productos--tbody`).innerHTML = productosHTML || "No hay productos que coincidan con la categoria seleccionada";
+    const productosContainer = document.querySelector(`#productos--tbody`)
+    productosContainer && (productosContainer.innerHTML = productosHTML || "No hay productos que coincidan con la categoria seleccionada");
     const productButtons = document.querySelectorAll(".prodBtn")
     productButtons.forEach(button=>{
         button.addEventListener('click', async (e)=>{

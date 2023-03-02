@@ -1,3 +1,15 @@
+[data-chatprofile]{
+  width: 100%;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  max-width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 16px;
+}
+
 .chatContainer {
   position: relative;
   background-color: #f4f4f4;

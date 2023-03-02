@@ -15,9 +15,26 @@ export const getMainPage = async (req, res) => {
     })
 }
 
+export const getChatGeneral = async (req, res) => {
+    res.render(`./chatGeneral`, {
+        id: req.user.id,
+        nombre: req.user.username,
+        pic: req.user.pic
+    })
+}
+
+export const getChatIndividual = async (req, res) => {
+    res.render(`./chatIndividual`, {
+        id: req.user.id,
+        nombre: req.user.username,
+        pic: req.user.pic,
+        destinatario: req.params.destinatario
+    })
+}
+
 export const getUserInfo = (req, res) => {
     const user = new GetMeDTO(req.user)
-    res.render("./sobreMi", { ...user })
+    res.render("./sobreMi", { ...user, id: req.user.id })
 }
 
 export const getSingnUpPage = (req, res) => {
