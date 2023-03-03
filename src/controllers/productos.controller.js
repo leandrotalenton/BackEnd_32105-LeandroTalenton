@@ -1,5 +1,5 @@
 import { io } from '../app.js';
-import { DaoFactory } from '../daos/daoFactory.js';
+import { DaoFactory } from '../daos/FactoryDao.js';
 import { ProductosDTO } from '../dtos/productos/productos.dto.js';
 import logger from '../loggers/configLog4JS.js';
 

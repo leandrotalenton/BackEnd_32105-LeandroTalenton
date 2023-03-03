@@ -1,4 +1,4 @@
-import { DaoFactory } from "../../daos/daoFactory.js";
+import { DaoFactory } from "../../daos/FactoryDao.js";
 const productosDAO = DaoFactory.getProductosDao();
 
 export class ProductosDTO {

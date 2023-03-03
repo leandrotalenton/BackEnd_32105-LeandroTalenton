@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+</head>
+<body>
+    <main>
+        <h2>Parámetros de configuración del servidor</h3>
+        <br>
+        <ul>
+            <li>
+                <h4>Puerto del servidor:</h4>
+                <span><%- port %></span>
+            </li>
+            <li>
+                <h4>Metodo de procesos hijos:</h4>
+                <span><%- method %></span>
+            </li>
+            <li>
+                <h4>Tiempo de expiracion de la sesion:</h4>
+                <span><%- sessionExpirationTime %></span>
+            </li>
+            <li>
+                <h4>Sistema de persistencia utilizado:</h4>
+                <span><%- DB %></span>
+            </li>
+            <li>
+                <h4>Puerto del servidor:</h4>
+                <span><%- environment %></span>
+            </li>
+            <li>
+                <h4>Mail que recibirá notificaciones del backend:</h4>
+                <span><%- emailAdress %></span>
+            </li>
+        </ul>
+    </main>
+</body>
+</html>

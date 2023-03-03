@@ -4,7 +4,7 @@ import DAOOrdenesMongo from "./ordenes/OrdenesDAOMongo.js";
 import DAOProductosMongo from "./productos/ProductosDaoMongo.js";
 import DAOUsuariosMongo from "./usuarios/UsuariosDAOMongo.js";
 
-const opcion = process.env.TIPO || "MongoAtlas"; //<-- esto nos lo habian mostrado como que se pasaba como process.argv[2], pero por ahora prefiero seguir trabajando como node.env
+const opcion = process.env.TIPO || "MONGO"; //<-- esto nos lo habian mostrado como que se pasaba como process.argv[2], pero por ahora prefiero seguir trabajando como node.env
 
 let daoUsuarios;
 let daoCarritos;

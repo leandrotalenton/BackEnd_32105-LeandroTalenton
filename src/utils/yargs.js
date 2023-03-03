@@ -5,12 +5,14 @@ export const yargsResult = yargs
         p: "port",
         m: "method",
         t: "sessionExpirationTime",
-        e: "environment"
+        e: "environment",
+        a: "emailAdress"
     })
     .default({
         port: process.env.PORT || 8080,
         method: "FORK",
         sessionExpirationTime: 600000,
-        environment: "PRODUCCION"
+        environment: "PRODUCCION",
+        emailAdress: "taurean.volkman65@ethereal.email"
     })
     .argv

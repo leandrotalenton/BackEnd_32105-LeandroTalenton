@@ -1,7 +1,7 @@
 import util from 'util'
 
 import { io } from '../app.js';
-import { DaoFactory } from '../daos/daoFactory.js';
+import { DaoFactory } from '../daos/FactoryDao.js';
 import logger from '../loggers/configLog4JS.js';
 
 const chatsDAO = DaoFactory.getChatsDao()

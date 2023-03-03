@@ -1,4 +1,4 @@
-import { DaoFactory } from "../../daos/daoFactory.js";
+import { DaoFactory } from "../../daos/FactoryDao.js";
 import { carritoActivoByUserId } from "../../services/carritos.service.js";
 const productosDAO = DaoFactory.getProductosDao();
 const carritosDAO = DaoFactory.getCarritosDao();

@@ -1,19 +1,18 @@
-import { cpus } from "os";
-const cpu = cpus()
+import { yargsResult } from "../utils/yargs.js"
+
+const { port, method, sessionExpirationTime, environment, emailAdress } = yargsResult
 
 export const getInfo = async (req,res)=>{
     try{
         const data = {
-            argumentosDeEntrada: process.argv.slice(2),
-            nombreDeLaPlataforma: process.platform,
-            versionDeNode: process.version,
-            memoriaTotalReservada: process.memoryUsage(),
-            pathDeEjecucion: process.execPath,
-            processId: process.pid,
-            carpetaDelProyecto: process.cwd(),
-            cantidadDeProcesadores: cpu.length
+            port,
+            method,
+            sessionExpirationTime,
+            DB: process.env.TIPO,
+            environment,
+            emailAdress
         }
-        res.send(data)
+        res.render('./info',data)
     } catch(err) {
         res.status(404).send(err)
     }

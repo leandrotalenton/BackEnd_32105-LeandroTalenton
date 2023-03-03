@@ -2,10 +2,13 @@ import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
 import bcrypt from "bcrypt"
 
-import { DaoFactory } from '../daos/daoFactory.js';
+import { DaoFactory } from '../daos/FactoryDao.js';
 import { sendMail } from '../transporters/nodeMailer.js'
 import { carritoActivoByUserId } from '../services/carritos.service.js';
 import { readByUsername } from '../services/usuarios.service.js';
+import { yargsResult } from './yargs.js';
+
+const { emailAdress: emailAdministrador } = yargsResult
 
 const usuariosDAO = DaoFactory.getUsuariosDao()
 const carritosDAO = DaoFactory.getCarritosDao()
@@ -16,8 +19,6 @@ const hashPassword = (pass) => {
 const validatePassword = (pass, hashedPassword) => {
     return bcrypt.compareSync(pass, hashedPassword)
 }
-
-export const emailAdministrador = "taurean.volkman65@ethereal.email"
 
 passport.use(
     "signUp",

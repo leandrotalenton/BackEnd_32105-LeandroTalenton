@@ -1,4 +1,4 @@
-import { DaoFactory } from '../daos/daoFactory.js';
+import { DaoFactory } from '../daos/FactoryDao.js';
 import { GetMeDTO } from '../dtos/usuarios/usuario.dto.js';
 import { updatePictureByUsername } from '../services/usuarios.service.js';
 

@@ -1,9 +1,11 @@
 import { CompletarCarritoDTO } from '../dtos/carritos/completarCarrito.dto.js';
 import { enviarMensajeTxt, enviarMensajeWsp } from '../transporters/mensajesTwilio.js';
 import { sendMail } from '../transporters/nodeMailer.js';
-import { emailAdministrador } from '../utils/passport.js';
 import { addProductTo, carritoActivoByUserId, comprar, deleteProductFrom } from '../services/carritos.service.js';
 import logger from '../loggers/configLog4JS.js';
+import { yargsResult } from '../utils/yargs.js';
+
+const { emailAdress: emailAdministrador } = yargsResult
 
 
 // lista productos del carrito(id)
