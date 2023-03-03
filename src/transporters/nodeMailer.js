@@ -1,4 +1,5 @@
 import { createTransport } from 'nodemailer';
+import logger from '../loggers/configLog4JS.js';
 
 export async function sendMail(to, subject, html){
     const transporter = createTransport({
@@ -21,7 +22,7 @@ export async function sendMail(to, subject, html){
         const info = await transporter.sendMail(opts)
         console.log(info)
     } catch(e) {
-        console.log(e)
+        logger.error(e)
     }
 }
 

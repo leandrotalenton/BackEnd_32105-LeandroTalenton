@@ -1,4 +1,5 @@
 import { DaoFactory } from "../daos/daoFactory.js";
+import logger from "../loggers/configLog4JS.js";
 const carritosDAO = DaoFactory.getCarritosDao();
 const ordenesDAO = DaoFactory.getOrdenesDao();
 
@@ -10,7 +11,7 @@ export async function carritoActivoByUserId(idUser) {
     });
     return carrito;
   } catch (e) {
-    console.log(e);
+    logger.error(e);
   }
 }
 
@@ -24,11 +25,8 @@ export async function addProductTo(idCarrito, prodToAdd) {
       ? (prodExistente.cantidad += Number(prodToAdd.cantidad))
       : carrito.productos.push(prodToAdd);
     await carritosDAO.updateById(idCarrito, carrito);
-    console.log(
-      `se agregaron ${prodToAdd.cantidad} unidades del producto ${prodToAdd} al carrito ${idCarrito}`
-    );
   } catch (e) {
-    console.log(e);
+    logger.error(e);
   }
 }
 
@@ -46,11 +44,8 @@ export async function deleteProductFrom(idCarrito, idProd, cantidadABorrar) {
       producto.cantidad -= Number(cantidadABorrar)
     }
     await carritosDAO.updateById(idCarrito, carrito);
-    console.log(
-      `se saca el prodcuto con timestamp ${idProd} de ${idCarrito}`
-    );
   } catch (e) {
-    console.log(e);
+    logger.error(e);
   }
 }
 
@@ -72,9 +67,9 @@ export async function comprar(idCarrito, idUser, validacion) {
         productos: [],
       });
     } else {
-      console.log("cuchame una cosa.. no voy a cerrar un carrito vacio");
+      logger.warn("cuchame una cosa.. no voy a cerrar un carrito vacio");
     }
   } catch (e) {
-    console.log(e);
+    logger.error(e);
   }
 }

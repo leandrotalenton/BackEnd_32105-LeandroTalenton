@@ -1,147 +1,72 @@
-[2023-03-01T22:41:20.523] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:41:25.129] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:41:33.571] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:41:36.095] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:41:48.242] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:41:54.337] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:42:03.370] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:42:19.282] [WARN] default - request fallida: PUT, a la URL: /
-[2023-03-01T22:42:20.640] [WARN] default - request fallida: GET, a la URL: /carrito/styles/normalize.css
-[2023-03-01T22:42:21.454] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:42:25.439] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:42:29.699] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:47:25.522] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:47:33.145] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:47:40.400] [WARN] default - request fallida: PUT, a la URL: /
-[2023-03-01T22:47:41.477] [WARN] default - request fallida: GET, a la URL: /carrito/styles/normalize.css
-[2023-03-01T22:47:42.303] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:47:46.259] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:48:31.284] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:48:39.705] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:48:47.126] [WARN] default - request fallida: PUT, a la URL: /
-[2023-03-01T22:48:48.270] [WARN] default - request fallida: GET, a la URL: /carrito/styles/normalize.css
-[2023-03-01T22:48:49.100] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:48:53.115] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:51:55.143] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:52:00.093] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:52:07.953] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:52:15.472] [WARN] default - request fallida: PUT, a la URL: /
-[2023-03-01T22:52:16.585] [WARN] default - request fallida: GET, a la URL: /carrito/styles/normalize.css
-[2023-03-01T22:52:17.428] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:52:21.429] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:53:59.959] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:54:05.797] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:54:10.882] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:54:19.596] [WARN] default - request fallida: PUT, a la URL: /
-[2023-03-01T22:54:20.670] [WARN] default - request fallida: GET, a la URL: /carrito/styles/normalize.css
-[2023-03-01T22:54:21.475] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:54:25.422] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:55:03.062] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:56:16.598] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:56:19.843] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:56:23.711] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:57:53.933] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:58:02.680] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:58:05.544] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:58:11.182] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:58:17.726] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:58:21.301] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:58:29.796] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T22:58:32.046] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T23:00:16.960] [WARN] default - request fallida: GET, a la URL: /styles/sobreMi.css
-[2023-03-01T23:00:17.583] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T23:00:21.979] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T23:00:29.366] [WARN] default - request fallida: GET, a la URL: /styles/sobreMi.css
-[2023-03-01T23:00:30.006] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T23:00:32.793] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T23:00:36.219] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T23:00:37.606] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T23:00:39.724] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T23:00:43.317] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T23:02:43.448] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-01T23:03:32.246] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T11:49:44.760] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T11:49:49.524] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T11:53:20.861] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T11:55:51.290] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T11:56:13.009] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T11:56:17.216] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T11:56:28.792] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T11:56:34.419] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T11:56:52.412] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T11:56:55.010] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:05:11.769] [WARN] default - request fallida: GET, a la URL: /undefined
-[2023-03-02T12:05:17.362] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:05:18.778] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:05:21.795] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:06:07.935] [WARN] default - request fallida: GET, a la URL: /undefined
-[2023-03-02T12:06:08.393] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:06:24.535] [WARN] default - request fallida: GET, a la URL: /undefined
-[2023-03-02T12:06:24.980] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:06:26.929] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:06:38.520] [WARN] default - request fallida: PUT, a la URL: /
-[2023-03-02T12:06:38.985] [WARN] default - request fallida: GET, a la URL: /carrito/styles/normalize.css
-[2023-03-02T12:06:39.607] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:06:43.158] [WARN] default - request fallida: GET, a la URL: /undefined
-[2023-03-02T12:06:43.162] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:07:13.833] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:07:13.847] [WARN] default - request fallida: GET, a la URL: /undefined
-[2023-03-02T12:07:22.477] [WARN] default - request fallida: GET, a la URL: /undefined
-[2023-03-02T12:07:24.583] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:07:25.651] [WARN] default - request fallida: GET, a la URL: /undefined
-[2023-03-02T12:07:33.297] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:07:33.302] [WARN] default - request fallida: GET, a la URL: /undefined
-[2023-03-02T12:07:37.668] [WARN] default - request fallida: GET, a la URL: /styles/sobreMi.css
-[2023-03-02T12:07:38.105] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:07:41.869] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:07:41.875] [WARN] default - request fallida: GET, a la URL: /undefined
-[2023-03-02T12:10:02.192] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:10:08.219] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:10:33.751] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:11:09.921] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:11:14.224] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:11:17.541] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:11:20.287] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:11:25.603] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:12:20.271] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:13:23.585] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:13:38.801] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:13:44.534] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:13:47.181] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:13:51.471] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:13:58.020] [WARN] default - request fallida: PUT, a la URL: /
-[2023-03-02T12:13:58.705] [WARN] default - request fallida: GET, a la URL: /carrito/styles/normalize.css
-[2023-03-02T12:13:59.319] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:14:02.914] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:14:06.042] [WARN] default - request fallida: GET, a la URL: /styles/sobreMi.css
-[2023-03-02T12:14:06.479] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:14:08.919] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:36:33.165] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:36:34.463] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:36:38.901] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:36:49.903] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:44:21.920] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T12:44:46.298] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T17:26:22.444] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T17:26:23.821] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T17:26:30.914] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T17:30:38.742] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T17:30:43.107] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T17:37:42.002] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T17:38:06.485] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T17:38:11.650] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T18:35:32.423] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T18:35:37.255] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T18:37:56.615] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T18:37:58.712] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T18:38:04.162] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T18:39:54.360] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T18:39:58.754] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T18:40:31.826] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T18:40:35.132] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T18:40:39.293] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T18:41:28.043] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T18:41:32.316] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T18:41:36.058] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T18:41:39.108] [WARN] default - request fallida: GET, a la URL: /favicon.ico
-[2023-03-02T18:41:40.183] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-02T20:58:55.057] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-02T20:58:59.695] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-02T20:59:04.639] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-02T20:59:07.235] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-02T20:59:51.402] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-02T20:59:55.297] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-02T21:00:07.231] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-02T21:00:16.888] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-02T21:00:21.695] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-02T21:00:33.598] [ERROR] default - Error: Invalid login: 535 Authentication failed
+    at SMTPConnection._formatError (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:790:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:1548:34)
+    at SMTPConnection.<anonymous> (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:546:26)
+    at SMTPConnection._processResponse (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:953:20)
+    at SMTPConnection._onData (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:755:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:193:44)
+    at TLSSocket.emit (node:events:390:28)
+    at addChunk (node:internal/streams/readable:315:12)
+    at readableAddChunk (node:internal/streams/readable:289:9)
+    at TLSSocket.Readable.push (node:internal/streams/readable:228:10) {
+  code: 'EAUTH',
+  response: '535 Authentication failed',
+  responseCode: 535,
+  command: 'AUTH PLAIN'
+}
+[2023-03-02T21:00:34.563] [ERROR] default - RestException [Error]: Authenticate
+    at success (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\twilio\lib\base\Version.js:135:15)
+    at Promise_then_fulfilled (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:766:44)
+    at Promise_done_fulfilled (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:835:31)
+    at Fulfilled_dispatch [as dispatch] (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:1229:9)
+    at Pending_become_eachMessage_task (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:1369:30)
+    at RawTask.call (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\asap\asap.js:40:19)
+    at flush (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\asap\raw.js:50:29)
+    at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+  status: 401,
+  code: 20003,
+  moreInfo: 'https://www.twilio.com/docs/errors/20003',
+  details: undefined
+}
+[2023-03-02T21:00:35.312] [ERROR] default - RestException [Error]: Authenticate
+    at success (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\twilio\lib\base\Version.js:135:15)
+    at Promise_then_fulfilled (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:766:44)
+    at Promise_done_fulfilled (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:835:31)
+    at Fulfilled_dispatch [as dispatch] (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:1229:9)
+    at Pending_become_eachMessage_task (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:1369:30)
+    at RawTask.call (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\asap\asap.js:40:19)
+    at flush (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\asap\raw.js:50:29)
+    at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+  status: 401,
+  code: 20003,
+  moreInfo: 'https://www.twilio.com/docs/errors/20003',
+  details: undefined
+}
+[2023-03-02T21:00:35.740] [WARN] default - request fallida: PUT, a la URL: /
+[2023-03-02T21:00:36.670] [WARN] default - request fallida: GET, a la URL: /carrito/styles/normalize.css
+[2023-03-02T21:00:37.345] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-02T21:00:41.239] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-02T21:04:27.315] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-02T21:04:31.287] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-02T21:04:35.693] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-02T21:08:38.827] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-02T21:08:42.449] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-02T21:10:10.442] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-02T21:10:20.088] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-02T21:24:58.909] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-02T21:26:18.669] [WARN] default - request fallida: GET, a la URL: /styles/sobreMi.css
+[2023-03-02T21:27:26.911] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-02T21:27:33.043] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-02T21:28:02.200] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-02T21:28:08.658] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-02T21:28:21.487] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-02T21:29:35.681] [WARN] default - request fallida: GET, a la URL: /favicon.ico

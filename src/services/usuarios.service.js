@@ -1,4 +1,5 @@
 import { DaoFactory } from "../daos/daoFactory.js"
+import logger from "../loggers/configLog4JS.js"
 
 const usuariosDAO = DaoFactory.getUsuariosDao()
 
@@ -11,10 +12,9 @@ export async function readByUsernameAndPassword(username, password) {
             return user
         }
     } catch (e) {
-        console.log(e)
+        logger.error(e)
     }
 }
-// console.log(await readByUsernameAndPassword('juancarlos', '$2b$10$4Pru1kRleW4SXWpclgI71.wRp7EYGYdbgpD5AvUajWoncTHvOYii.'))
 
 export async function readByUsername(username) {
     try {
@@ -24,7 +24,7 @@ export async function readByUsername(username) {
             return user
         }
     } catch (e) {
-        console.log(e)
+        logger.error(e)
     }
 }
 
@@ -35,6 +35,6 @@ export async function updatePictureByUsername(username, path) {
         user.pic = path
         await usuariosDAO.updateById(user._id, user)
     } catch (e) {
-        console.log(e)
+        logger.error(e)
     }
 }

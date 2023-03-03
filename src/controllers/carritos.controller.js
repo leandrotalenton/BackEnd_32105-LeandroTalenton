@@ -3,6 +3,7 @@ import { enviarMensajeTxt, enviarMensajeWsp } from '../transporters/mensajesTwil
 import { sendMail } from '../transporters/nodeMailer.js';
 import { emailAdministrador } from '../utils/passport.js';
 import { addProductTo, carritoActivoByUserId, comprar, deleteProductFrom } from '../services/carritos.service.js';
+import logger from '../loggers/configLog4JS.js';
 
 
 // lista productos del carrito(id)
@@ -12,7 +13,7 @@ export const getAllActiveCartProducts = async (req, res) => {
         const { arrayProdData, subTotal } = await carritoCompleto.calculateProductsDataAndSubtotal()
         res.render("./carrito", { arrayProdData, subTotal, nombre: req.user.username, pic: req.user.pic, id: req.user.id})
     } catch (e) {
-        console.log(e)
+        logger.error(e)
     }
 }
 
@@ -31,7 +32,7 @@ export const postProductToActiveCart = async (req, res) => {
             cantidad: req.query.cantidad
         })
     } catch (e) {
-        console.log(e)
+        logger.error(e)
     }
 }
 
@@ -42,7 +43,7 @@ export const deleteProductFromActiveCart = async (req, res) => {
         await deleteProductFrom(carrito._id, req.params.id_prod, req.query.cantidad)
         res.redirect(303, "/")
     } catch (e) {
-        console.log(e)
+        logger.error(e)
     }
 }
 
@@ -60,6 +61,6 @@ export const putCartAsClosed = async (req, res) => {
         await enviarMensajeTxt("Tu pedido se ha recibido y se encuentra en proceso", req.user.phone) // mensaje de texto al cliente
         res.redirect("/")
     } catch (e) {
-        console.log(e)
+        logger.error(e)
     }
 }

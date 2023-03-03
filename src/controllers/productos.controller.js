@@ -1,6 +1,7 @@
 import { io } from '../app.js';
 import { DaoFactory } from '../daos/daoFactory.js';
 import { ProductosDTO } from '../dtos/productos/productos.dto.js';
+import logger from '../loggers/configLog4JS.js';
 
 const productosDAO = DaoFactory.getProductosDao()
 
@@ -55,7 +56,7 @@ export const postNewProduct = async (req, res) => {
         res.status(201).redirect('back')
         // .json(producto)
     } catch (e) {
-        console.log(e)
+        logger.error(e)
     }
 }
 
@@ -71,7 +72,7 @@ export const putUpdateProductById = async (req, res) => {
             res.status(404).send({ error: `producto no encontrado` })
         }
     } catch (e) {
-        console.log(e)
+        logger.error(e)
     }
 }
 
@@ -87,6 +88,6 @@ export const deleteProductById = async (req, res) => {
             res.status(404).send({ error: `producto no encontrado` })
         }
     } catch (e) { 
-        console.log(e) 
+        logger.error(e) 
     }
 }

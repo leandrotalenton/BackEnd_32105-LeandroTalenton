@@ -62,7 +62,6 @@ export const postNewProfilePictureAndUploadImage = async (req, res) => {
     } else {
         (async () => {
             await updatePictureByUsername(req.user.username, `/images/profilePics/${req.file.filename}`)
-            console.log("se cambia la foto")
             res.redirect("/")
         })()
     }

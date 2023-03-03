@@ -56,7 +56,6 @@ class ContainerMongoDb extends ContainerFactory{
         try {
             const { modifiedCount } = await this.db.replaceOne({_id: id}, newDocument)
             if ( modifiedCount > 0 ) {
-                console.log(`Se ha actualizado el item ${id}`)
                 return newDocument
             } else {
                 return `no se encuentra un item con el ID especificado`

@@ -25,8 +25,6 @@ passport.use(
         const existantUser = await readByUsername(username)
         if(existantUser) { return done(null, false) }
 
-        // console.log("req.file asdf: ",req.file)
-        // console.log("req.body asdf: ",req.body)
         await usuariosDAO.create({
             username,
             password: hashPassword(password),
@@ -77,14 +75,14 @@ passport.use(
 )
 
 passport.serializeUser((userObj, done) => {
-    console.log("se ejecuta el serializeUser con esta info: ", userObj)
+    // console.log("se ejecuta el serializeUser con esta info: ", userObj)
     done(null, userObj._id)
 })
 
 passport.deserializeUser( async(someId, done)=>{
-    console.log("se ejecuta el deserializeUser con esta info: ", someId)
+    // console.log("se ejecuta el deserializeUser con esta info: ", someId)
     const user = await usuariosDAO.readById(someId)
-    console.log("esto me trae el deserializer: ", user)
+    // console.log("esto me trae el deserializer: ", user)
     done(null, user)
 })
 

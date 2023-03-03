@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../styles/formulario.css">
     <link rel="stylesheet" href="../styles/productos.css">
     <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
 </head>
 <body>
     <%- include( './partials/navBar' ) %>
@@ -28,7 +29,6 @@
                 </tr>
             </thead>
             <tbody id="productos--tbody">
-                <% console.log("arrayProdData",arrayProdData) %>
             </tbody>
         </table>
     </div>
@@ -36,7 +36,6 @@
     <script src="../scripts/publicScript.js"></script>
     <script>
         const arrayProdData = JSON.parse(`<%- JSON.stringify(arrayProdData) %>`)
-        console.log(arrayProdData)
         renderProductos(arrayProdData)
     </script>
 </body>

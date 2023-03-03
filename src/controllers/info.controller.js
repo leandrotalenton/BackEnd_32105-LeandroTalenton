@@ -13,7 +13,6 @@ export const getInfo = async (req,res)=>{
             carpetaDelProyecto: process.cwd(),
             cantidadDeProcesadores: cpu.length
         }
-        // console.log(data)
         res.send(data)
     } catch(err) {
         res.status(404).send(err)

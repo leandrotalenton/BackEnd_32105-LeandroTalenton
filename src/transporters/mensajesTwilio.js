@@ -1,4 +1,5 @@
 import twilio from "twilio";
+import logger from "../loggers/configLog4JS.js";
 
 export async function enviarMensajeTxt(body, to = '+541164665369'){
     const accountSID = 'AC9c8fd8fadd42839fff278b4a49fb7f63'
@@ -14,7 +15,7 @@ export async function enviarMensajeTxt(body, to = '+541164665369'){
         });
         console.log(msg)
     } catch (e) {
-        console.log(e)
+        logger.error(e)
     }
 }
 
@@ -32,6 +33,6 @@ export async function enviarMensajeWsp(body, to = '+541164665369'){
         });
         console.log(msg)
     } catch (e) {
-        console.log(e)
+        logger.error(e)
     }
 }

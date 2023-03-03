@@ -4,14 +4,12 @@ import path from 'path'
 const profilePicStorage = multer.diskStorage({
     destination: './public/images/profilePics',
     filename: function(req, file, cb){
-        console.log(req)
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
     }
 })
 const productStorage = multer.diskStorage({
     destination: './public/images/productPics',
     filename: function(req, file, cb){
-        console.log(req)
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
     }
 })

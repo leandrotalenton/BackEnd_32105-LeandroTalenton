@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../styles/productos.css">
     <link rel="stylesheet" href="../styles/normalize.css">
     <link rel="stylesheet" href="../styles/chat.css">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
 </head>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.min.js"></script>
@@ -20,7 +21,6 @@
     <script src="/scripts/publicScript.js"></script>
 
 
-    <% console.log("asd", destinatario) %>
     <%- include( './partials/navBar' ) %>
     <div data-chatProfile="individual" data-destinatario="<%- destinatario %>">Chat individual con <%- destinatario %></div>
     <%- include( './partials/chat' ) %>

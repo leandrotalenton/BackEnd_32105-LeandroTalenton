@@ -1,9 +1,10 @@
 import MongoStore from 'connect-mongo';
+import logger from '../loggers/configLog4JS.js';
 import { yargsResult } from './yargs.js';
 
 const { sessionExpirationTime, environment } = yargsResult
 
-console.log("environment yargs:",environment)
+logger.info("environment yargs:",environment)
 
 const mongoOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 

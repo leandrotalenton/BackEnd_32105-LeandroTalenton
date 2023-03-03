@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./styles/carrito.css">
     <link rel="stylesheet" href="./styles/navBar.css">
     <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
 </head>
 <body>
     <%- include( './partials/navBar' ) %>
@@ -24,7 +25,6 @@
         <h4>Subtotal</h4>
         <h4>Remover</h4>
         <% arrayProdData.forEach((producto, i)=>{ %>
-        <% console.log("fffff",producto) %>
             <img src="<%= producto.thumbnail %>">
             <div>
                 <%= producto.title %>
@@ -57,12 +57,10 @@
                 try{
                     const dataId = e.currentTarget.getAttribute("data-id")
                     const cantidad = document.querySelector(`#q-${dataId}`).value
-                    console.log("dataId: ",dataId)
-                    console.log("cantidad: ",cantidad)
                     await fetch(`/carrito/${dataId}/productos?cantidad=${cantidad}`, {method: "DELETE"})
                     location.reload()
                 } catch (e) {
-                    console.log(e)
+                    logger.error(e)
                 }
             }))
         document.querySelector("#comprar").addEventListener("click", async ()=>{
@@ -70,7 +68,7 @@
                     await fetch(`/carrito`, {method: "PUT"})
                     window.location.href = "/carrito/compra"
                 } catch (e) {
-                    console.log(e)
+                    logger.error(e)
                 }
             })
     </script>

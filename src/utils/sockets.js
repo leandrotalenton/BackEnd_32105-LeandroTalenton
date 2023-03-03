@@ -1,11 +1,8 @@
 import util from 'util'
-import { normalize, denormalize, schema } from 'normalizr';
 
 import { io } from '../app.js';
 import { DaoFactory } from '../daos/daoFactory.js';
-
-const autoresSchema = new schema.Entity("autores");
-const chatsSchema = new schema.Entity("chats", {mensajes:[{autor:autoresSchema}]});
+import logger from '../loggers/configLog4JS.js';
 
 const chatsDAO = DaoFactory.getChatsDao()
 const productosDAO = DaoFactory.getProductosDao()
@@ -13,26 +10,9 @@ const productosDAO = DaoFactory.getProductosDao()
 export async function createSocketsChatsProductos() {
     return (
         io.on('connection', async (socket)=>{
-            console.log(`Cliente conectado, id: ${socket.id}`)
+            logger.info(`Cliente conectado, id: ${socket.id}`)
 
             // // chat 
-            // // <-- el deserializador seguramente se rompio con el cambio de DB, si tnego tiempo despues lo reviso
-            // socket.emit("new_msg", normalize({id: 'chats', mensajes: await chatsDAO.read() }, chatsSchema));
-            // socket.on("new_msg", async (data) => {
-            //     try{
-            //         const currDate = new Date()
-            //         data.date= `${currDate.toLocaleString()}`
-            //         await chatsDAO.create(data)
-            //         const mensajesNormalizados = normalize({id: 'chats', mensajes: await chatsDAO.read() }, chatsSchema)
-            //         // console.log("mensajesNormalizados: ", util.inspect(mensajesNormalizados, false, 10, true ))
-            //         io.sockets.emit("new_msg", mensajesNormalizados);
-            //     } catch(err) {
-            //         console.log(err)
-            //     }
-            // });
-
-            // chat 
-            // <-- el deserializador seguramente se rompio con el cambio de DB, si tnego tiempo despues lo reviso
             socket.emit("new_msg", await chatsDAO.read());
             socket.on("new_msg", async (data) => {
                 try{
@@ -40,8 +20,8 @@ export async function createSocketsChatsProductos() {
                     data.date= `${currDate.toLocaleString()}`
                     await chatsDAO.create(data)
                     io.sockets.emit("new_msg", await chatsDAO.read());
-                } catch(err) {
-                    console.log(err)
+                } catch(e) {
+                    logger.error(e)
                 }
             });
         
@@ -49,12 +29,11 @@ export async function createSocketsChatsProductos() {
             socket.emit("new_prod", await productosDAO.read());
             socket.on("new_prod", async (data) => {
                 try{
-                    console.log("esto es la data del socket io para postear un producto nuevo", data)
                     await productosDAO.create(data);
                     const productos = await productosDAO.read();
                     io.sockets.emit('new_prod', productos);
-                } catch(err) {
-                    console.log(err)
+                } catch(e) {
+                    logger.error(e)
                 }
             });
         })
