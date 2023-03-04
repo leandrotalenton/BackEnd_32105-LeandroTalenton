@@ -1,12 +1,13 @@
 .content-main{
     display: flex;
     flex-direction: row-reverse;
-    max-width: 83rem;
+    max-width: 1328px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 30px;
     padding-bottom: 30px;
-    /* background-color: hsl(0 0% 100%/1) */
+    background-image: radial-gradient(hsla(233.33 27.273% 12.941%/.2) 0.5px,hsla(0 0% 90%/1) 0.5px);
+    background-size: 4px 4px;
 }
 
 .sidebar__aside{

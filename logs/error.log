@@ -42,3 +42,63 @@
   moreInfo: 'https://www.twilio.com/docs/errors/20003',
   details: undefined
 }
+[2023-03-04T03:07:40.071] [ERROR] default - Error: Invalid login: 535 Authentication failed
+    at SMTPConnection._formatError (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:790:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:1548:34)
+    at SMTPConnection.<anonymous> (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:546:26)
+    at SMTPConnection._processResponse (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:953:20)
+    at SMTPConnection._onData (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:755:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:193:44)
+    at TLSSocket.emit (node:events:390:28)
+    at addChunk (node:internal/streams/readable:315:12)
+    at readableAddChunk (node:internal/streams/readable:289:9)
+    at TLSSocket.Readable.push (node:internal/streams/readable:228:10) {
+  code: 'EAUTH',
+  response: '535 Authentication failed',
+  responseCode: 535,
+  command: 'AUTH PLAIN'
+}
+[2023-03-04T03:07:41.098] [ERROR] default - RestException [Error]: Authenticate
+    at success (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\twilio\lib\base\Version.js:135:15)
+    at Promise_then_fulfilled (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:766:44)
+    at Promise_done_fulfilled (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:835:31)
+    at Fulfilled_dispatch [as dispatch] (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:1229:9)
+    at Pending_become_eachMessage_task (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:1369:30)
+    at RawTask.call (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\asap\asap.js:40:19)
+    at flush (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\asap\raw.js:50:29)
+    at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+  status: 401,
+  code: 20003,
+  moreInfo: 'https://www.twilio.com/docs/errors/20003',
+  details: undefined
+}
+[2023-03-04T03:07:41.828] [ERROR] default - RestException [Error]: Authenticate
+    at success (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\twilio\lib\base\Version.js:135:15)
+    at Promise_then_fulfilled (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:766:44)
+    at Promise_done_fulfilled (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:835:31)
+    at Fulfilled_dispatch [as dispatch] (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:1229:9)
+    at Pending_become_eachMessage_task (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:1369:30)
+    at RawTask.call (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\asap\asap.js:40:19)
+    at flush (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\asap\raw.js:50:29)
+    at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+  status: 401,
+  code: 20003,
+  moreInfo: 'https://www.twilio.com/docs/errors/20003',
+  details: undefined
+}
+[2023-03-04T04:14:17.846] [ERROR] default - Error: Invalid login: 535 Authentication failed
+    at SMTPConnection._formatError (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:790:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:1548:34)
+    at SMTPConnection.<anonymous> (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:546:26)
+    at SMTPConnection._processResponse (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:953:20)
+    at SMTPConnection._onData (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:755:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:193:44)
+    at TLSSocket.emit (node:events:390:28)
+    at addChunk (node:internal/streams/readable:315:12)
+    at readableAddChunk (node:internal/streams/readable:289:9)
+    at TLSSocket.Readable.push (node:internal/streams/readable:228:10) {
+  code: 'EAUTH',
+  response: '535 Authentication failed',
+  responseCode: 535,
+  command: 'AUTH PLAIN'
+}

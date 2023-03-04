@@ -1,7 +1,7 @@
 .card {
     box-shadow: 0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1);;
-    width: 15rem;
-    margin: 1rem;
+    width: 240px;
+    margin: 16px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -29,28 +29,31 @@
     width: 100%;
     display: block;
     filter: drop-shadow(2px 4px 8px gray);
+    z-index: 1;
+    position: relative;
 }
 .card>figure .background-blur{
     position: absolute;
     object-fit: cover;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 0;
     filter: blur(8px);
     top: 0;
 }
 .card .card-body{
+    background-color: white;
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
-    gap: 0.5rem;
-    padding: 1.5rem;
+    gap: 8px;
+    padding: 24px;
 }
 .card .card-title{
-    font-size: 1.25rem;
+    font-size: 18px;
     font-weight: 600;
-    line-height: 1.75rem;
-    margin-bottom: 0.5rem;
+    line-height: 28px;
+    margin-bottom: 8px;
 
     display: -webkit-box;
     max-width: 200px;
@@ -101,9 +104,9 @@
     flex-wrap: wrap;
     align-items: flex-end;
     align-content: flex-end;
-    gap: 0.5rem;
+    gap: 8px;
     width: 100%;
-    gap: 0.5rem;
+    gap: 8px;
 }
 
 .card-actions .badge {
@@ -111,7 +114,7 @@
     align-items: center;
     justify-content: center;
     height: 20px;
-    font-size: .875rem;
+    font-size: 14px;
     line-height: 20px;
     width: fit-content;
     padding: 8px;
@@ -123,7 +126,7 @@
     background-color: hsl(229.09 95.652% 63.922%);
     border-color: hsl(229.09 95.652% 63.922%);
     color: hsl(229.09 100% 92.784%);
-    padding: 1rem;
+    padding: 16px;
     font-weight: 600;
     transition: 0.25s;
 }

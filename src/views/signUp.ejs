@@ -4,53 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <title>Register Page with Username and Password Example</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="./styles/loginForm.css">
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
 </head>
 
 <body>
-    <h2>Sign Up:</h2>
-    <div>
-        <form action="/signup" method="POST" enctype="multipart/form-data">
-            <div>
-                <label for="signup__username"><span>Username</span></label>
-                <input id="signup__username" type="text" name="username" placeholder="Username" required>
+    <main class="login-container">
+        <section class="login-body">
+            <h2>Sign Up:</h2>
+            <form action="/signup" method="POST" enctype="multipart/form-data">
+                <div class="form-field">
+                    <label for="signup__username"><span>Username</span></label>
+                    <input id="signup__username" type="text" name="username" placeholder="Username" required>
+                </div>
+                <div class="form-field">
+                    <label for="signup__password"><span>Password</span></label>
+                    <input id="signup__password" type="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="form-field">
+                    <label for="signup__profilePicture"><span>profilePicture</span></label>
+                    <label class="custom-file-upload" >
+                        seleccione una foto de perfil
+                        <input id="signup__profilePicture" type="file" class="form-control-file" name="uploaded_file">
+                    </label>
+                </div>
+                <div class="form-field">
+                    <label for="signup__email"><span>Email</span></label>
+                    <input id="signup__email" type="text" name="email" placeholder="email" required>
+                </div>
+                <div class="form-field">
+                    <label for="signup__age"><span>Age</span></label>
+                    <input id="signup__age" type="number" name="age" placeholder="age" required>
+                </div>
+                <div class="form-field">
+                    <label for="signup__address"><span>Address</span></label>
+                    <input id="signup__address" type="text" name="address" placeholder="address" required>
+                </div>
+                <div class="form-field">
+                    <label for="signup__area"><span>Area Code</span></label>
+                    <%- include( './partials/areaCode' ) %>
+                </div>
+                <div class="form-field">
+                    <label for="signup__phone"><span>Phone</span></label>
+                    <input id="signup__phone" type="text" name="phone" placeholder="phone" required>
+                </div>
+                <div class="form-field">
+                    <input type="submit" value="Sign Up">
+                </div>
+            </form>
+            <div class="login-buttons">
+                <span>Member?</span> 
+                <a href="/">Login now</a>
             </div>
-            <div>
-                <label for="signup__password"><span>Password</span></label>
-                <input id="signup__password" type="password" name="password" placeholder="Password" required>
-            </div>
-            <div>
-                <label for="signup__profilePicture"><span>profilePicture</span></label>
-                <input id="signup__profilePicture" type="file" class="form-control-file" name="uploaded_file">
-            </div>
-            <div>
-                <label for="signup__email"><span>Email</span></label>
-                <input id="signup__email" type="text" name="email" placeholder="email" required>
-            </div>
-            <div>
-                <label for="signup__age"><span>Age</span></label>
-                <input id="signup__age" type="number" name="age" placeholder="age" required>
-            </div>
-            <div>
-                <label for="signup__address"><span>Address</span></label>
-                <input id="signup__address" type="text" name="address" placeholder="address" required>
-            </div>
-            <div>
-                <label for="signup__area"><span>Area Code</span></label>
-                <%- include( './partials/areaCode' ) %>
-            </div>
-            <div>
-                <label for="signup__phone"><span>Phone</span></label>
-                <input id="signup__phone" type="text" name="phone" placeholder="phone" required>
-            </div>
-            <div>
-                <input type="submit" value="Sign Up">
-            </div>
-        </form>
-        <p>
-            <span>Member?</span> 
-            <a href="/">Login now</a>
-        </p>
-    </div>
+        </section>
+    </main>
 </body>
 </html>

@@ -16,21 +16,21 @@ border-radius: 5px;
 
 header{
     display: flex;
-    gap: 3.5rem;
+    gap: 56px;
     position: fixed;
     top: 0;
     width: 100%;
-    height: 7.1rem;
-    padding: 1.9rem 3rem;
+    height: 112px;
+    padding: 30px 48px;
     background-color: hsl(0, 0%, 100%);
     align-items: center;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 1.2rem;
-    line-height: 1.5rem;
+    font-size: 20px;
+    line-height: 24px;
     color: #000000;
-    box-shadow: .0rem .2rem .6rem .1rem rgba(0, 0, 0, 0.25);
+    box-shadow: 0 3px 9px 2px rgba(0, 0, 0, 0.25);
     z-index: 100;
 }
 
@@ -45,14 +45,14 @@ header>div:first-child{
 
 header>div:first-child>p{
     padding-left: 15px;
-    font-size: 1rem;
-    line-height: 0.9rem;
+    font-size: 16px;
+    line-height: 15px;
 }
 
 header>div:first-child>p>b{
     font-weight: 700;
-    font-size: 1.6rem;
-    line-height: 1.475rem;
+    font-size: 24px;
+    line-height: 13px;
 }
 
 header>div:nth-child(2){
@@ -62,13 +62,13 @@ header>div:nth-child(2){
 }
 
 header>div:nth-child(2)>svg{
-    padding-left: 0.4rem;
-    height: 0.6rem;
-    width: 1.1rem;
+    padding-left: 6px;
+    height: 6px;
+    width: 17px;
 }
 
 header>div:last-child{
-    margin-left: 3rem;
+    margin-left: 48px;
 }
 
 .position{
@@ -82,7 +82,7 @@ header>div:last-child{
 .position__button{
     display: flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 7px;
 }
 
 .position__button:hover{
@@ -92,24 +92,24 @@ header>div:last-child{
 .position__button>{
     display: flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 8px;
 }
 
 .position__menu{
-    max-height: 0rem;
+    max-height: 0;
     overflow: hidden;
     position: absolute;
-    width: 8rem;
+    width: 128px;
     display: grid;
     grid-template-rows: repeat(3, auto);
     align-items: center;
-    top: 2.5rem;
+    top: 40px;
     transition: max-height 0.1s linear 0s;
 }
 
 .position__checkbox:checked ~ .position__menu{
     max-height: calc(4*33px);
-    box-shadow: .2rem .2rem .6rem .1rem rgba(0, 0, 0, 0.25);
+    box-shadow: 0 3px 9px 2px rgba(0, 0, 0, 0.25);
     transition: max-height 0.1s linear 0s;
 }
 
@@ -126,18 +126,18 @@ header>div:last-child{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.0rem;
+    font-size: 16px;
+    line-height: 16px;
     color: #000000;
     background: #FFFFFF;
-    border-top: 0.1rem solid #E6E6E6;
+    border-top: 1.6px solid #E6E6E6;
 }
 
 .position__menu>li a{
     display: block;
     width: 90%;
     height: 100%;
-    padding: 0.5rem 0;
+    padding: 8px 0;
 }
 
 .position__menu a:hover{
@@ -147,7 +147,7 @@ header>div:last-child{
 }
 
 .position__menu>li a span{
-    padding: 0 0.5rem;
+    padding: 0 8px;
 }
 
 .position__menu>li:first-child{
@@ -160,9 +160,9 @@ header>div:last-child{
 }
 
 .logout{
-    padding: 4px 13px;
+    padding: 4px 16px;
     background-color: hsl(229.09 95.652% 63.922%);
-    border-radius: 10px;
+    border-radius: 4px;
     color: hsl(229.09 100% 92.784%);
     transition: 0.25s;
 }

@@ -18,3 +18,7 @@
         top: 113.6px;
     }
 }
+
+.puede-darme-dinero{
+    filter: saturate(0.8);
+}
