@@ -1,26 +1,27 @@
-.productos{
-    display: flex;
-    width: 100%;
-    align-items: center;
-    flex-direction: column;
+.productos {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
 }
 
 .productos table {
-border-collapse: separate;
-border-spacing: 0rem;
+  border-collapse: separate;
+  border-spacing: 0rem;
 }
 
-.productos thead{
-    background-color: aquamarine;
+.productos thead {
+  background-color: aquamarine;
 }
 
-.productos td,.productos th{
-    min-width: 10.0rem;
-    border: .1rem solid black;
-    text-align: center;
+.productos td,
+.productos th {
+  min-width: 10rem;
+  border: 0.1rem solid black;
+  text-align: center;
 }
 
 .productos img {
-    height: 7.5rem;
-    width: 7.5rem;
+  height: 7.5rem;
+  width: 7.5rem;
 }

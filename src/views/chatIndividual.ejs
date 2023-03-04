@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>test</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/navBar.css">
-    <link rel="stylesheet" href="/styles/formulario.css">
-    <link rel="stylesheet" href="/styles/productos.css">
-    <link rel="stylesheet" href="/styles/normalize.css">
-    <link rel="stylesheet" href="/styles/chat.css">
-    <link rel="stylesheet" href="/styles/bannerMegalateral.css">
-    <link rel="stylesheet" href="/styles/layout.css">
-    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/navBar.css" />
+    <link rel="stylesheet" href="/styles/formulario.css" />
+    <link rel="stylesheet" href="/styles/productos.css" />
+    <link rel="stylesheet" href="/styles/normalize.css" />
+    <link rel="stylesheet" href="/styles/chat.css" />
+    <link rel="stylesheet" href="/styles/bannerMegalateral.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" />
+  </head>
+  <body>
     <script src="https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.min.js"></script>
     <script src="../socket.io/socket.io.js"></script>
     <script src="/scripts/publicScript.js"></script>
 
-
     <%- include( './partials/navBar' ) %>
     <main class="content-main">
-        <div class="sidebar__aside">
-            <%- include( './partials/bannerMegalateral' ) %>
+      <div class="sidebar__aside">
+        <%- include( './partials/bannerMegalateral' ) %>
+      </div>
+      <div class="sidebar__main">
+        <div
+          data-chatProfile="individual"
+          data-destinatario="<%- destinatario %>"
+        >
+          Chat individual con <%- destinatario %>
         </div>
-        <div class="sidebar__main">
-            <div data-chatProfile="individual" data-destinatario="<%- destinatario %>">Chat individual con <%- destinatario %></div>
-            <%- include( './partials/chat' ) %>
-        </div>
+        <%- include( './partials/chat' ) %>
+      </div>
     </main>
-</body>
+  </body>
 </html>

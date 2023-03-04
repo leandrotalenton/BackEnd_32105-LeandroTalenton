@@ -1,11 +1,22 @@
-
 <div class="chatContainer">
-    <ul class="chatWindow">
-        <li>Cargando mensajes...</li>
-    </ul>
-    <div class="chatInput">
-        <textarea id="chat_mensaje" placeholder="mensaje" type="text"></textarea>
-        <button onclick="return enviarMensaje()" id="enviar" data-autor-username="<%- nombre %>" data-autor-pic="<%- pic %>">Enviar</button>
-        <input id="chat_destinatario" placeholder="destinatario" type="text" value="">
-    </div>
+  <ul class="chatWindow">
+    <li>Cargando mensajes...</li>
+  </ul>
+  <div class="chatInput">
+    <textarea id="chat_mensaje" placeholder="mensaje" type="text"></textarea>
+    <button
+      onclick="return enviarMensaje()"
+      id="enviar"
+      data-autor-username="<%- nombre %>"
+      data-autor-pic="<%- pic %>"
+    >
+      Enviar
+    </button>
+    <input
+      id="chat_destinatario"
+      placeholder="destinatario"
+      type="text"
+      value=""
+    />
+  </div>
 </div>

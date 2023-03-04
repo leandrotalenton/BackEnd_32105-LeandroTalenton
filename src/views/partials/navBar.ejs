@@ -1,41 +1,47 @@
 <header>
-    <div>
-        <a href="/"><img src="<%- pic %>" alt="foto de perfil"></a>
-        <p>Bienvenido <br><b id="<%- id %>"><%- nombre %></b></p>
-    </div>
-    <div class="position">
-        <input type="checkbox" class="position__checkbox" id="toggle">
-        <label class="position__button" for="toggle" >
-            <p>MENU</p>
-            <svg width="16" height="10" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 0.5L4 3.5L7 0.5" stroke="#151515"/>
-            </svg>
-        </label>
-        <ul class="position__menu" >
-            <li>
-                <a href="/">
-                    <span>Home</span>
-                </a>
-            </li>
-            <li>
-                <a href="/productos">
-                    <span>Productos</span>
-                </a>
-            </li>
-            <li>
-                <a href="/carrito">
-                    <span>Carrito</span>
-                </a>
-            </li>
-            <li>
-                <a href="/usuario">
-                    <span>About me</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <a href="/logout">
-        <button class="logout">Logout</button>
-    </a>
+  <div>
+    <a href="/"><img src="<%- pic %>" alt="foto de perfil" /></a>
+    <p>Bienvenido <br /><b id="<%- id %>"><%- nombre %></b></p>
+  </div>
+  <div class="position">
+    <input type="checkbox" class="position__checkbox" id="toggle" />
+    <label class="position__button" for="toggle">
+      <p>MENU</p>
+      <svg
+        width="16"
+        height="10"
+        viewBox="0 0 8 5"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M1 0.5L4 3.5L7 0.5" stroke="#151515" />
+      </svg>
+    </label>
+    <ul class="position__menu">
+      <li>
+        <a href="/">
+          <span>Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="/productos">
+          <span>Productos</span>
+        </a>
+      </li>
+      <li>
+        <a href="/carrito">
+          <span>Carrito</span>
+        </a>
+      </li>
+      <li>
+        <a href="/usuario">
+          <span>About me</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <a href="/logout">
+    <button class="logout">Logout</button>
+  </a>
 </header>
 <div class="headderPlaceholder"></div>

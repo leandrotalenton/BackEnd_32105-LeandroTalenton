@@ -1,7 +1,7 @@
-.card-container{
-    width: calc(100% - 4rem);
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(25.6rem,1fr));
-    gap: 2rem;
-    /* justify-items: center; */
+.card-container {
+  width: calc(100% - 4rem);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25.6rem, 1fr));
+  gap: 2rem;
+  /* justify-items: center; */
 }

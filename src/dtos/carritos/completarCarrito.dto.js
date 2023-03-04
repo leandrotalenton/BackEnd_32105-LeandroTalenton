@@ -26,8 +26,8 @@ export class CompletarCarritoDTO {
     this.arrayProdData.sort((a, b) => {
       const prodA = a.title.toUpperCase();
       const prodB = b.title.toUpperCase();
-      if (prodA < prodB) return -1
-      if (prodA > prodB) return 1
+      if (prodA < prodB) return -1;
+      if (prodA > prodB) return 1;
       return 0;
     });
     this.subTotal = this.arrayProdData.reduce(

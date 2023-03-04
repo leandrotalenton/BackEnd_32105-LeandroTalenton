@@ -1,17 +1,17 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
 }
 
 a {
-    color: inherit; /* blue colors for links too */
-    text-decoration: none; /* no underline */
+  color: inherit; /* blue colors for links too */
+  text-decoration: none; /* no underline */
 }
 
-:root{
-    font-size: 62.5%;
+:root {
+  font-size: 62.5%;
 }

@@ -6,7 +6,7 @@ class DAOOrdenesMongo extends ContainerMongoDb {
       usuarioId: { type: String, required: true },
       carritoId: { type: String, required: true },
       timeStamp: { type: String, required: true },
-      estado: {type: String, required: true, default: "generada"},
+      estado: { type: String, required: true, default: "generada" },
     });
   }
 }

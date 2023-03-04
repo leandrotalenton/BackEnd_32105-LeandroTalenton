@@ -137,8 +137,7 @@ function renderProductos(data, formato) {
             </td>
           </tr>    
         `;
-      }
-      else {
+      } else {
         return `
         <article class="card">
           <figure>
@@ -169,7 +168,8 @@ function renderProductos(data, formato) {
             </div>
           </div>
         </article>
-        `}
+        `;
+      }
     })
     .join(" ");
 

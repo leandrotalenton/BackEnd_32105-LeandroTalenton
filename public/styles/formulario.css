@@ -1,12 +1,12 @@
-.formulario{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 3.0rem;
+.formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
 }
 
-.formulario .form{
-    width: 30.0rem;
-    display: flex;
-    flex-direction: column;
+.formulario .form {
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
 }

@@ -1,85 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Logout</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/carrito.css">
-    <link rel="stylesheet" href="/styles/navBar.css">
-    <link rel="stylesheet" href="/styles/normalize.css">
-    <link rel="stylesheet" href="/styles/bannerMegalateral.css">
-    <link rel="stylesheet" href="/styles/layout.css">
-    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/carrito.css" />
+    <link rel="stylesheet" href="/styles/navBar.css" />
+    <link rel="stylesheet" href="/styles/normalize.css" />
+    <link rel="stylesheet" href="/styles/bannerMegalateral.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" />
+  </head>
+  <body>
     <%- include( './partials/navBar' ) %>
     <main class="content-main">
-        <div class="sidebar__aside">
-            <%- include( './partials/bannerMegalateral' ) %>
+      <div class="sidebar__aside">
+        <%- include( './partials/bannerMegalateral' ) %>
+      </div>
+      <div class="sidebar__main">
+        <h3>Productos en el carrito activo:</h3>
+        <br />
+        <div class="carritoGrid">
+          <h4>Thumbnail</h4>
+          <h4>Nombre</h4>
+          <h4>Precio</h4>
+          <h4>Cantidad</h4>
+          <h4>Subtotal</h4>
+          <h4>Remover</h4>
+          <% arrayProdData.forEach((producto, i)=>{ %>
+          <img src="<%= producto.thumbnail %>" />
+          <div><%= producto.title %></div>
+          <div><%= producto.price %></div>
+          <div><%= producto.cantidad %></div>
+          <div><%= producto.subtotal %></div>
+          <div>
+            <input id="<%= 'q-'+producto.prodId %>" type="number" value="1" />
+            <button class="borrar" data-id="<%= producto.prodId %>">X</button>
+          </div>
+          <% }) %>
+          <h4></h4>
+          <h4></h4>
+          <h4></h4>
+          <h4>Precio Total:</h4>
+          <h4><%= subTotal %></h4>
+          <h4><button id="comprar">comprar</button></h4>
         </div>
-        <div class="sidebar__main">
-            <h3>Productos en el carrito activo:</h3>
-            <br>
-            <div class="carritoGrid">
-                <h4>Thumbnail</h4>
-                <h4>Nombre</h4>
-                <h4>Precio</h4>
-                <h4>Cantidad</h4>
-                <h4>Subtotal</h4>
-                <h4>Remover</h4>
-                <% arrayProdData.forEach((producto, i)=>{ %>
-                    <img src="<%= producto.thumbnail %>">
-                    <div>
-                        <%= producto.title %>
-                    </div>
-                    <div>
-                        <%= producto.price %>
-                    </div>
-                    <div>
-                        <%= producto.cantidad %>
-                    </div>
-                    <div>
-                        <%= producto.subtotal %>
-                    </div>
-                    <div>
-                        <input id="<%= 'q-'+producto.prodId %>" type="number" value="1" />
-                        <button class="borrar" data-id="<%= producto.prodId %>">X</button>
-                    </div>
-                <% }) %>
-                <h4> </h4>
-                <h4> </h4>
-                <h4> </h4>
-                <h4>Precio Total: </h4>
-                <h4><%= subTotal %></h4>
-                <h4><button id="comprar">comprar</button></h4>
-            </div>
-        </div>
+      </div>
     </main>
-    
+
     <script>
-        document.querySelectorAll(".borrar")
-            .forEach(button => button.addEventListener('click', async (e)=>{
-                try{
-                    const dataId = e.currentTarget.getAttribute("data-id")
-                    const cantidad = document.querySelector(`#q-${dataId}`).value
-                    await fetch(`/carrito/${dataId}/productos?cantidad=${cantidad}`, {method: "DELETE"})
-                    location.reload()
-                } catch (e) {
-                    logger.error(e)
-                }
-            }))
-        document.querySelector("#comprar").addEventListener("click", async ()=>{
-                try{
-                    await fetch(`/carrito`, {method: "PUT"})
-                    window.location.href = "/carrito/compra"
-                } catch (e) {
-                    logger.error(e)
-                }
-            })
+      document.querySelectorAll(".borrar").forEach((button) =>
+        button.addEventListener("click", async (e) => {
+          try {
+            const dataId = e.currentTarget.getAttribute("data-id");
+            const cantidad = document.querySelector(`#q-${dataId}`).value;
+            await fetch(`/carrito/${dataId}/productos?cantidad=${cantidad}`, {
+              method: "DELETE",
+            });
+            location.reload();
+          } catch (e) {
+            logger.error(e);
+          }
+        })
+      );
+      document.querySelector("#comprar").addEventListener("click", async () => {
+        try {
+          await fetch(`/carrito`, { method: "PUT" });
+          window.location.href = "/carrito/compra";
+        } catch (e) {
+          logger.error(e);
+        }
+      });
     </script>
-</body>
+  </body>
 </html>

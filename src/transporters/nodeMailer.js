@@ -1,29 +1,29 @@
-import { createTransport } from 'nodemailer';
-import logger from '../loggers/configLog4JS.js';
+import { createTransport } from "nodemailer";
+import logger from "../loggers/configLog4JS.js";
 
-export async function sendMail(to, subject, html){
-    const transporter = createTransport({
-        host: 'smtp.ethereal.email',
-        port: 587,
-        auth: {
-            user: 'cynthia.ferry@ethereal.email',
-            pass: 'TcBzmB8ky3GQCvUcM5'
-        }
-    });
+export async function sendMail(to, subject, html) {
+  const transporter = createTransport({
+    host: "smtp.ethereal.email",
+    port: 587,
+    auth: {
+      user: "cynthia.ferry@ethereal.email",
+      pass: "TcBzmB8ky3GQCvUcM5",
+    },
+  });
 
-    const opts = {
-        from: "cynthia.ferry@ethereal.email",
-        to,
-        subject,
-        html
-    }
+  const opts = {
+    from: "cynthia.ferry@ethereal.email",
+    to,
+    subject,
+    html,
+  };
 
-    try{
-        const info = await transporter.sendMail(opts)
-        console.log(info)
-    } catch(e) {
-        logger.error(e)
-    }
+  try {
+    const info = await transporter.sendMail(opts);
+    console.log(info);
+  } catch (e) {
+    logger.error(e);
+  }
 }
 
 // sendMail(

@@ -1,49 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Logout</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/normalize.css">
-    <link rel="stylesheet" href="/styles/navBar.css">
-    <link rel="stylesheet" href="/styles/bannerMegalateral.css">
-    <link rel="stylesheet" href="/styles/layout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/normalize.css" />
+    <link rel="stylesheet" href="/styles/navBar.css" />
+    <link rel="stylesheet" href="/styles/bannerMegalateral.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
     <!-- <link rel="stylesheet" href="/styles/sobreMi.css"> -->
-    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
-</head>
-<body>
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" />
+  </head>
+  <body>
     <%- include( './partials/navBar' ) %>
     <main class="content-main">
-        <div class="sidebar__aside">
-            <%- include( './partials/bannerMegalateral' ) %>
+      <div class="sidebar__aside">
+        <%- include( './partials/bannerMegalateral' ) %>
+      </div>
+      <div class="sidebar__main">
+        <div class="userData">
+          <div>nombre: <span><%= nombre %></span></div>
+          <div>
+            email:
+            <span><%= email %></span>
+          </div>
+          <div>
+            edad:
+            <span><%= edad %></span>
+          </div>
+          <div>
+            tel:
+            <span><%= tel %></span>
+          </div>
+          <div>
+            direccion:
+            <span><%= direccion %></span>
+          </div>
+          <form
+            action="/cambiarfoto"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <label for="signup__pic"
+              ><span>Actualizar foto de perfil: </span></label
+            >
+            <input
+              id="signup__pic"
+              type="file"
+              name="uploaded_file"
+              placeholder="pic"
+            />
+            <input type="submit" value="Actualizar" />
+          </form>
         </div>
-        <div class="sidebar__main">
-            <div class="userData">
-                <div>nombre:
-                    <span><%= nombre %></span></div>
-                <div>email: 
-                    <span><%= email %></span>
-                </div>
-                <div>edad: 
-                    <span><%= edad %></span>
-                </div>
-                <div>tel: 
-                    <span><%= tel %></span>
-                </div>
-                <div>direccion: 
-                    <span><%= direccion %></span>
-                </div>
-                <form action="/cambiarfoto" method="POST" enctype="multipart/form-data">
-                    <label for="signup__pic"><span>Actualizar foto de perfil: </span></label>
-                    <input id="signup__pic" type="file" name="uploaded_file" placeholder="pic">
-                    <input type="submit" value="Actualizar">
-                </form>
-            </div>
-        </div>
+      </div>
     </main>
-</body>
+  </body>
 </html>

@@ -33,15 +33,13 @@ export async function addProductTo(idCarrito, prodToAdd) {
 export async function deleteProductFrom(idCarrito, idProd, cantidadABorrar) {
   try {
     const carrito = await carritosDAO.readById(idCarrito);
-    const producto = carrito.productos.find(
-      (prod) => prod.prodId === idProd
-    );
-    if(Number(cantidadABorrar) >= Number(producto.cantidad)){
+    const producto = carrito.productos.find((prod) => prod.prodId === idProd);
+    if (Number(cantidadABorrar) >= Number(producto.cantidad)) {
       carrito.productos = carrito.productos.filter(
         (prod) => prod.prodId !== idProd
-      )
+      );
     } else {
-      producto.cantidad -= Number(cantidadABorrar)
+      producto.cantidad -= Number(cantidadABorrar);
     }
     await carritosDAO.updateById(idCarrito, carrito);
   } catch (e) {
@@ -59,8 +57,8 @@ export async function comprar(idCarrito, idUser, validacion) {
         usuarioId: idUser,
         carritoId: idCarrito,
         timeStamp: new Date().toLocaleString(),
-        estado: "generada"
-      })
+        estado: "generada",
+      });
       await carritosDAO.create({
         usuarioId: idUser,
         carritoActivo: true,

@@ -1,7 +1,7 @@
-.carritoGrid{
-    display: grid;
-    grid-template-columns: repeat(6, auto);
-    align-items: center;
-    justify-items: center;
-    max-width: 70.0rem;
+.carritoGrid {
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  align-items: center;
+  justify-items: center;
+  max-width: 70rem;
 }
