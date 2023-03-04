@@ -83,3 +83,16 @@
 [2023-03-03T15:33:41.097] [WARN] default - request fallida: GET, a la URL: /favicon.ico
 [2023-03-03T15:33:58.333] [WARN] default - request fallida: GET, a la URL: /favicon.ico
 [2023-03-03T15:34:00.582] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-03T21:15:26.211] [WARN] default - request fallida: GET, a la URL: /productos/styles/bannerMegalateral.css
+[2023-03-03T21:15:27.361] [WARN] default - request fallida: GET, a la URL: /productos/styles/layout.css
+[2023-03-03T21:16:11.344] [WARN] default - request fallida: GET, a la URL: /productos/styles/bannerMegalateral.css
+[2023-03-03T21:16:11.352] [WARN] default - request fallida: GET, a la URL: /productos/styles/layout.css
+[2023-03-03T21:19:40.803] [WARN] default - request fallida: GET, a la URL: /productos/styles/layout.css
+[2023-03-03T21:19:40.805] [WARN] default - request fallida: GET, a la URL: /productos/styles/bannerMegalateral.css
+[2023-03-03T21:19:59.250] [WARN] default - request fallida: GET, a la URL: /productos/styles/layout.css
+[2023-03-03T21:19:59.255] [WARN] default - request fallida: GET, a la URL: /productos/styles/bannerMegalateral.css
+[2023-03-03T22:31:24.998] [WARN] default - request fallida: GET, a la URL: /images/stock/photo-1606107557195-0e29a4b5b4aa.jpg
+[2023-03-03T22:46:29.195] [WARN] default - request fallida: GET, a la URL: /images/stock/photo-1606107557195-0e29a4b5b4aa.jpg
+[2023-03-03T22:48:03.026] [WARN] default - request fallida: GET, a la URL: /images/stock/photo-1606107557195-0e29a4b5b4aa.jpg
+[2023-03-03T22:50:03.427] [WARN] default - request fallida: GET, a la URL: /images/stock/photo-1606107557195-0e29a4b5b4aa.jpg
+[2023-03-03T22:52:14.312] [WARN] default - request fallida: GET, a la URL: /images/stock/photo-1606107557195-0e29a4b5b4aa.jpg

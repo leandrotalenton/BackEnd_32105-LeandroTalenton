@@ -12,36 +12,45 @@
     <link rel="stylesheet" href="./styles/formulario.css">
     <link rel="stylesheet" href="./styles/productos.css">
     <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="./styles/bannerMegalateral.css">
+    <link rel="stylesheet" href="./styles/layout.css">
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
 </head>
 <body>
     <%- include( './partials/navBar' ) %>
-    <div class="productos">
-        <div>
-            <input id="categoria" type="text" placeholder="categoria">
-            <button id="filtrar">Filtrar</button>
+    <main class="content-main">
+        <div class="sidebar__aside">
+            <%- include( './partials/bannerMegalateral' ) %>
         </div>
-        <br>
-        <table>
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Category</th>
-                    <th>Price</th>
-                    <th>Thumbnail</th>
-                    <th>Cantidad</th>
-                    <th>Agregar producto</th>
-                </tr>
-            </thead>
-            <tbody id="productos--tbody">
-            </tbody>
-        </table>
-    </div>
+        <div class="sidebar__main">
+            <div class="productos">
+                <div>
+                    <input id="categoria" type="text" placeholder="categoria">
+                    <button id="filtrar">Filtrar</button>
+                </div>
+                <br>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Thumbnail</th>
+                            <th>Cantidad</th>
+                            <th>Agregar producto</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productos--tbody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
 
     <script src="./scripts/publicScript.js"></script>
     <script>
         const arrayProdData = JSON.parse(`<%- JSON.stringify(arrayProdData) %>`)
-        renderProductos(arrayProdData)
+        renderProductos(arrayProdData, "lista")
         document.querySelector("#filtrar").addEventListener('click', (e)=>{
             e.preventDefault()
             const filterValue = document.querySelector("#categoria").value

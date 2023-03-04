@@ -1,0 +1,20 @@
+
+.megalateral {
+    display: none;
+    width: 250px;
+    background: repeating-linear-gradient(45deg,rgba(255,255,255,.1),rgba(255,255,255,.1),rgba(255,255,255,.1),rgba(255,255,255,.1) 4px,rgba(0,0,0,.15) 6px);
+    height: 100%;
+    min-height: calc(100vh - 180px);
+}
+@media (min-width: 1280px){
+    .megalateral {
+        display: block;
+        position: relative;
+        /* position: sticky; */
+        color: #00000000;
+    }
+    .imagen-pegajosa{
+        position: sticky;
+        top: 113.6px;
+    }
+}

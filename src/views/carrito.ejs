@@ -11,45 +11,54 @@
     <link rel="stylesheet" href="./styles/carrito.css">
     <link rel="stylesheet" href="./styles/navBar.css">
     <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="./styles/bannerMegalateral.css">
+    <link rel="stylesheet" href="./styles/layout.css">
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
 </head>
 <body>
     <%- include( './partials/navBar' ) %>
-    <h3>Productos en el carrito activo:</h3>
-    <br>
-    <div class="carritoGrid">
-        <h4>Thumbnail</h4>
-        <h4>Nombre</h4>
-        <h4>Precio</h4>
-        <h4>Cantidad</h4>
-        <h4>Subtotal</h4>
-        <h4>Remover</h4>
-        <% arrayProdData.forEach((producto, i)=>{ %>
-            <img src="<%= producto.thumbnail %>">
-            <div>
-                <%= producto.title %>
+    <main class="content-main">
+        <div class="sidebar__aside">
+            <%- include( './partials/bannerMegalateral' ) %>
+        </div>
+        <div class="sidebar__main">
+            <h3>Productos en el carrito activo:</h3>
+            <br>
+            <div class="carritoGrid">
+                <h4>Thumbnail</h4>
+                <h4>Nombre</h4>
+                <h4>Precio</h4>
+                <h4>Cantidad</h4>
+                <h4>Subtotal</h4>
+                <h4>Remover</h4>
+                <% arrayProdData.forEach((producto, i)=>{ %>
+                    <img src="<%= producto.thumbnail %>">
+                    <div>
+                        <%= producto.title %>
+                    </div>
+                    <div>
+                        <%= producto.price %>
+                    </div>
+                    <div>
+                        <%= producto.cantidad %>
+                    </div>
+                    <div>
+                        <%= producto.subtotal %>
+                    </div>
+                    <div>
+                        <input id="<%= 'q-'+producto.prodId %>" type="number" value="1" />
+                        <button class="borrar" data-id="<%= producto.prodId %>">X</button>
+                    </div>
+                <% }) %>
+                <h4> </h4>
+                <h4> </h4>
+                <h4> </h4>
+                <h4>Precio Total: </h4>
+                <h4><%= subTotal %></h4>
+                <h4><button id="comprar">comprar</button></h4>
             </div>
-            <div>
-                <%= producto.price %>
-            </div>
-            <div>
-                <%= producto.cantidad %>
-            </div>
-            <div>
-                <%= producto.subtotal %>
-            </div>
-            <div>
-                <input id="<%= 'q-'+producto.prodId %>" type="number" value="1" />
-                <button class="borrar" data-id="<%= producto.prodId %>">X</button>
-            </div>
-        <% }) %>
-        <h4> </h4>
-        <h4> </h4>
-        <h4> </h4>
-        <h4>Precio Total: </h4>
-        <h4><%= subTotal %></h4>
-        <h4><button id="comprar">comprar</button></h4>
-    </div>
+        </div>
+    </main>
     
     <script>
         document.querySelectorAll(".borrar")

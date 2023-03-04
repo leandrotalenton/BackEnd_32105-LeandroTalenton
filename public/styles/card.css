@@ -1,0 +1,134 @@
+.card {
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1);;
+    width: 15rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px;
+    transition: 0.25s;
+}
+.card:hover {
+    opacity: 95%;
+}
+.card>figure{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+.card>figure>a{
+    width: 100%;
+}
+.card>figure .card-img{
+    height: 130px;
+    object-fit: contain;
+    width: 100%;
+    display: block;
+    filter: drop-shadow(2px 4px 8px gray);
+}
+.card>figure .background-blur{
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: blur(8px);
+    top: 0;
+}
+.card .card-body{
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.5rem;
+}
+.card .card-title{
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.75rem;
+    margin-bottom: 0.5rem;
+
+    display: -webkit-box;
+    max-width: 200px;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.card .card-description{
+    display: -webkit-box;
+    max-width: 200px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    margin-bottom: 10px;
+    height: 60px;
+}
+.card-numbers{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom:5px;
+}
+
+.card-amount-text{
+    color: rgb(164, 164, 164);
+}
+
+.card-amount-number{
+    width: 35px;
+    text-align: center;
+    border: none;
+}
+.card-amount-number:focus{
+    border: none;
+    outline: none;
+}
+
+.card-amount-number::-webkit-inner-spin-button {
+    opacity: 1;
+    background-color: red;
+    color: red;
+}
+
+.card .card-actions{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    align-content: flex-end;
+    gap: 0.5rem;
+    width: 100%;
+    gap: 0.5rem;
+}
+
+.card-actions .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    font-size: .875rem;
+    line-height: 20px;
+    width: fit-content;
+    padding: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+}
+
+.card-actions .badge.badge-comprar{
+    background-color: hsl(229.09 95.652% 63.922%);
+    border-color: hsl(229.09 95.652% 63.922%);
+    color: hsl(229.09 100% 92.784%);
+    padding: 1rem;
+    font-weight: 600;
+    transition: 0.25s;
+}
+.card-actions .badge.badge-comprar:hover{
+    background-color: hsl(229, 89%, 53%);
+    border-color: hsl(229, 89%, 53%);
+    cursor: pointer;
+}

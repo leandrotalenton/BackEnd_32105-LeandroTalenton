@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="./styles/productos.css">
     <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="./styles/chat.css">
+    <link rel="stylesheet" href="./styles/bannerMegalateral.css">
+    <link rel="stylesheet" href="./styles/layout.css">
+    <link rel="stylesheet" href="./styles/card.css">
+    <link rel="stylesheet" href="./styles/cardContainer.css">
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
 </head>
 <body>
@@ -22,27 +26,24 @@
 
 
     <%- include( './partials/navBar' ) %>
-    <% if(rank){ %>
-        <%- include( './partials/formulario' ) %>
-    <% } %>
-    <div class="productos">
-        <table>
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Category</th>
-                    <th>Price</th>
-                    <th>Thumbnail</th>
-                    <th>Cantidad</th>
-                    <th>Agregar producto</th>
-                </tr>
-            </thead>
-            <tbody id="productos--tbody">
-            </tbody>
-        </table>
-    </div>
-    <div data-chatProfile="general">Chat general</div>
-    <%- include( './partials/chat' ) %>
+    <main class="content-main">
+        <div class="sidebar__aside">
+            <%- include( './partials/bannerMegalateral' ) %>
+        </div>
+        <div class="sidebar__main">
+            <% if(rank){ %>
+                <%- include( './partials/formulario' ) %>
+            <% } %>
+            <div class="productos">
+                <h2>Productos</h2>
+                <div class="card-container" id="productos--tbody">
+                    Cargando productos...
+                </div>
+            </div>
+            <div data-chatProfile="general">Chat general</div>
+            <%- include( './partials/chat' ) %>
+        </div>
+    </main>
 
 
 </body>

@@ -11,6 +11,7 @@ header button {
 header img {
 width: 70px;
 height: 70px;
+border-radius: 5px;
 }
 
 header{
@@ -34,7 +35,7 @@ header{
 }
 
 .headderPlaceholder{
-    margin-top: 9rem;
+    margin-top: 114px;
 }
 
 header>div:first-child{
@@ -43,7 +44,7 @@ header>div:first-child{
 }
 
 header>div:first-child>p{
-    padding-left: 0.5rem;
+    padding-left: 15px;
     font-size: 1rem;
     line-height: 0.9rem;
 }
@@ -156,4 +157,15 @@ header>div:last-child{
 .position__menu>li:hover, .position__menu>li a:hover{
     background: #FFF6E6;
     color: #FFA500;
+}
+
+.logout{
+    padding: 4px 13px;
+    background-color: hsl(229.09 95.652% 63.922%);
+    border-radius: 10px;
+    color: hsl(229.09 100% 92.784%);
+    transition: 0.25s;
+}
+.logout:hover{
+    background-color: hsl(229, 89%, 53%);
 }
