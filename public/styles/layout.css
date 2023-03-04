@@ -1,13 +1,13 @@
 .content-main{
     display: flex;
     flex-direction: row-reverse;
-    max-width: 1328px;
+    /* max-width: 132.8rem; */
     margin-left: auto;
     margin-right: auto;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    background-image: radial-gradient(hsla(233.33 27.273% 12.941%/.2) 0.5px,hsla(0 0% 90%/1) 0.5px);
-    background-size: 4px 4px;
+    padding-top: 3.0rem;
+    padding-bottom: 3.0rem;
+    /* background-image: radial-gradient(hsla(233.33 27.273% 12.941%/.2) .05rem,hsla(0 0% 90%/1) .05rem);
+    background-size: .4rem .4rem; */
 }
 
 .sidebar__aside{

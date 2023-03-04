@@ -1,12 +1,12 @@
 
 .megalateral {
     display: none;
-    width: 250px;
-    background: repeating-linear-gradient(45deg,rgba(255,255,255,.1),rgba(255,255,255,.1),rgba(255,255,255,.1),rgba(255,255,255,.1) 4px,rgba(0,0,0,.15) 6px);
+    width: 25.0rem;
+    background: repeating-linear-gradient(45deg,rgba(255,255,255,.1),rgba(255,255,255,.1),rgba(255,255,255,.1),rgba(255,255,255,.1) 4rem,rgba(0,0,0,.15) 6rem);
     height: 100%;
-    min-height: calc(100vh - 180px);
+    min-height: calc(100vh - 18.0rem);
 }
-@media (min-width: 1280px){
+@media (min-width: 100rem){
     .megalateral {
         display: block;
         position: relative;
@@ -15,7 +15,7 @@
     }
     .imagen-pegajosa{
         position: sticky;
-        top: 113.6px;
+        top: 11.36rem;
     }
 }
 

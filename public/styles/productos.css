@@ -7,7 +7,7 @@
 
 .productos table {
 border-collapse: separate;
-border-spacing: 0px;
+border-spacing: 0rem;
 }
 
 .productos thead{
@@ -15,12 +15,12 @@ border-spacing: 0px;
 }
 
 .productos td,.productos th{
-    min-width: 100px;
-    border: 1px solid black;
+    min-width: 10.0rem;
+    border: .1rem solid black;
     text-align: center;
 }
 
 .productos img {
-    height: 75px;
-    width: 75px;
+    height: 7.5rem;
+    width: 7.5rem;
 }

@@ -8,15 +8,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/navBar.css">
-    <link rel="stylesheet" href="./styles/formulario.css">
-    <link rel="stylesheet" href="./styles/productos.css">
-    <link rel="stylesheet" href="./styles/normalize.css">
-    <link rel="stylesheet" href="./styles/chat.css">
-    <link rel="stylesheet" href="./styles/bannerMegalateral.css">
-    <link rel="stylesheet" href="./styles/layout.css">
-    <link rel="stylesheet" href="./styles/card.css">
-    <link rel="stylesheet" href="./styles/cardContainer.css">
+    <link rel="stylesheet" href="/styles/navBar.css">
+    <link rel="stylesheet" href="/styles/formulario.css">
+    <link rel="stylesheet" href="/styles/productos.css">
+    <link rel="stylesheet" href="/styles/normalize.css">
+    <link rel="stylesheet" href="/styles/chat.css">
+    <link rel="stylesheet" href="/styles/bannerMegalateral.css">
+    <link rel="stylesheet" href="/styles/layout.css">
+    <link rel="stylesheet" href="/styles/card.css">
+    <link rel="stylesheet" href="/styles/cardContainer.css">
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
 </head>
 <body>
@@ -35,7 +35,6 @@
                 <%- include( './partials/formulario' ) %>
             <% } %>
             <div class="productos">
-                <h2>Productos</h2>
                 <div class="card-container" id="productos--tbody">
                     Cargando productos...
                 </div>
@@ -43,6 +42,7 @@
             <div data-chatProfile="general">Chat general</div>
             <%- include( './partials/chat' ) %>
         </div>
+        <a href="/chat/123" style="position: fixed; bottom: -20px; right: -20px;"><span>chatear con el admin</span></a>
     </main>
 
 

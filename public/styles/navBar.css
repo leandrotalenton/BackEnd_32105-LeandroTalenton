@@ -9,33 +9,35 @@ header button {
 }
 
 header img {
-width: 70px;
-height: 70px;
-border-radius: 5px;
+width: 5rem;
+height: 5rem;
+border-radius: .5rem;
+object-fit: cover;
 }
 
 header{
     display: flex;
-    gap: 56px;
+    gap: 1rem;
     position: fixed;
     top: 0;
     width: 100%;
-    height: 112px;
-    padding: 30px 48px;
+    height: 9.2rem;
+    padding: 0 2rem;
     background-color: hsl(0, 0%, 100%);
     align-items: center;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 1.5rem;
+    line-height: 2.4rem;
     color: #000000;
-    box-shadow: 0 3px 9px 2px rgba(0, 0, 0, 0.25);
+    /* box-shadow: 0 0.3rem 0.9rem 0.2rem rgb(0 0 0 / 25%); */
+    border-bottom: 1px solid #e4e4e4;
     z-index: 100;
 }
 
 .headderPlaceholder{
-    margin-top: 114px;
+    margin-top: 9.2rem;
 }
 
 header>div:first-child{
@@ -44,15 +46,15 @@ header>div:first-child{
 }
 
 header>div:first-child>p{
-    padding-left: 15px;
-    font-size: 16px;
-    line-height: 15px;
+    padding-left: 1rem;
+    font-size: 1.3rem;
+    line-height: 1.3rem;
 }
 
 header>div:first-child>p>b{
     font-weight: 700;
-    font-size: 24px;
-    line-height: 13px;
+    font-size: 2rem;
+    line-height: 2rem;
 }
 
 header>div:nth-child(2){
@@ -62,13 +64,39 @@ header>div:nth-child(2){
 }
 
 header>div:nth-child(2)>svg{
-    padding-left: 6px;
-    height: 6px;
-    width: 17px;
+    padding-left: .6rem;
+    height: .6rem;
+    width: 1.7rem;
 }
 
+@media (min-width: 33rem){
+    header{
+        gap: 5.6rem;
+        font-size: 2rem;
+    }
+
+    header img {
+        width: 7.0rem;
+        height: 7.0rem;
+        border-radius: .5rem;
+        object-fit: cover;
+    }
+
+    header>div:first-child>p{
+        padding-left: 1.5rem;
+        font-size: 1.6rem;
+        line-height: 1.5rem;
+    }
+
+    header>div:first-child>p>b {
+        font-size: 2.4rem;
+        line-height: 2.3rem;
+    }
+}
+
+
 header>div:last-child{
-    margin-left: 48px;
+    margin-left: 4.8rem;
 }
 
 .position{
@@ -82,7 +110,7 @@ header>div:last-child{
 .position__button{
     display: flex;
     align-items: center;
-    gap: 7px;
+    gap: .7rem;
 }
 
 .position__button:hover{
@@ -92,24 +120,24 @@ header>div:last-child{
 .position__button>{
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: .8rem;
 }
 
 .position__menu{
     max-height: 0;
     overflow: hidden;
     position: absolute;
-    width: 128px;
+    width: 12.8rem;
     display: grid;
     grid-template-rows: repeat(3, auto);
     align-items: center;
-    top: 40px;
+    top: 4.0rem;
     transition: max-height 0.1s linear 0s;
 }
 
 .position__checkbox:checked ~ .position__menu{
-    max-height: calc(4*33px);
-    box-shadow: 0 3px 9px 2px rgba(0, 0, 0, 0.25);
+    max-height: calc(4*3.3rem);
+    box-shadow: 0 .3rem .9rem .2rem rgba(0, 0, 0, 0.25);
     transition: max-height 0.1s linear 0s;
 }
 
@@ -126,18 +154,18 @@ header>div:last-child{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 16px;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
     color: #000000;
     background: #FFFFFF;
-    border-top: 1.6px solid #E6E6E6;
+    border-top: .16rem solid #E6E6E6;
 }
 
 .position__menu>li a{
     display: block;
     width: 90%;
     height: 100%;
-    padding: 8px 0;
+    padding: .8rem 0;
 }
 
 .position__menu a:hover{
@@ -147,7 +175,7 @@ header>div:last-child{
 }
 
 .position__menu>li a span{
-    padding: 0 8px;
+    padding: 0 .8rem;
 }
 
 .position__menu>li:first-child{
@@ -160,9 +188,9 @@ header>div:last-child{
 }
 
 .logout{
-    padding: 4px 16px;
+    padding: .4rem 1.6rem;
     background-color: hsl(229.09 95.652% 63.922%);
-    border-radius: 4px;
+    border-radius: .4rem;
     color: hsl(229.09 100% 92.784%);
     transition: 0.25s;
 }

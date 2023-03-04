@@ -51,7 +51,7 @@ function renderChat(data) {
       return `
             <li class="messageContainer ${ownOrThird}">
                 <a href="/chat/${msg.autor.username}">
-                    <img class="senderImg" src="${msg.autor.pic}">
+                    <img class="senderImg" src="${msg.autor.pic}" loading="lazy" >
                 </a>
                 <div class="message">
                     <a class="sender" href="/chat/${msg.autor.username}">
@@ -163,7 +163,7 @@ function renderProductos(data, formato) {
             </div>
             <div class="card-actions">
               <a href="/productos?category=${producto.category}">
-                <span class="badge">${producto.category}</span>
+                <span class="badge badge-category">${producto.category}</span>
               </a>
               <button class="badge badge-comprar prodBtn" data-id="${producto._id}" >COMPRAR</button>
             </div>

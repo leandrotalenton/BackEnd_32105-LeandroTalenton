@@ -102,3 +102,19 @@
   responseCode: 535,
   command: 'AUTH PLAIN'
 }
+[2023-03-04T14:47:43.870] [ERROR] default - Error: Invalid login: 535 Authentication failed
+    at SMTPConnection._formatError (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:790:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:1548:34)
+    at SMTPConnection.<anonymous> (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:546:26)
+    at SMTPConnection._processResponse (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:953:20)
+    at SMTPConnection._onData (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:755:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:193:44)
+    at TLSSocket.emit (node:events:390:28)
+    at addChunk (node:internal/streams/readable:315:12)
+    at readableAddChunk (node:internal/streams/readable:289:9)
+    at TLSSocket.Readable.push (node:internal/streams/readable:228:10) {
+  code: 'EAUTH',
+  response: '535 Authentication failed',
+  responseCode: 535,
+  command: 'AUTH PLAIN'
+}

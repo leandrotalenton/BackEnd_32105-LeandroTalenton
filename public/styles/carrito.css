@@ -3,5 +3,5 @@
     grid-template-columns: repeat(6, auto);
     align-items: center;
     justify-items: center;
-    max-width: 700px;
+    max-width: 70.0rem;
 }

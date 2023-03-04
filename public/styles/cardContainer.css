@@ -1,6 +1,7 @@
 .card-container{
-    width: 100%;
+    width: calc(100% - 4rem);
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(256px,1fr));
-    justify-items: center;
+    grid-template-columns: repeat(auto-fit,minmax(25.6rem,1fr));
+    gap: 2rem;
+    /* justify-items: center; */
 }
