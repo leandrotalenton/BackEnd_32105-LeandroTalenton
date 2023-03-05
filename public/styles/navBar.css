@@ -168,8 +168,8 @@ header > div:last-child {
 }
 
 .position__menu a:hover {
-  background: #fff6e6;
-  color: #ffa500;
+  background: #4b6bfb;
+  color: #dae1ff;
   cursor: pointer;
 }
 
@@ -183,8 +183,8 @@ header > div:last-child {
 
 .position__menu > li:hover,
 .position__menu > li a:hover {
-  background: #fff6e6;
-  color: #ffa500;
+  background: #4b6bfb;
+  color: #dae1ff;
 }
 
 .logout {

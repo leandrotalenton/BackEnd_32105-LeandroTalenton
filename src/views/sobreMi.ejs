@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/styles/navBar.css" />
     <link rel="stylesheet" href="/styles/bannerMegalateral.css" />
     <link rel="stylesheet" href="/styles/layout.css" />
-    <!-- <link rel="stylesheet" href="/styles/sobreMi.css"> -->
+    <link rel="stylesheet" href="/styles/sobreMi.css" />
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" />
   </head>
   <body>
@@ -25,43 +25,43 @@
         <%- include( './partials/bannerMegalateral' ) %>
       </div>
       <div class="sidebar__main">
-        <div class="userData">
-          <div>nombre: <span><%= nombre %></span></div>
-          <div>
-            email:
-            <span><%= email %></span>
-          </div>
-          <div>
-            edad:
-            <span><%= edad %></span>
-          </div>
-          <div>
-            tel:
-            <span><%= tel %></span>
-          </div>
-          <div>
-            direccion:
-            <span><%= direccion %></span>
-          </div>
-          <form
-            action="/cambiarfoto"
-            method="POST"
-            enctype="multipart/form-data"
-          >
-            <label for="signup__pic"
-              ><span>Actualizar foto de perfil: </span></label
+        <div class="userData-container">
+          <div class="userData-flex">
+            <div>Nombre: <span><%= nombre %></span></div>
+            <div>
+              Email:
+              <span><%= email %></span>
+            </div>
+            <div>
+              Edad:
+              <span><%= edad %></span>
+            </div>
+            <div>
+              Telefono:
+              <span><%= tel %></span>
+            </div>
+            <div>
+              Direccion:
+              <span><%= direccion %></span>
+            </div>
+            <form
+              action="/cambiarfoto"
+              method="POST"
+              enctype="multipart/form-data"
             >
-            <input
-              id="signup__pic"
-              type="file"
-              name="uploaded_file"
-              placeholder="pic"
-            />
-            <input type="submit" value="Actualizar" />
-          </form>
-          <a class="chat__admin" href="/chat/123"
-            ><span>Contactar al admin</span></a
-          >
+              <label for="signup__pic">Actualizar foto de perfil: </label>
+              <input
+                id="signup__pic"
+                type="file"
+                name="uploaded_file"
+                placeholder="pic"
+              />
+              <input type="submit" value="Actualizar" />
+            </form>
+            <a class="chat__admin" href="/chat/123"
+              ><span>Contactar al admin</span></a
+            >
+          </div>
         </div>
       </div>
     </main>

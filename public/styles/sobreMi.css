@@ -1,0 +1,15 @@
+.userData-container{
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.userData-flex{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+
+.userData-flex span{
+  font-weight: 600;
+}
