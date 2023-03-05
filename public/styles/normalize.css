@@ -15,3 +15,9 @@ a {
 :root {
   font-size: 62.5%;
 }
+
+@media (max-width: 650px) {
+  .--mobile-hidden{
+    display: none;
+  }
+}

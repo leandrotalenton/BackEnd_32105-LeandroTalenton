@@ -182,3 +182,143 @@
 [2023-03-04T16:01:15.817] [WARN] default - request fallida: GET, a la URL: /chat/styles/loginForm.css
 [2023-03-04T16:08:24.824] [WARN] default - request fallida: GET, a la URL: /chat/styles/normalize.css
 [2023-03-04T16:08:24.828] [WARN] default - request fallida: GET, a la URL: /chat/styles/loginForm.css
+[2023-03-04T20:26:04.411] [ERROR] default - Error: Invalid login: 535 Authentication failed
+    at SMTPConnection._formatError (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:790:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:1548:34)
+    at SMTPConnection.<anonymous> (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:546:26)
+    at SMTPConnection._processResponse (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:953:20)
+    at SMTPConnection._onData (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:755:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:193:44)
+    at TLSSocket.emit (node:events:390:28)
+    at addChunk (node:internal/streams/readable:315:12)
+    at readableAddChunk (node:internal/streams/readable:289:9)
+    at TLSSocket.Readable.push (node:internal/streams/readable:228:10) {
+  code: 'EAUTH',
+  response: '535 Authentication failed',
+  responseCode: 535,
+  command: 'AUTH PLAIN'
+}
+[2023-03-04T20:26:05.373] [ERROR] default - RestException [Error]: Authenticate
+    at success (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\twilio\lib\base\Version.js:135:15)
+    at Promise_then_fulfilled (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:766:44)
+    at Promise_done_fulfilled (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:835:31)
+    at Fulfilled_dispatch [as dispatch] (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:1229:9)
+    at Pending_become_eachMessage_task (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:1369:30)
+    at RawTask.call (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\asap\asap.js:40:19)
+    at flush (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\asap\raw.js:50:29)
+    at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+  status: 401,
+  code: 20003,
+  moreInfo: 'https://www.twilio.com/docs/errors/20003',
+  details: undefined
+}
+[2023-03-04T20:26:06.078] [ERROR] default - RestException [Error]: Authenticate
+    at success (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\twilio\lib\base\Version.js:135:15)
+    at Promise_then_fulfilled (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:766:44)
+    at Promise_done_fulfilled (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:835:31)
+    at Fulfilled_dispatch [as dispatch] (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:1229:9)
+    at Pending_become_eachMessage_task (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:1369:30)
+    at RawTask.call (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\asap\asap.js:40:19)
+    at flush (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\asap\raw.js:50:29)
+    at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+  status: 401,
+  code: 20003,
+  moreInfo: 'https://www.twilio.com/docs/errors/20003',
+  details: undefined
+}
+[2023-03-04T20:26:06.504] [WARN] default - request fallida: PUT, a la URL: /
+[2023-03-04T20:31:37.480] [WARN] default - cuchame una cosa.. no voy a cerrar un carrito vacio
+[2023-03-04T20:31:39.573] [ERROR] default - Error: Invalid login: 535 Authentication failed
+    at SMTPConnection._formatError (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:790:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:1548:34)
+    at SMTPConnection.<anonymous> (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:546:26)
+    at SMTPConnection._processResponse (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:953:20)
+    at SMTPConnection._onData (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:755:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:193:44)
+    at TLSSocket.emit (node:events:390:28)
+    at addChunk (node:internal/streams/readable:315:12)
+    at readableAddChunk (node:internal/streams/readable:289:9)
+    at TLSSocket.Readable.push (node:internal/streams/readable:228:10) {
+  code: 'EAUTH',
+  response: '535 Authentication failed',
+  responseCode: 535,
+  command: 'AUTH PLAIN'
+}
+[2023-03-04T20:31:40.486] [ERROR] default - RestException [Error]: Authenticate
+    at success (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\twilio\lib\base\Version.js:135:15)
+    at Promise_then_fulfilled (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:766:44)
+    at Promise_done_fulfilled (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:835:31)
+    at Fulfilled_dispatch [as dispatch] (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:1229:9)
+    at Pending_become_eachMessage_task (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:1369:30)
+    at RawTask.call (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\asap\asap.js:40:19)
+    at flush (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\asap\raw.js:50:29)
+    at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+  status: 401,
+  code: 20003,
+  moreInfo: 'https://www.twilio.com/docs/errors/20003',
+  details: undefined
+}
+[2023-03-04T20:31:41.234] [ERROR] default - RestException [Error]: Authenticate
+    at success (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\twilio\lib\base\Version.js:135:15)
+    at Promise_then_fulfilled (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:766:44)
+    at Promise_done_fulfilled (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:835:31)
+    at Fulfilled_dispatch [as dispatch] (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:1229:9)
+    at Pending_become_eachMessage_task (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:1369:30)
+    at RawTask.call (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\asap\asap.js:40:19)
+    at flush (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\asap\raw.js:50:29)
+    at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+  status: 401,
+  code: 20003,
+  moreInfo: 'https://www.twilio.com/docs/errors/20003',
+  details: undefined
+}
+[2023-03-04T20:31:41.675] [WARN] default - request fallida: PUT, a la URL: /
+[2023-03-04T21:02:43.890] [ERROR] default - Error: Invalid login: 535 Authentication failed
+    at SMTPConnection._formatError (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:790:19)
+    at SMTPConnection._actionAUTHComplete (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:1548:34)
+    at SMTPConnection.<anonymous> (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:546:26)
+    at SMTPConnection._processResponse (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:953:20)
+    at SMTPConnection._onData (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:755:14)
+    at TLSSocket.SMTPConnection._onSocketData (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\nodemailer\lib\smtp-connection\index.js:193:44)
+    at TLSSocket.emit (node:events:390:28)
+    at addChunk (node:internal/streams/readable:315:12)
+    at readableAddChunk (node:internal/streams/readable:289:9)
+    at TLSSocket.Readable.push (node:internal/streams/readable:228:10) {
+  code: 'EAUTH',
+  response: '535 Authentication failed',
+  responseCode: 535,
+  command: 'AUTH PLAIN'
+}
+[2023-03-04T21:02:44.955] [ERROR] default - RestException [Error]: Authenticate
+    at success (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\twilio\lib\base\Version.js:135:15)
+    at Promise_then_fulfilled (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:766:44)
+    at Promise_done_fulfilled (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:835:31)
+    at Fulfilled_dispatch [as dispatch] (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:1229:9)
+    at Pending_become_eachMessage_task (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:1369:30)
+    at RawTask.call (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\asap\asap.js:40:19)
+    at flush (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\asap\raw.js:50:29)
+    at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+  status: 401,
+  code: 20003,
+  moreInfo: 'https://www.twilio.com/docs/errors/20003',
+  details: undefined
+}
+[2023-03-04T21:02:45.674] [ERROR] default - RestException [Error]: Authenticate
+    at success (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\twilio\lib\base\Version.js:135:15)
+    at Promise_then_fulfilled (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:766:44)
+    at Promise_done_fulfilled (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:835:31)
+    at Fulfilled_dispatch [as dispatch] (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:1229:9)
+    at Pending_become_eachMessage_task (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\q\q.js:1369:30)
+    at RawTask.call (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\asap\asap.js:40:19)
+    at flush (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\asap\raw.js:50:29)
+    at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+  status: 401,
+  code: 20003,
+  moreInfo: 'https://www.twilio.com/docs/errors/20003',
+  details: undefined
+}
+[2023-03-04T21:02:47.147] [WARN] default - request fallida: PUT, a la URL: /
+[2023-03-04T22:12:09.045] [WARN] default - request fallida: GET, a la URL: /productos/scripts/publicScript.js
+[2023-03-04T22:12:28.747] [WARN] default - request fallida: GET, a la URL: /productos/scripts/publicScript.js
+[2023-03-04T22:12:32.890] [WARN] default - request fallida: GET, a la URL: /productos/scripts/publicScript.js
+[2023-03-04T22:13:01.418] [WARN] default - request fallida: GET, a la URL: /productos/scripts/publicScript.js

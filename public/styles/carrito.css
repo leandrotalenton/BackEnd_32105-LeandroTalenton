@@ -1,7 +1,129 @@
-.carritoGrid {
-  display: grid;
-  grid-template-columns: repeat(6, auto);
+
+
+.carrito-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-items: center;
+  font-size: 1.3rem;
+  margin-bottom: 4.5rem;
+}
+
+.carrito-table {
   max-width: 70rem;
+  border-spacing: 0;
+}
+
+.carrito-table img {
+  height: 5rem;
+  width: 5rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.carrito-table td, .carrito-table th {
+  text-align: center;
+  padding: 1rem .5rem;
+}
+
+.carrito-table tr th {
+  border-bottom: 2px solid black;
+}
+
+.carrito-table tr td {
+  border-bottom: 1px solid black;
+}
+
+.card-amount-text {
+  color: rgb(164, 164, 164);
+}
+
+.card-amount-number {
+  width: 3.5rem;
+  text-align: center;
+  border: none;
+}
+.card-amount-number:focus {
+  border: none;
+  outline: none;
+}
+
+.reset-button-styles{
+  display: inline-block;
+  border: none;
+  margin: 0;
+  text-decoration: none;
+  background: #4b6bfb;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+}
+.reset-button-styles:hover,
+.reset-button-styles:focus {
+    background: hsl(229, 89%, 53%);
+}
+.reset-button-styles:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+.card-amount-borrar{
+    height: 1.7rem;
+    width: 1.7rem;
+    border-radius: 50%;
+}
+
+.card-comprar{
+  width: 100%;
+  height: 3rem;
+  font-size: 1.5rem;
+  border-radius: .4rem;
+  min-width: 9.2rem;
+}
+
+/* ////////////// MODAL ///////////////// */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  left: 0;
+  top: 0;
+  z-index: 500; /* Sit on top */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+  }
+  .modal-content:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: modal-content 1.2s linear infinite;
+  }
+  @keyframes modal-content {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
 }

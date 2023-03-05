@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="/styles/normalize.css" />
     <link rel="stylesheet" href="/styles/bannerMegalateral.css" />
     <link rel="stylesheet" href="/styles/layout.css" />
+    <link rel="stylesheet" href="/styles/card.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" />
   </head>
   <body>
@@ -27,32 +29,24 @@
       </div>
       <div class="sidebar__main">
         <div class="productos">
-          <div>
+          <div class="filtro-categoria">
             <input id="categoria" type="text" placeholder="categoria" />
             <button id="filtrar">Filtrar</button>
           </div>
-          <br />
-          <table>
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Category</th>
-                <th>Price</th>
-                <th>Thumbnail</th>
-                <th>Cantidad</th>
-                <th>Agregar producto</th>
-              </tr>
-            </thead>
-            <tbody id="productos--tbody"></tbody>
-          </table>
+          <div class="card-container" id="productos--tbody">
+            Cargando productos...
+          </div>
         </div>
       </div>
     </main>
-
-    <script src="./scripts/publicScript.js"></script>
+    <a class="chat__admin" href="/chat/123"
+      ><span>Contactar al admin</span></a
+    >
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="/scripts/publicScript.js"></script>
     <script>
       const arrayProdData = JSON.parse(`<%- JSON.stringify(arrayProdData) %>`);
-      renderProductos(arrayProdData, "lista");
+      renderProductos(arrayProdData, "cards");
       document.querySelector("#filtrar").addEventListener("click", (e) => {
         e.preventDefault();
         const filterValue = document.querySelector("#categoria").value;

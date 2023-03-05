@@ -184,6 +184,15 @@ function renderProductos(data, formato) {
       try {
         const productId = e.currentTarget.getAttribute("data-id");
         const cantidad = document.querySelector(`#q-${productId}`).value;
+        await Toastify({
+          text: "Se agrega un producto al carrito",
+          className: "toast",
+          gravity: "bottom", // `top` or `bottom`
+          position: "left", // `left`, `center` or `right`
+          style: {
+            background: "#4b6bfb",
+          }
+        }).showToast();
         await fetch(`/carrito/${productId}/productos?cantidad=${cantidad}`, {
           method: "POST",
         });

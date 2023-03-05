@@ -1,13 +1,11 @@
 .content-main {
   display: flex;
   flex-direction: row-reverse;
-  /* max-width: 132.8rem; */
   margin-left: auto;
   margin-right: auto;
   padding-top: 3rem;
   padding-bottom: 3rem;
-  /* background-image: radial-gradient(hsla(233.33 27.273% 12.941%/.2) .05rem,hsla(0 0% 90%/1) .05rem);
-    background-size: .4rem .4rem; */
+  min-height: calc(100vh - 9.2rem)
 }
 
 .sidebar__aside {
@@ -16,4 +14,31 @@
 
 .sidebar__main {
   flex-grow: 1;
+}
+
+.chat__admin {
+  position: fixed;
+  bottom: 33px;
+  right: 2rem;
+  padding: 1rem;
+  background-color: #25d366;
+  color: white;
+  border-radius: 1rem;
+  transition: 0.25s;
+  font-size: 1.5rem;
+  z-index: 100;
+}
+
+@media (min-width: 100rem) {
+  .chat__admin {
+    right: 27rem;
+  }
+}
+
+.chat__admin:hover {
+  background-color: #0fe25d;
+}
+
+.chat__admin > span {
+  font-weight: 500;
 }

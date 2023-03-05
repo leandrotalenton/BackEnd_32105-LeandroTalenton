@@ -1,3 +1,10 @@
+.card-container {
+  width: calc(100% - 4rem);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25.6rem, 1fr));
+  gap: 2rem;
+}
+
 .card {
   box-shadow: 0 2rem 2.5rem -0.5rem rgba(0, 0, 0, 0.1),
     0 8rem 10rem -6rem rgba(0, 0, 0, 0.1);
@@ -10,9 +17,43 @@
   border-radius: 1.5rem;
   transition: 0.25s;
 }
-.card:hover {
-  opacity: 85%;
+
+@media (min-width: 600px) {
+  .producto .card {
+    flex-direction: row;
+    max-width: 78rem;
+  }
+  
+  .producto .card figure {
+    flex-grow: 1;
+    max-width: 50%;
+  }
+  
+  .producto .card figure .card-img {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+  }
+  
+  .producto .card .card-body {
+    max-width: 50%;
+    justify-content: space-between;
+  }
+  
+  .producto .card .card-body .card-description {
+    height: auto;
+  }
+  
+  .producto .card .card-body a {
+    flex-grow: 1;
+  }
 }
+
+.card:hover {
+  box-shadow: 0 2rem 2.5rem -0.5rem rgba(0, 0, 0, 0.4),
+    0 8rem 10rem -6rem rgba(0, 0, 0, 0.2);
+}
+
 .card > figure {
   align-items: center;
   display: flex;
@@ -57,14 +98,12 @@
   margin-bottom: 0.8rem;
 
   display: -webkit-box;
-  max-width: 20rem;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 .card .card-description {
   display: -webkit-box;
-  max-width: 20rem;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -78,6 +117,10 @@
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 0.5rem;
+}
+
+.card-price {
+  font-size: 1.4rem;
 }
 
 .card-amount-text {
@@ -94,11 +137,9 @@
   outline: none;
 }
 
-.card-amount-number::-webkit-inner-spin-button {
+/* .card-amount-number::-webkit-inner-spin-button {
   opacity: 1;
-  background-color: red;
-  color: red;
-}
+} */
 
 .card .card-actions {
   display: flex;
@@ -145,4 +186,8 @@
   background-color: hsl(229, 89%, 53%);
   border-color: hsl(229, 89%, 53%);
   cursor: pointer;
+}
+
+.toast {
+  font-size: 1.5rem;
 }

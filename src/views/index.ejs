@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="/styles/bannerMegalateral.css" />
     <link rel="stylesheet" href="/styles/layout.css" />
     <link rel="stylesheet" href="/styles/card.css" />
-    <link rel="stylesheet" href="/styles/cardContainer.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" />
   </head>
   <body>
@@ -39,12 +39,11 @@
             Cargando productos...
           </div>
         </div>
-        <div data-chatProfile="general">Chat general</div>
-        <%- include( './partials/chat' ) %>
       </div>
-      <a href="/chat/123" style="position: fixed; bottom: -20px; right: -20px"
-        ><span>chatear con el admin</span></a
+      <a class="chat__admin" href="/chat/123"
+        ><span>Contactar al admin</span></a
       >
     </main>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   </body>
 </html>

@@ -3,6 +3,7 @@
   width: 100%;
   align-items: center;
   flex-direction: column;
+  gap: 2.5rem;
 }
 
 .productos table {
@@ -24,4 +25,38 @@
 .productos img {
   height: 7.5rem;
   width: 7.5rem;
+}
+
+.filtro-categoria {
+  display: flex;
+}
+
+.filtro-categoria > input{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #5a5a5d;
+  border: 0.3rem solid #e0effe;
+  border-right: none;
+  border-radius: 0.8rem 0rem 0rem 0.8rem;
+  height: 4rem;
+  width: 100%;
+  padding: 1.2rem 1.6rem;
+  background-color: white;
+  outline: none;
+}
+
+.filtro-categoria > button{
+  color: white;
+  font-weight: 600;
+  font-size: 1.6rem;
+  background-color: hsl(229.09 95.652% 63.922%);
+  border-radius: 0rem 0.8rem 0.8rem 0rem;
+  height: 4rem;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  transition: 0.25s;
 }
