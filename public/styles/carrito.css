@@ -127,3 +127,15 @@
       transform: rotate(360deg);
     }
 }
+
+.--generada {
+  color: green
+}
+
+.--cancelada {
+  color: red
+}
+
+.--entregada {
+  color: gray
+}

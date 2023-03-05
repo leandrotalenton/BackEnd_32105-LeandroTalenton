@@ -26,7 +26,12 @@
       </div>
       <div class="sidebar__main">
         <section class="carrito-container">
-          <h3>Productos en el carrito activo:</h3>
+          <h3>Orden del <%= timeStamp %>:</h3>
+          <br />
+          <h5>Estado: <%= estado %></h5>
+          <h5>Direccion de entrega: <%= usuarioData.address %></h5>
+          <br />
+
           <table class="carrito-table">
             <thead>
               <tr>
@@ -35,7 +40,6 @@
                 <th class="--mobile-hidden">Precio</th>
                 <th>Cant</th>
                 <th>Subtotal</th>
-                <th>Remover</th>
               </tr>
             </thead>
             <tbody>
@@ -48,23 +52,6 @@
                 <td class="--mobile-hidden">$ <%= producto.price %></td>
                 <td><%= producto.cantidad %></td>
                 <td>$ <%= producto.subtotal %></td>
-                <td>
-                  <span class="card-amount-text --mobile-hidden">Cant:</span>
-                  <input
-                    class="card-amount-number"
-                    id="<%= 'q-'+producto.prodId %>"
-                    type="number"
-                    value="1"
-                    min="1"
-                    max="<%= producto.cantidad %>"
-                  />
-                  <button
-                    class="borrar card-amount-borrar reset-button-styles"
-                    data-id="<%= producto.prodId %>"
-                  >
-                    X
-                  </button>
-                </td>
               </tr>
               <% }) %>
             </tbody>
@@ -75,11 +62,6 @@
                 <td class="--mobile-hidden"></td>
                 <td>Precio Total:</td>
                 <td>$ <%= subTotal %></td>
-                <td>
-                  <button id="comprar" class="reset-button-styles card-comprar">
-                    comprar
-                  </button>
-                </td>
               </tr>
             </tfoot>
           </table>
@@ -87,45 +69,5 @@
       </div>
     </main>
     <a class="chat__admin" href="/chat/admin"><span>Contactar al admin</span></a>
-    <div class="modal modal-spinner">
-      <div class="modal-content"></div>
-    </div>
-
-    <script>
-      const modal = document.querySelector(".modal-spinner");
-      const openModal = function() {
-        modal.style.display = "flex";
-      }
-
-      document.querySelectorAll(".borrar").forEach((button) =>
-        button.addEventListener("click", async (e) => {
-          try {
-            openModal()
-            const dataId = e.currentTarget.getAttribute("data-id");
-            const cantidad = document.querySelector(`#q-${dataId}`).value;
-            await fetch(`/carrito/${dataId}/productos?cantidad=${cantidad}`, {
-              method: "DELETE",
-            });
-            location.reload();
-          } catch (e) {
-            logger.error(e);
-          }
-        })
-      );
-      document.querySelector("#comprar").addEventListener("click", async () => {
-        const cartLength = <%- arrayProdData.length %>
-        if(cartLength){
-          try {
-            openModal()
-            await fetch(`/carrito`, { method: "PUT" });
-            window.location.href = "/carrito/compra";
-          } catch (e) {
-            logger.error(e);
-          }
-        } else {
-          console.log("carrito vacio")
-        }
-      });
-    </script>
   </body>
 </html>

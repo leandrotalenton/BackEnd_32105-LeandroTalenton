@@ -12,7 +12,9 @@ export class completarOrdenDTO {
     this.usuarioId = usuarioId;
     this.usuarioData = {};
     this.carritoId = carritoId;
-    this.carritoData = {};
+    this.arrayProdData = [];
+    this.array
+    this.subTotal = 0;
     this.timeStamp = timeStamp;
     this.estado = estado;
   }
@@ -28,8 +30,8 @@ export class completarOrdenDTO {
     await carritoCompleto.calculateProductsDataAndSubtotal(carritoObj._id);
 
     this.carritoData = carritoObj
-    this.carritoData.productos = arrayProdData
-    this.carritoData.subTotal = subTotal
+    this.arrayProdData = arrayProdData
+    this.subTotal = subTotal
 
     return this;
   }

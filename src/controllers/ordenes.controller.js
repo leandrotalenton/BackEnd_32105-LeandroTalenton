@@ -7,13 +7,13 @@ import { getCompleteOrder, getFilteredUserOrders } from "../services/ordenes.ser
 export const getUserOrders = async (req, res) => {
   try {
     const ordersArray = await getFilteredUserOrders(req.user._id);
-    res.send(ordersArray)
-    // res.render("./ordenes", {
-    //   nombre: req.user.username,
-    //   pic: req.user.pic,
-    //   id: req.user.id,
-    //   ...ordersArray,
-    // });
+    // res.send(ordersArray)
+    res.render("./ordenes", {
+      nombre: req.user.username,
+      pic: req.user.pic,
+      id: req.user.id,
+      arrayDeOrdenes: ordersArray,
+    });
   } catch (e) {
     logger.error(e);
   }
@@ -23,17 +23,13 @@ export const getUserOrders = async (req, res) => {
 export const getOrderData = async (req, res) => {
   try {
     const ordenCompleta = await getCompleteOrder(req.params.id_orden);
-    console.log("ordenCompleta:",ordenCompleta);
-    console.log("req.user._id.toString()",req.user._id.toString())
-    console.log("ordenCompleta.usuarioId",ordenCompleta.usuarioId)
     if(req.user._id.toString() === ordenCompleta.usuarioId){
-      res.send(ordenCompleta);
-      // res.render("./orden", {
-      //   nombre: req.user.username,
-      //   pic: req.user.pic,
-      //   id: req.user.id,
-      //   ...ordenCompleta,
-      // });
+      res.render("./orden", {
+        nombre: req.user.username,
+        pic: req.user.pic,
+        id: req.user.id,
+        ...ordenCompleta,
+      });
     } else {
       res.send("esta orden no le corresponde a usted senior")
     }

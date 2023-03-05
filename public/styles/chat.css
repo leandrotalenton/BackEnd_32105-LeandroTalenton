@@ -207,3 +207,12 @@ textarea {
 textarea::placeholder {
   font-family: "Inter";
 }
+
+.backToGroupChat {
+  max-width: 50rem;
+  margin: 1rem auto;
+  font-size: 1.2rem;
+  color: rgba(255, 0, 0, 0.75);;
+  text-align: right;
+  font-weight: 600;
+}

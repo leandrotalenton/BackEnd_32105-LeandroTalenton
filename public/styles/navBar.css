@@ -135,7 +135,7 @@ header > div:last-child {
 }
 
 .position__checkbox:checked ~ .position__menu {
-  max-height: calc(5 * 3.3rem);
+  max-height: calc(6 * 3.3rem);
   box-shadow: 0 0.3rem 0.9rem 0.2rem rgba(0, 0, 0, 0.25);
   transition: max-height 0.1s linear 0s;
 }
