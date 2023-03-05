@@ -221,7 +221,12 @@ Renderiza una pagina con la informacion del servidor
 
 ## Usage/Examples
 
-*insert gifs here*
+*Gif de compra de productos*
+![Alt text](public/gifs/ezgif.com-video-to-gif.gif)
+
+*Gif de filtrado de productos y uso del chat*
+![Alt text](public/gifs/vistaProductosYChat.gif)
+
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file
