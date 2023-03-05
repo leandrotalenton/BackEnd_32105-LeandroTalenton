@@ -322,3 +322,113 @@
 [2023-03-04T22:12:28.747] [WARN] default - request fallida: GET, a la URL: /productos/scripts/publicScript.js
 [2023-03-04T22:12:32.890] [WARN] default - request fallida: GET, a la URL: /productos/scripts/publicScript.js
 [2023-03-04T22:13:01.418] [WARN] default - request fallida: GET, a la URL: /productos/scripts/publicScript.js
+[2023-03-05T12:33:48.487] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-05T12:34:46.553] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-05T12:37:28.272] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-05T12:38:24.902] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-05T12:38:46.457] [ERROR] default - ReferenceError: usuarioId is not defined
+    at completarOrdenDTO.completeData (file:///C:/Users/leand/Desktop/Proyectos_program/BackEnd_32105-LeandroTalenton/src/dtos/ordenes/completarOrden.dto.js:19:48)
+    at getOrderData (file:///C:/Users/leand/Desktop/Proyectos_program/BackEnd_32105-LeandroTalenton/src/controllers/ordenes.controller.js:27:42)
+    at Layer.handle [as handle_request] (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\index.js:284:15
+    at param (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\index.js:365:14)
+    at param (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\index.js:421:3)
+[2023-03-05T12:39:41.453] [ERROR] default - ReferenceError: usuarioId is not defined
+    at completarOrdenDTO.completeData (file:///C:/Users/leand/Desktop/Proyectos_program/BackEnd_32105-LeandroTalenton/src/dtos/ordenes/completarOrden.dto.js:21:48)
+    at getOrderData (file:///C:/Users/leand/Desktop/Proyectos_program/BackEnd_32105-LeandroTalenton/src/controllers/ordenes.controller.js:27:42)
+    at Layer.handle [as handle_request] (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\index.js:284:15
+    at param (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\index.js:365:14)
+    at param (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\index.js:421:3)
+[2023-03-05T12:39:42.858] [ERROR] default - ReferenceError: usuarioId is not defined
+    at completarOrdenDTO.completeData (file:///C:/Users/leand/Desktop/Proyectos_program/BackEnd_32105-LeandroTalenton/src/dtos/ordenes/completarOrden.dto.js:21:48)
+    at getOrderData (file:///C:/Users/leand/Desktop/Proyectos_program/BackEnd_32105-LeandroTalenton/src/controllers/ordenes.controller.js:27:42)
+    at Layer.handle [as handle_request] (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\index.js:284:15
+    at param (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\index.js:365:14)
+    at param (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\index.js:421:3)
+[2023-03-05T12:39:55.593] [ERROR] default - ReferenceError: usuarioId is not defined
+    at completarOrdenDTO.completeData (file:///C:/Users/leand/Desktop/Proyectos_program/BackEnd_32105-LeandroTalenton/src/dtos/ordenes/completarOrden.dto.js:21:48)
+    at getOrderData (file:///C:/Users/leand/Desktop/Proyectos_program/BackEnd_32105-LeandroTalenton/src/controllers/ordenes.controller.js:27:42)
+    at Layer.handle [as handle_request] (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\index.js:284:15
+    at param (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\index.js:365:14)
+    at param (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\index.js:421:3)
+[2023-03-05T12:47:48.112] [ERROR] default - ReferenceError: completarOrdenDTO is not defined
+    at getCompleteOrder (file:///C:/Users/leand/Desktop/Proyectos_program/BackEnd_32105-LeandroTalenton/src/services/ordenes.service.js:22:22)
+    at getOrderData (file:///C:/Users/leand/Desktop/Proyectos_program/BackEnd_32105-LeandroTalenton/src/controllers/ordenes.controller.js:29:33)
+    at Layer.handle [as handle_request] (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\index.js:284:15
+    at param (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\index.js:365:14)
+    at param (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\index.js:421:3)
+[2023-03-05T12:47:49.021] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-05T12:47:59.881] [ERROR] default - ReferenceError: completarOrdenDTO is not defined
+    at getCompleteOrder (file:///C:/Users/leand/Desktop/Proyectos_program/BackEnd_32105-LeandroTalenton/src/services/ordenes.service.js:22:22)
+    at getOrderData (file:///C:/Users/leand/Desktop/Proyectos_program/BackEnd_32105-LeandroTalenton/src/controllers/ordenes.controller.js:29:33)
+    at Layer.handle [as handle_request] (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\index.js:284:15
+    at param (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\index.js:365:14)
+    at param (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (C:\Users\leand\Desktop\Proyectos_program\BackEnd_32105-LeandroTalenton\node_modules\express\lib\router\index.js:421:3)
+[2023-03-05T12:48:00.835] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-05T12:48:14.267] [ERROR] default - ReferenceError: completarOrdenDTO is not defined
+    at getCompleteOrder (file:///C:/Users/leand/Desktop/Proyectos_program/BackEnd_32105-LeandroTalenton/src/services/ordenes.service.js:22:22)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async getOrderData (file:///C:/Users/leand/Desktop/Proyectos_program/BackEnd_32105-LeandroTalenton/src/controllers/ordenes.controller.js:29:27)
+[2023-03-05T12:48:15.174] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-05T12:49:47.870] [ERROR] default - ReferenceError: completarOrdenDTO is not defined
+    at getCompleteOrder (file:///C:/Users/leand/Desktop/Proyectos_program/BackEnd_32105-LeandroTalenton/src/services/ordenes.service.js:23:22)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async getOrderData (file:///C:/Users/leand/Desktop/Proyectos_program/BackEnd_32105-LeandroTalenton/src/controllers/ordenes.controller.js:29:27)
+[2023-03-05T12:49:48.832] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-05T12:50:09.429] [ERROR] default - TypeError: Found non-callable @@iterator
+    at getCompleteOrder (file:///C:/Users/leand/Desktop/Proyectos_program/BackEnd_32105-LeandroTalenton/src/services/ordenes.service.js:24:22)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async getOrderData (file:///C:/Users/leand/Desktop/Proyectos_program/BackEnd_32105-LeandroTalenton/src/controllers/ordenes.controller.js:29:27)
+[2023-03-05T12:50:10.357] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-05T12:51:27.582] [ERROR] default - ReferenceError: usuarioId is not defined
+    at completarOrdenDTO.completeData (file:///C:/Users/leand/Desktop/Proyectos_program/BackEnd_32105-LeandroTalenton/src/dtos/ordenes/completarOrden.dto.js:21:48)
+    at getCompleteOrder (file:///C:/Users/leand/Desktop/Proyectos_program/BackEnd_32105-LeandroTalenton/src/services/ordenes.service.js:25:42)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async getOrderData (file:///C:/Users/leand/Desktop/Proyectos_program/BackEnd_32105-LeandroTalenton/src/controllers/ordenes.controller.js:29:27)
+[2023-03-05T12:51:28.472] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-05T12:52:15.770] [ERROR] default - ReferenceError: res is not defined
+    at getCompleteOrder (file:///C:/Users/leand/Desktop/Proyectos_program/BackEnd_32105-LeandroTalenton/src/services/ordenes.service.js:27:5)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async getOrderData (file:///C:/Users/leand/Desktop/Proyectos_program/BackEnd_32105-LeandroTalenton/src/controllers/ordenes.controller.js:29:27)
+[2023-03-05T12:52:16.656] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-05T12:56:35.311] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-05T13:03:47.510] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-05T13:04:24.058] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-05T13:10:19.973] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-05T13:12:12.926] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-05T13:13:50.608] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-05T13:16:09.976] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-05T13:16:53.568] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-05T13:19:12.434] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-05T13:19:28.312] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-05T13:19:54.919] [WARN] default - request fallida: GET, a la URL: /favicon.ico
+[2023-03-05T13:21:33.062] [WARN] default - request fallida: GET, a la URL: /favicon.ico

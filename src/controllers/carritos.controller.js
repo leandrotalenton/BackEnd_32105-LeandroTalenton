@@ -19,8 +19,9 @@ const { emailAdress: emailAdministrador } = yargsResult;
 export const getAllActiveCartProducts = async (req, res) => {
   try {
     const carritoCompleto = new CompletarCarritoDTO(req.user._id);
+    const carritoActivoId = await carritoActivoByUserId(req.user._id)
     const { arrayProdData, subTotal } =
-      await carritoCompleto.calculateProductsDataAndSubtotal();
+      await carritoCompleto.calculateProductsDataAndSubtotal(carritoActivoId._id);
     res.render("./carrito", {
       arrayProdData,
       subTotal,

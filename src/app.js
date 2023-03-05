@@ -14,6 +14,7 @@ import { productosRouter } from "./routers/productos.js";
 import { infoRouter } from "./routers/info.js";
 import { carritosRouter } from "./routers/carritos.js";
 import { chatRouter } from "./routers/chat.js";
+import { ordenesRouter } from "./routers/ordenes.js";
 
 const app = express();
 export const HttpServer = new HTTPServer(app);
@@ -47,6 +48,7 @@ app.use("/", usuariosRouter);
 app.use("/chat", chatRouter);
 app.use("/productos", authMw, productosRouter);
 app.use("/carrito", authMw, carritosRouter);
+app.use("/ordenes", authMw, ordenesRouter);
 app.use("/info", infoRouter);
 
 app.all("*", (req, res, next) => {

@@ -9,8 +9,9 @@ export class CompletarCarritoDTO {
     this.arrayProdData = [];
     this.subTotal = 0;
   }
-  async calculateProductsDataAndSubtotal() {
-    const { productos } = await carritoActivoByUserId(this.userId);
+  async calculateProductsDataAndSubtotal(carritoId) {
+    // const { productos } = await carritoActivoByUserId(this.userId);
+    const { productos } = await carritosDAO.readById(carritoId);
     await Promise.all(
       productos.map(async (prod) => {
         let data = await productosDAO.readById(prod.prodId);

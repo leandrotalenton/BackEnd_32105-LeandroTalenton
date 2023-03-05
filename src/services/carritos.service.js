@@ -1,7 +1,7 @@
 import { DaoFactory } from "../daos/FactoryDao.js";
 import logger from "../loggers/configLog4JS.js";
+
 const carritosDAO = DaoFactory.getCarritosDao();
-const ordenesDAO = DaoFactory.getOrdenesDao();
 
 export async function carritoActivoByUserId(idUser) {
   try {
