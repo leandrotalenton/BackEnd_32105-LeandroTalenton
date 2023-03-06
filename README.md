@@ -292,8 +292,11 @@ or
 argumentos:
  -p port. Puerto a utilizar
  -m method. Metodo a utilizar (CLUSTER || FORK)
+ -t sessionExpirationTime. tiempo de expiracion de la sesion
+ -e environment. (PRODUCCION || DESARROLLO)
+ -a emailAdress. Email del administrador
 
-ej: node index.js -p 8081 -m CLUSTER
+ej: node src/server.js -e DESARROLLO -p 8081 -m CLUSTER -t 800000 
 
 
  ### forever
